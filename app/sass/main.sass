@@ -87,10 +87,12 @@ b, strong
 		display: flex
 		text-transform: uppercase
 		li
-			padding: 20px 15px
+			padding: 20px 12px
 			border-left: 1px solid #c0c5f5
 			transform: skew(-16deg)
 			background: #fff
+			&:last-child
+				border-right: 1px solid #c0c5f5
 			a
 				display: inline-block
 				text-transform: uppercase
@@ -103,7 +105,7 @@ b, strong
 		text-transform: uppercase
 		color: $blue
 		height: 66px
-		padding: 11px 20px
+		padding: 11px 15px
 		box-sizing: border-box
 		transform: skew(-16deg)
 		text-align: center
@@ -118,7 +120,7 @@ b, strong
 		text-transform: uppercase
 		color: #fff
 		height: 66px
-		padding: 20px 20px
+		padding: 20px 15px
 		box-sizing: border-box
 		transform: skew(-16deg)
 		text-align: center
@@ -140,7 +142,7 @@ b, strong
 		span
 			display: inline-block
 			transform: skew(16deg)
-			padding: 21px 100px 18px 70px
+			padding: 21px 85px 18px 60px
 			color: $blue
 			text-transform: uppercase
 			white-space: nowrap
@@ -149,7 +151,7 @@ b, strong
 			transform: skew(16deg)
 			position: absolute
 			top: 19px
-			left: 30px
+			left: 23px
 	.topline-leftside
 		display: flex
 		margin-left: 65px
@@ -164,7 +166,7 @@ b, strong
 // Banner
 
 .section-banner
-	background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)
+	background: linear-gradient(90deg, rgba(25,29,80,1) 0%, rgba(9,9,121,1) 0%, rgba(25,29,80,1) 57%)
 	margin-top: 66px
 	.section-inner
 	.banner
@@ -174,24 +176,27 @@ b, strong
 	.banner-rightside
 		position: absolute
 		width: 550px
-		top: 150px
+		top: 80px
 		left: 270px
 		z-index: 2000
 	.banner-rightside__big-logo
 		position: absolute
-		top: 0
-		left: -240px
+		top: 50px
+		left: -208px
+		width: 170px
+		height: 226px
 		img
-			width: auto
+			width: 170px
+			height: 226px
 	.banner-rightside__title
 		width: 422px
 	.h1
 		font-size: 55px
 		color: #fff
 	.banner-rightside__post-title
-		width: 335px
+		width: 380px
 		color: #ffffff
-		+font("Solomon-Sans-Book", 300, 20px)
+		+font("Solomon-Sans-Book", 300, 21px)
 		text-transform: uppercase
 	.banner-rightside__button
 		+font("NeoSansPro-BoldItalic", 700, 23px)
@@ -202,7 +207,7 @@ b, strong
 		text-align: center
 		box-sizing: border-box
 		text-transform: uppercase
-		margin: 70px
+		margin: 60px 0px 0px 0px
 		cursor: pointer
 		span
 			display: inline-block
@@ -213,20 +218,35 @@ b, strong
 		bottom: 0
 		left: 50%
 		margin-left: -30px
+		.owl-dot
+			span
+				background: #fff
+				width: 11px
+				height: 11px
+		.owl-dot.active
+			span
+				background: #fff
+				transform: scale(1.3)
+				transfition: scale .25s ease
 	.owl-nav
 		position: absolute
-		top: 250px
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		margin: auto
 		display: flex
 		justify-content: space-between
 		width: 100vw
 		height: 60px
 		pointer-events: none
+		color: #fff
 		button.owl-prev
 			bottom: 0px
 			left: 0px
 			position: absolute
 			border-radius: 10em
-			font-size: 45px
+			font-size: 23px
 			line-height: 1
 			background: #98a3cc
 			width: 50px
@@ -235,14 +255,18 @@ b, strong
 			margin-left: 100px
 			pointer-events: auto
 			&:hover
-				background: #fff
-				color: black
+				background: #98a3cc
+				color: #fff
+			i
+				position: absolute
+				top: 14px
+				left: 16px
 		button.owl-next
 			bottom: 0px
 			right: 0px
 			position: absolute
 			border-radius: 10em
-			font-size: 45px
+			font-size: 23px
 			line-height: 1
 			background: #98a3cc
 			width: 50px
@@ -251,8 +275,12 @@ b, strong
 			margin-right: 100px
 			pointer-events: auto
 			&:hover
-				background: #fff
-				color: black
+				background: #98a3cc
+				color: #fff
+			i
+				position: absolute
+				top: 14px
+				left: 19px
 			span
 				margin-left: 5px
 		
@@ -361,7 +389,7 @@ b, strong
 // Customers
 
 .section-bannercustomer
-	background: linear-gradient(left, #252e77 31%, #000000 100%)
+	background: linear-gradient(90deg, rgba(25,29,80,1) 0%, rgba(9,9,121,1) 0%, rgba(25,29,80,1) 57%)
 	margin-top: 66px
 	.section-inner
 	.bannercustomer
@@ -372,7 +400,7 @@ b, strong
 		position: absolute
 		width: 550px
 		left: 75px
-		top: 225px
+		top: 200px
 		z-index: 2000
 	.bannercustomer-rightside__big-logo
 		position: absolute
@@ -556,6 +584,7 @@ b, strong
 		display: flex
 		flex-wrap: wrap
 		justify-content: space-between
+		margin-bottom: 99px
 	.conditions-block
 		text-align: center
 		width: 33%
@@ -582,9 +611,181 @@ b, strong
 // Background
 
 .section-background
-	background: url('../img/@2x/')
+	background: url('../img/@2x/bg-barbell.jpg') no-repeat center
+	background-size: cover
+	min-height: 448px
+	position: relative
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		background: rgba(#000, .3)
 	.section-inner
+		position: relative
+		
 
 
 // Background_
+
+// Questions
+
+.section-questions
+	background: url('../img/@2x/bg-ques.jpg') no-repeat center
+	background-size: cover
+	.section-inner
+	.questions
+	.questions-title
+		color: #fff
+		font-size: 30px
+		text-transform: uppercase
+		text-align: center
+		margin: 0 auto
+		width: 600px
+		padding-top: 70px
+	.h2
+	.questions-button-wrapper
+		padding-bottom: 40px
+	.questions-button
+		display: block
+		margin-top: 40px
+		+font('Solomon-Sans-Bold-Italic', 700, 19px)
+		color: #fff
+		width: 230px
+		background: #000
+		text-align: center
+		padding: 10px 0px
+		transform: skew(-16deg)
+		margin-left: auto
+		margin-right: auto
+		cursor: pointer
+		text-transform: uppercase
+		span
+			display: inline-block
+			transform: skew(16deg)
+
+// Questions_
+
+
+// Map
+
+.section-map
+	background: url('../img/@2x/bg-map.jpg') no-repeat center
+	background-size: cover
+	min-height: 661px
+	.section-inner
+	
+	
+// Map_
+
+// Contacts
+
+.section-contacts
+	background: url('../img/@2x/bg-contacts.jpg') no-repeat center
+	background-size: cover
+	color: #fff
+	min-height: 146px
+	.section-inner
+	.contacts
+		display: flex
+		justify-content: space-between
+		width: 90%
+		margin: 0 auto 
+	.contacts-leftside
+		padding-top: 30px
+	.contacts-leftside__blocks
+		display: flex
+	.contacts-leftside__block
+		font-family: "NeoSansPro-Italic", sans-serif
+		text-transform: uppercase
+		margin-right: 30px
+	.leftside__block-title
+		font-size: 18px
+		text-decoration: underline
+	.leftside__block-address
+		font-size: 15px
+		margin-top: 3px
+	.leftside__block-tel
+		font-size: 15px
+		margin-top: 5px
+
+
+	.contacts-rightside
+		padding-top: 30px
+	.contacts-rightside__social
+		display: flex
+		justify-content: flex-end
+		i
+			font-size: 30px
+			line-height: 1.7
+		.fa-facebook-f
+			margin-right: 2px
+	.social
+		margin-left: 10px
+		display: block
+		color: #fff
+	.rightside__social-vk
+		width: 50px
+		height: 50px
+		border-radius: 10em
+		background: #7d7abe
+		text-align: center
+		cursor: pointer
+	.rightside__social-facebook
+		width: 50px
+		height: 50px
+		border-radius: 10em
+		background: #7d7abe
+		text-align: center
+		cursor: pointer
+	.rightside__social-instagram
+		width: 50px
+		height: 50px
+		border-radius: 10em
+		background: #7d7abe
+		text-align: center
+		cursor: pointer
+	.rightside__social-youtube
+		width: 50px
+		height: 50px
+		border-radius: 10em
+		background: #7d7abe
+		text-align: center
+		cursor: pointer
+	.contacts-rightside__buttons
+		display: flex
+		padding-top: 13px
+	.google-play
+		cursor: pointer
+	.app-store
+		cursor: pointer
+		margin-left: 15px
+
+
+
+// Contacts_
+
+// Footer
+
+.section-footer
+	+font1("NeoSansPro-Regular", 400)
+	font-size: 17px
+	text-transform: uppercase
+	min-height: 125px
+	background: #f6f7f8
+	color: #1a1e51
+	.section-inner
+	.footer-links
+		display: flex
+		justify-content: space-around
+		padding-top: 50px
+	.footer-copyright
+	.footer-link
+		text-decoration: underline
+		color: #1a1e51
+
+
+// Footer_
 @import "_media"
