@@ -25,7 +25,7 @@
 		"gulp-uglify": "^3.0.2",
 		"gulp-util": "^3.0.8"
 	},
-	"homepage": "https://fenderroads.github.io/Creatives-digital",
+	"homepage": "https://fenderroads.github.io/Fitgrad",
 	"dependencies": {
 		"gh-pages": "^2.0.1"
 	}

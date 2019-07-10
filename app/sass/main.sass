@@ -169,12 +169,13 @@ b, strong
 	.section-inner
 	.banner
 		display: flex
+		justify-content: flex-end
 		position: relative
 	.banner-rightside
-		position: relative
+		position: absolute
 		width: 550px
-		margin-left: 300px
-		margin-top: 100px
+		top: 150px
+		left: 270px
 		z-index: 2000
 	.banner-rightside__big-logo
 		position: absolute
@@ -227,7 +228,7 @@ b, strong
 			border-radius: 10em
 			font-size: 45px
 			line-height: 1
-			background: #fff
+			background: #98a3cc
 			width: 50px
 			height: 50px
 			outline: none
@@ -243,7 +244,7 @@ b, strong
 			border-radius: 10em
 			font-size: 45px
 			line-height: 1
-			background: #fff
+			background: #98a3cc
 			width: 50px
 			height: 50px
 			outline: none
@@ -258,10 +259,8 @@ b, strong
 
 
 	.banner-leftside
-		position: absolute
-		right: 0
-		top: 0
 		overflow: hidden
+		width: 100%
 	.banner-leftside-wrapper
 		position: relative
 		margin-right: -1em
