@@ -1,0 +1,591 @@
+@import "_fonts.sass"
+@import "_vars.sass"
+@import "_libs.sass"
+@import "_constructor.sass"
+
+*
+	padding: 0
+	margin: 0
+	
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+.normal-satate 
+  transform: skew(-16deg) scale(1) !important
+  opacity: 1 !important
+
+.container
+	width: 100%
+
+a
+	text-decoration: none
+
+.h1, .h2, .h3, .h4, .h5, .h6
+	text-transform: uppercase
+	line-height: 1.4
+
+li
+	list-style: none
+
+.text-center
+	text-align: center
+	
+body
+	font-size: 16px
+	min-width: 320px
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+	
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+b, strong
+	font-weight: bold
+    
+	
+// Default Styles
+
+// Header
+
+.section-header
+	background: #fff
+	width: 100%
+	position: fixed
+	top: 0
+	z-index: 9999
+	.section-inner
+	.header-topline
+		display: flex
+		justify-content: space-between
+	.small-logo
+		background: #fff
+		transform: skew(-16deg)
+		height: 66px
+		img
+			padding: 20px 20px
+	.active-nav
+		background: #f2f5fd
+	.menu
+		display: flex
+		text-transform: uppercase
+		li
+			padding: 20px 15px
+			border-left: 1px solid #c0c5f5
+			transform: skew(-16deg)
+			background: #fff
+			a
+				display: inline-block
+				text-transform: uppercase
+				color: $accent
+				transform: skew(16deg) 
+				font-size: 14px
+				white-space: nowrap
+	.to-book-button
+		background: #e9efff
+		text-transform: uppercase
+		color: $blue
+		height: 66px
+		padding: 11px 20px
+		box-sizing: border-box
+		transform: skew(-16deg)
+		text-align: center
+		cursor: pointer
+		line-height: 1.6
+		span
+			display: inline-block
+			transform: skew(16deg)
+			font-size: 14px
+	.consultation-button
+		background: $accent
+		text-transform: uppercase
+		color: #fff
+		height: 66px
+		padding: 20px 20px
+		box-sizing: border-box
+		transform: skew(-16deg)
+		text-align: center
+		cursor: pointer
+		line-height: 1.6
+		white-space: nowrap
+		span
+			display: inline-block
+			transform: skew(16deg)
+			font-size: 14px
+	.telephone
+		background: #f2f5fd
+		height: 66px 
+		display: inline-block
+		transform: skew(-16deg)
+		position: relative
+		box-sizing: border-box
+		cursor: pointer
+		span
+			display: inline-block
+			transform: skew(16deg)
+			padding: 21px 100px 18px 70px
+			color: $blue
+			text-transform: uppercase
+			white-space: nowrap
+			font-size: 14px
+		img
+			transform: skew(16deg)
+			position: absolute
+			top: 19px
+			left: 30px
+	.topline-leftside
+		display: flex
+		margin-left: 65px
+	.topline-rightside
+		width: 100%
+		display: flex
+		justify-content: flex-end
+
+
+// Header_
+
+// Banner
+
+.section-banner
+	background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)
+	margin-top: 66px
+	.section-inner
+	.banner
+		display: flex
+		position: relative
+	.banner-rightside
+		position: relative
+		width: 550px
+		margin-left: 300px
+		margin-top: 100px
+		z-index: 2000
+	.banner-rightside__big-logo
+		position: absolute
+		top: 0
+		left: -240px
+		img
+			width: auto
+	.banner-rightside__title
+		width: 422px
+	.h1
+		font-size: 55px
+		color: #fff
+	.banner-rightside__post-title
+		width: 335px
+		color: #ffffff
+		+font("Solomon-Sans-Book", 300, 20px)
+		text-transform: uppercase
+	.banner-rightside__button
+		+font("NeoSansPro-BoldItalic", 700, 23px)
+		color: $blue
+		background: #f7941d
+		transform: skew(-16deg)
+		width: 240px
+		text-align: center
+		box-sizing: border-box
+		text-transform: uppercase
+		margin: 70px
+		cursor: pointer
+		span
+			display: inline-block
+			transform: skew(16deg)
+			padding: 7px 0px
+	.owl-dots
+		position: absolute
+		bottom: 0
+		left: 50%
+		margin-left: -30px
+	.owl-nav
+		position: absolute
+		top: 250px
+		display: flex
+		justify-content: space-between
+		width: 100vw
+		height: 60px
+		pointer-events: none
+		button.owl-prev
+			bottom: 0px
+			left: 0px
+			position: absolute
+			border-radius: 10em
+			font-size: 45px
+			line-height: 1
+			background: #fff
+			width: 50px
+			height: 50px
+			outline: none
+			margin-left: 100px
+			pointer-events: auto
+			&:hover
+				background: #fff
+				color: black
+		button.owl-next
+			bottom: 0px
+			right: 0px
+			position: absolute
+			border-radius: 10em
+			font-size: 45px
+			line-height: 1
+			background: #fff
+			width: 50px
+			height: 50px
+			outline: none
+			margin-right: 100px
+			pointer-events: auto
+			&:hover
+				background: #fff
+				color: black
+			span
+				margin-left: 5px
+		
+
+
+	.banner-leftside
+		position: absolute
+		right: 0
+		top: 0
+		overflow: hidden
+	.banner-leftside-wrapper
+		position: relative
+		margin-right: -1em
+	.banner-leftside__bigoverlay
+		position: absolute
+		right: -75px
+		bottom: 0
+		z-index: 2000
+		pointer-events: none
+		img
+			width: 20em
+	.banner-leftside__row
+		display: flex 
+		justify-content: flex-end
+	.banner-item
+		display: block
+		width: 6.5em
+		overflow: hidden
+		height: 3.5em
+		cursor: pointer
+		box-sizing: border-box
+		margin: 0.5px
+		opacity: 0
+		transition: none
+		&:hover a:before
+			opacity: 0
+			transition: opacity .5s ease
+		.banner-item-img
+			width: 130%
+			height: 100%
+			margin-left: -15%
+			transform: skew(16deg)
+		img
+			display: block
+			width: 100%
+		a
+			display: block
+			position: relative
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				bottom: 0
+				right: 0
+				left: 0
+				background: rgba($accent, .7)	
+	#line-2
+		margin-right: -2em
+	#line-3
+		margin-right: -4em
+		.banner-item:first-child
+			margin-right: 15em
+	#line-4
+		.banner-item:first-child
+			margin-right: 9em	
+	#line-5
+		margin-right: -2.5em
+		.banner-item:first-child
+			margin-right: 7em	
+	#line-6
+		margin-right: -3em
+		.banner-item:first-child
+			margin-right: 14em	
+	#line-7
+		margin-right: -0.5em
+		.banner-item:first-child
+			margin-right: 11em	
+	#line-8
+		margin-right: -2.5em
+		.banner-item:first-child
+			margin-right: 8em	
+	#line-9
+		margin-right: -3.5em
+		.banner-item:first-child
+			margin-right: 15em	
+	#line-10
+		margin-right: -0.3em
+		.banner-item:first-child
+			margin-right: 6em	
+	#line-11
+		margin-right: -0.3em
+		.banner-item:first-child
+			margin-right: 12em	
+	#line-12
+		margin-right: -1em
+		.banner-item:first-child
+			margin-right: 22em	
+	#line-13
+		.banner-item:first-child
+			margin-right: 10em
+	#line-15
+		.banner-item:first-child
+			margin-right: 10em			
+
+			
+// Banner_
+
+// Customers
+
+.section-bannercustomer
+	background: linear-gradient(left, #252e77 31%, #000000 100%)
+	margin-top: 66px
+	.section-inner
+	.bannercustomer
+		display: flex
+		justify-content: flex-end
+		position: relative
+	.bannercustomer-rightside
+		position: absolute
+		width: 550px
+		left: 75px
+		top: 225px
+		z-index: 2000
+	.bannercustomer-rightside__big-logo
+		position: absolute
+		top: 0
+		left: -240px
+		img
+			width: auto
+	.bannercustomer-rightside__title
+		width: 422px
+	.h2
+		font-size: 55px
+		color: #fff
+	.bannercustomer-rightside__post-title
+		width: 735px
+		color: #ffffff
+		+font("Solomon-Sans-Book", 300, 17px)
+		text-transform: uppercase
+	.bannercustomer-rightside__button
+		+font("NeoSansPro-BoldItalic", 700, 23px)
+		color: $blue
+		background: #f7941d
+		transform: skew(-16deg)
+		width: 240px
+		text-align: center
+		box-sizing: border-box
+		text-transform: uppercase
+		margin: 70px
+		cursor: pointer
+		span
+			display: inline-block
+			transform: skew(16deg)
+			padding: 7px 0px
+
+
+	.bannercustomer-leftside
+		overflow: hidden
+		width: 100%
+	.bannercustomer-leftside-wrapper
+		position: relative
+		margin-right: -1em
+		margin-top: -8em
+	.bannercustomer-leftside__bigoverlay
+		position: absolute
+		right: -75px
+		bottom: -8px
+		z-index: 2000
+		pointer-events: none
+		img
+			width: 20em
+	.bannercustomer-leftside__row
+		display: flex 
+		justify-content: flex-end
+	.bannercustomer-item
+		display: block
+		width: 6.5em
+		overflow: hidden
+		height: 3.5em
+		cursor: pointer
+		box-sizing: border-box
+		margin: 0.5px
+		opacity: 0
+		transition: none
+		&:hover a:before
+			opacity: 0
+			transition: opacity .5s ease
+		.bannercustomer-item-img
+			width: 130%
+			height: 100%
+			margin-left: -15%
+			transform: skew(16deg)
+		img
+			display: block
+			width: 100%
+		a
+			display: block
+			position: relative
+			&:before
+				content: ''
+				position: absolute
+				top: 0
+				bottom: 0
+				right: 0
+				left: 0
+				background: rgba($accent, .7)	
+	#line-2
+		margin-right: -2em
+	#line-3
+		margin-right: -4em
+		.bannercustomer-item:first-child
+			margin-right: 15em
+	#line-4
+		.bannercustomer-item:first-child
+			margin-right: 9em	
+	#line-5
+		margin-right: -2.5em
+		.bannercustomer-item:first-child
+			margin-right: 7em	
+	#line-6
+		margin-right: -3em
+		.bannercustomer-item:first-child
+			margin-right: 14em	
+	#line-7
+		margin-right: -0.5em
+		.bannercustomer-item:first-child
+			margin-right: 11em	
+	#line-8
+		margin-right: -2.5em
+		.bannercustomer-item:first-child
+			margin-right: 8em	
+	#line-9
+		margin-right: -3.5em
+		.bannercustomer-item:first-child
+			margin-right: 15em	
+	#line-10
+		margin-right: -0.3em
+		.bannercustomer-item:first-child
+			margin-right: 6em	
+	#line-11
+		margin-right: -0.3em
+		.bannercustomer-item:first-child
+			margin-right: 12em	
+	#line-12
+		margin-right: -1em
+		.bannercustomer-item:first-child
+			margin-right: 22em	
+	#line-13
+		.bannercustomer-item:first-child
+			margin-right: 10em
+	#line-15
+		.bannercustomer-item:first-child
+			margin-right: 10em
+
+	
+// Customers_
+
+
+// Conditions
+
+.section-conditions
+	.section-inner
+		position: relative
+	.conditions
+		z-index: 2000
+		position: relative
+	.conditions-bgleft
+		position: absolute
+		left: 0
+		z-index: 1
+		width: 800px
+		height: 797px
+		img
+			width: 800px
+			height: 797px
+	.conditions-bgright
+		position: absolute
+		right: 0
+		z-index: 1
+		width: 650px
+		height: 792px
+		img
+			width: 650px
+			height: 792px
+	.conditions-title
+		text-align: center
+		font-size: 30px
+		color: #f7941d
+		text-transform: uppercase
+		padding-top: 50px
+	.h2
+	.conditions-post-title
+		text-align: center
+		width: 900px
+		margin-left: auto
+		margin-right: auto
+		+font("NeoSansPro-Italic", 600, 20px)
+		padding-top: 25px
+		color: #1d235d
+	.conditions-blocks
+		margin-left: auto
+		margin-right: auto
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+	.conditions-block
+		text-align: center
+		width: 33%
+		margin-top: 40px
+	.conditions-block__img
+		position: relative
+		width: 157px
+		height: 157px
+		margin: 0 auto
+		.cond-round
+		.cond-info
+			position: absolute
+			top: 0
+			right: 0
+			cursor: pointer
+	.conditions-block__title
+		color: #1e245e
+		+font("NeoSansPro-Italic", 500, 19px)
+		text-transform: uppercase
+	
+// Conditions_
+
+
+// Background
+
+.section-background
+	background: url('../img/@2x/')
+	.section-inner
+
+
+// Background_
+@import "_media"
