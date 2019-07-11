@@ -63,4 +63,13 @@ $(function() {
 
   // Banner_
 
+  // Select
+  $('.js-tour-select').select2({
+    minimumResultsForSearch: Infinity,
+    width: 'style'
+  })
+
+  // Select_
+
+
 });
