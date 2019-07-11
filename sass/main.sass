@@ -6,6 +6,8 @@
 *
 	padding: 0
 	margin: 0
+	outline: none
+
 	
 ::placeholder
 	color: #666
@@ -101,6 +103,7 @@ b, strong
 				font-size: 14px
 				white-space: nowrap
 	.to-book-button
+		display: block
 		background: #e9efff
 		text-transform: uppercase
 		color: $blue
@@ -116,6 +119,7 @@ b, strong
 			transform: skew(16deg)
 			font-size: 14px
 	.consultation-button
+		display: block
 		background: $accent
 		text-transform: uppercase
 		color: #fff
@@ -131,7 +135,13 @@ b, strong
 			display: inline-block
 			transform: skew(16deg)
 			font-size: 14px
+	.consultation-button-second
+		@extend .consultation-button
+		line-height: 1.6
+		span
+			margin-top: -9px
 	.telephone
+		display: block
 		background: #f2f5fd
 		height: 66px 
 		display: inline-block
@@ -223,6 +233,9 @@ b, strong
 				background: #fff
 				width: 11px
 				height: 11px
+			&:hover
+				span
+					background: #fff
 		.owl-dot.active
 			span
 				background: #fff
@@ -540,29 +553,13 @@ b, strong
 // Conditions
 
 .section-conditions
+	background: url('../img/@2x/bg-pixels.jpg') no-repeat center
+	background-size: cover
 	.section-inner
 		position: relative
 	.conditions
 		z-index: 2000
 		position: relative
-	.conditions-bgleft
-		position: absolute
-		left: 0
-		z-index: 1
-		width: 800px
-		height: 797px
-		img
-			width: 800px
-			height: 797px
-	.conditions-bgright
-		position: absolute
-		right: 0
-		z-index: 1
-		width: 650px
-		height: 792px
-		img
-			width: 650px
-			height: 792px
 	.conditions-title
 		text-align: center
 		font-size: 30px
@@ -584,7 +581,7 @@ b, strong
 		display: flex
 		flex-wrap: wrap
 		justify-content: space-between
-		margin-bottom: 99px
+		padding-bottom: 99px
 	.conditions-block
 		text-align: center
 		width: 33%
@@ -792,13 +789,480 @@ b, strong
 // Tour
 
 .section-tour
-	
+	background: url('../img/@2x/bg-tour.jpg') no-repeat center
+	background-size: cover
+	min-height: 248px
+	margin-top: 66px
+	position: relative
 	.section-inner
 	.tour
+		display: flex
+		justify-content: space-between
+		margin: 0 auto
+		width: 90%
+		padding-top: 40px
 	.tour-biglogo
+		width: 130px
+		height: 173px
+		img
+			width: 130px
+			height: 173px
 	.tour-select
-	#tour
+		align-self: flex-start
+		padding-top: 55px
+
+
+	.select2-container
+		+font("NeoSansPro-BoldItalic", 700, 20px)
+		transform: skew(-16deg)
+		text-align: center
+		outline: none
+		width: 260px
+		color: #2f2a60
+		background: #f7941d
+	.select2-container--default .select2-selection--single
+		background: #f7941d
+		border: none
+	.select2-container .select2-selection--single .select2-selection__rendered
+		line-height: 44px
+		transform: skew(16deg)
+	.js-tour-select
+		outline: none
+	.select2-selection--single
+		height: 45px
+	.select2-container--default .select2-selection--single .select2-selection__arrow
+		top: 6px
+		right: 73px
+	.select2-container--default .select2-selection--single .select2-selection__arrow b
+		border-width: 10px 6px 0 6px
+		border-color: #313563 transparent transparent transparent
+	.select2-container .select2-container--default .select2-container--open .select2-dropdown
+	.select2-dropdown
+		background-color: #f7941d
+	.select2-dropdown--below
+		background-color: #f7941d
+	.select2-results__option[aria-selected=true]
+		background-color: $accent
+
+
+	.title-page-wrapper
+		width: 100vw
+		position: absolute
+		height: 60px
 	.title-page
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 325px
+		background: $accent
+		padding: 8px 0px
+		text-align: center
+		text-transform: uppercase
+		color: #fff
+		transform: skew(-16deg)
+		font-size: 23px
+		z-index: 1000
+		margin-left: 20%
+		span
+			transform: skew(16deg)
+			display: inline-block
 
 // Tour_
+
+// Data
+
+.section-data
+	.section-inner
+	.data
+	.data-blocks
+		display: flex
+		justify-content: space-between
+		width: 100%
+		margin: 0 auto
+		padding-top: 35px
+		padding-bottom: 50px
+	.data-block
+		width: 33%
+		text-align: center
+		position: relative
+	.data-block__title
+		+font("Solomon-Sans-Black Italic", 400, 20px)
+		text-align: center
+		width: 200px
+		background: #313563
+		padding: 7px 0px
+		color: #fff
+		transform: skew(-16deg)
+		margin: 0 auto
+		cursor: pointer
+		&:hover
+			background: #f7941d
+			color: #313563
+			transition: all .30s ease
+		span
+			display: inline-block
+			transfrom: skew(16deg)
+	.data-block-line1
+		position: absolute
+		right: 0
+		bottom: -15px
+		height: 290px
+		width: 1px
+		background: #313563
+	.data-block-line2
+		position: absolute
+		left: 0
+		bottom: -15px
+		height: 290px
+		width: 1px
+		background: #313563
+	.data-block__address
+		+font("NeoSansPro-BoldItalic", 700, 22px)
+		text-transform: uppercase
+		color: #1F2496
+		margin-top: 15px
+	.data-block__tel
+		+font("NeoSansPro-BoldItalic", 700, 24px)
+		color: $accent
+	.data-block__time
+		+font("NeoSansPro-Italic", 400, 20px)
+		color: #363874
+		line-height: 1.3
+		margin-top: 5px
+	.data-block__emails
+		+font("NeoSansPro-Italic", 500, 18px)
+		color: #222222
+		margin-top: 20px 
+		width: 80%
+		margin-left: auto
+		margin-right: auto
+
+
+
+// Data_
+
+
+// News
+
+.section-news
+	.section-inner
+	.news
+	.news-blocks
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		width: 95%
+		margin: 0 auto
+		padding-top: 75px
+	.news-block
+		border: 5px solid $accent
+		width: 46%
+		display: flex
+		justify-content: space-between
+		padding: 6px
+		margin-bottom: 55px
+	.news-block__content
+		padding: 10px
+		max-width: 600px
+	.content-date
+		text-align: right
+		+font("Solomon-Sans-Bold-Italic", 700, 14px)
+		text-decoration: underline
+		padding-bottom: 6px
+	.content-title
+		+font("Solomon-Sans-Black", 700, 16px)
+		line-height: 1.4
+		width: 90%
+	.content-text
+		+font("Solomon-Sans-Book", 300, 13px)
+		line-height: 1.4
+		width: 90%
+		max-width: 600px
+	.content-more
+		+font("Solomon-Sans-Bold-Italic", 700, 15px)
+		color: $accent
+		text-decoration: underline
+		cursor: pointer
+		padding-top: 10px
+	.news-block__img
+		width: 270px
+		height: 220px
+		align-self: center
+		img
+			width: 270px
+			height: 220px
+
+// News_
+
+// Newsitem
+
+.section-newsitem
+	background: url('../img/@2x/bg-pixels.jpg') no-repeat center
+	background-size: cover
+	.section-inner
+	.newsitem
+		padding-top: 130px
+		padding-bottom: 70px
+		width: 90%
+		margin: 0 auto
+	.newsitem-topline
+		display: flex
+		justify-content: space-between
+		padding-bottom: 40px
+	.newsitem-topline__return
+		+font("NeoSansPro-BoldItalic", 700, 18px)
+		color: #1a1e51
+		text-transform: uppercase
+		background: #f7941d
+		transform: skew(-16deg)
+		padding: 6px 15px
+		display: block
+	.newsitem-topline__date
+		+font("Solomon-Sans-SemiBold", 600, 20px)
+		color: #313563
+		text-transform: uppercase
+	.newsitem-flex
+		display: flex
+		justify-content: space-between
+	.newsitem-leftside
+
+	.newsitem-leftside__title
+		color: #000
+		+font("Solomon-Sans-Black", 900, 25px)
+		color: #313563
+	.newsitem-leftside__title
+	.newsitem-leftside__title2
+		font-size: 23px
+	.newsitem-leftside__title3
+		font-size: 21px
+
+	.newsitem-leftside__text
+		+font("Solomon-Sans-Normal", 400, 16px)
+		margin: 7px 0px
+		width: 90%
+		max-width: 1000px
+		&:last-child
+			span:last-child
+				margin-top: 10px
+		span
+			display: inline-block
+	.newsitem-rightside
+		width: 680px
+		height: 379px
+	.newsitem-rightside__img
+		width: 680px
+		height: 379px
+		img
+			width: 680px
+			height: 379px
+
+// Newsitem_
+
+// Event
+
+.section-event
+	background: url('../img/@2x/bg-pixels.jpg') no-repeat center
+	background-size: cover
+	.section-inner
+	.mini-square
+		display: inline-block
+		width: 8px
+		height: 8px
+		background: $accent
+		transform: skew(-24deg)
+		margin: 0 12px 3px 12px
+	.event
+		width: 90%
+		margin: 0 auto
+		padding-top: 150px
+		padding-bottom: 70px
+	.event-topline
+		display: flex
+		justify-content: space-between
+	.event-topline__return
+		+font("NeoSansPro-BoldItalic", 700, 18px)
+		color: #1a1e51
+		text-transform: uppercase
+		background: #f7941d
+		transform: skew(-16deg)
+		padding: 6px 15px
+		display: block
+		span
+			transform: skew(16deg)
+			display: inline-block
+	.event-topline__date
+		+font("Solomon-Sans-SemiBold", 600, 20px)
+		color: #313563
+		text-transform: uppercase
+	.event-text
+		+font("Solomon-Sans-Normal", 400, 16px)
+		max-width: 800px
+		margin: 0 auto
+		padding: 67px 0px
+		color: #000
+		span
+			display: inline-block
+			&:last-child
+				margin-top: 10px
+
+
+	.event-gallery
+		max-width: 1660px
+		margin: 0 auto
+	.event-gallery-images
+		max-width: 1635px
+		img
+			width: 324px
+			height: 181px
+
+
+// Event_
+
+// Reserve
+
+.section-reserve
+	background: url('../img/@2x/bg-club-new.png') no-repeat center
+	background-size: cover
+	margin-top: 66px
+	.section-inner
+	.reserve
+		padding-top: 35px
+	.reserve-biglogo
+		margin-left: auto
+		margin-right: auto
+		width: 334px
+		height: 445px
+	.reserve-buttons-price
+		padding-top: 60px
+		margin-left: auto
+		margin-right: auto
+		width: 350px
+		display: flex
+		text-align: center
+		line-height: 1.3
+		em
+			font-style: normal
+			+font("NeoSansPro-BoldItalic", 700, 16px)
+			color: #2a2c6f
+		span
+			color: #2a2c6f
+			+font("NeoSansPro-Italic", 700, 16px)
+		span:last-child
+			+font("NeoSansPro-Italic", 700, 30px)
+			color: #fff
+			margin-top: 0px
+			margin-bottom: 9px
+	.reserve-buttons-price__first
+		width: 50%
+		transform: skew(-16deg)
+		background: $accent
+		span
+			display: inline-block
+			transform: skew(16deg)
+			margin-top: 9px
+	.reserve-buttons-price__second
+		width: 50%
+		background: #f7941d
+		transform: skew(-16deg)
+		span
+			display: inline-block
+			transform: skew(16deg)
+			margin-top: 9px
+	.reserve-button
+		width: 230px
+		background: #fff
+		color: $accent
+		text-transform: uppercase
+		+font("NeoSansPro-Italic", 700, 18px)
+		transform: skew(-16deg)
+		text-align: center
+		padding: 4px 0px
+		margin: 0 auto
+		span
+			display: inline-block
+			transform: skew(16deg)
+	.reserve-conditions
+		+font("NeoSansPro-LightItalic", 200, 15px)
+		color: #fff9f9
+		width: 287px
+		margin: 0 auto
+		padding-top: 30px
+		a
+			text-decoration: underline
+			color: #fff9f9
+	.reserve-threebuttons
+		display: flex
+		justify-content: center
+		padding-top: 80px
+	.reserve-threebuttons__button
+		+font("NeoSansPro-Italic", 800, 24px)
+		color: #131434
+		padding: 5px 15px
+		background: #e8e8e8
+		transform: skew(-16deg)
+		text-transform: uppercase
+		span
+			display: inline-block
+			transform: skew(16deg)
+		&:nth-child(2)
+			margin: 0px 25px
+	.reserve-threebuttons__first
+	.reserve-threebuttons__second
+	.reserve-threebuttons__third
+
+
+// Reserve_
+
+// Fitness
+
+.section-fitness
+	background: url("../img/@2x/bg-fitness.png") no-repeat center
+	background-size: cover
+	.section-inner
+	.fitness
+		width: 75%
+		margin: 0 auto
+	.fitness-flex
+		display: flex
+		justify-content: space-between
+	.fitness-img
+	.fitness-arguments
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		width: 100%
+	.fitness-arguments__item
+		display: flex
+		&:first-child
+			.arguments-title
+				margin-left: 5px
+		&:nth-child(2)
+			.arguments-title
+				margin-left: 5px
+		&:first-child
+			.arguments-title
+				margin-left: 5px
+		&:first-child
+			.arguments-title
+				margin-left: 5px
+		&:first-child
+			.arguments-title
+				margin-left: 5px
+		&:first-child
+			.arguments-title
+				margin-left: 5px
+		&:nth-child(7)
+			.arguments-title
+				margin-left: 5px
+	.arguments-img
+	.arguments-title
+		align-self: center
+		+font("NeoSansPro-Italic", 500, 20px)
+		color: #fff
+	.fitness-arguments-column
+		width: 50%
+
+
+
+// Fitness_
 @import "_media"
