@@ -22,6 +22,7 @@
 
 .container
 	width: 100%
+	
 
 a
 	text-decoration: none
@@ -553,7 +554,7 @@ b, strong
 // Conditions
 
 .section-conditions
-	background: url('../img/@2x/bg-pixels.jpg') no-repeat center
+	background: url('../img/@2x/bg-pixels.png') no-repeat center
 	background-size: cover
 	.section-inner
 		position: relative
@@ -997,7 +998,7 @@ b, strong
 // Newsitem
 
 .section-newsitem
-	background: url('../img/@2x/bg-pixels.jpg') no-repeat center
+	background: url('../img/@2x/bg-pixels.png') no-repeat center
 	background-size: cover
 	.section-inner
 	.newsitem
@@ -1061,7 +1062,7 @@ b, strong
 // Event
 
 .section-event
-	background: url('../img/@2x/bg-pixels.jpg') no-repeat center
+	background: url('../img/@2x/bg-pixels.png') no-repeat center
 	background-size: cover
 	.section-inner
 	.mini-square
@@ -1207,8 +1208,11 @@ b, strong
 		&:nth-child(2)
 			margin: 0px 25px
 	.reserve-threebuttons__first
+		display: block
 	.reserve-threebuttons__second
+		display: block
 	.reserve-threebuttons__third
+		display: block
 
 
 // Reserve_
@@ -1216,53 +1220,572 @@ b, strong
 // Fitness
 
 .section-fitness
-	background: url("../img/@2x/bg-fitness.png") no-repeat center
-	background-size: cover
 	.section-inner
-	.fitness
-		width: 75%
+		background: url("../img/@2x/bg-fitness.png") no-repeat center
+		background-size: cover
+	.section-reverse-title
+		width: 100%
+		min-height: 210px
+		background: #131434
+	.reserve-title
+		padding-top: 120px
+		width: 811px
 		margin: 0 auto
+		font-size: 30px
+		color: #ff9500
+	.fitness
+		width: 80%
+		margin: 0 auto
+		padding: 60px 0px
 	.fitness-flex
 		display: flex
 		justify-content: space-between
+		align-items: center
 	.fitness-img
+		width: 370px
+		height: 437px
+		img
+			width: 370px
+			height: 437px
 	.fitness-arguments
 		display: flex
 		flex-wrap: wrap
 		justify-content: space-between
-		width: 100%
+		width: 70%
 	.fitness-arguments__item
 		display: flex
-		&:first-child
-			.arguments-title
-				margin-left: 5px
-		&:nth-child(2)
-			.arguments-title
-				margin-left: 5px
-		&:first-child
-			.arguments-title
-				margin-left: 5px
-		&:first-child
-			.arguments-title
-				margin-left: 5px
-		&:first-child
-			.arguments-title
-				margin-left: 5px
-		&:first-child
-			.arguments-title
-				margin-left: 5px
-		&:nth-child(7)
-			.arguments-title
-				margin-left: 5px
+		min-width: 350px
 	.arguments-img
+		min-width: 100px
+		min-height: 100px
+		position: relative
+		img
+			position: absolute
+	#fit-icon-1
+		top: 5px
+		right: 0
+	#fit-icon-2
+		top: 6px
+		right: 4px
+	#fit-icon-3
+		top: 24px
+		right: 0
+	#fit-icon-4
+		top: 0
+		right: 13px
+	#fit-icon-5
+		top: 4px
+		right: 0
+	#fit-icon-6
+		top: 2px
+		right: 5px
+	#fit-icon-7
+		top: 14px
+		right: 0
+	#fit-icon-8
+		top: 13px
+		right: 0
 	.arguments-title
 		align-self: center
 		+font("NeoSansPro-Italic", 500, 20px)
 		color: #fff
+		margin-left: 15px
 	.fitness-arguments-column
 		width: 50%
 
 
 
 // Fitness_
+
+
+// Ourstock
+
+.section-ourstock
+	.section-inner
+	.ourstock
+	.container-carousel
+	.ourstock-carousel
+	.ourstock-wrapper
+		width: 435px
+		margin-left: auto
+		margin-right: auto
+		&:hover .img-event1
+			background: rgba($accent, .7)
+			transition: all .5s ease
+		&:hover .img-event2
+			background: rgba(#1a1e51, .7)
+			transition: all .5s ease
+		&:hover .img-event3
+			background: rgba(#ff9516, .7)
+			transition: all .5s ease
+		&:hover .ourstock-content-wrapper
+			background: transparent
+			transition: all .5s ease
+		&:hover .ourstock-content__post-title
+			opacity: 1
+			transition: all .5s ease
+	.ourstock-img
+		position: relative
+		overflow: hidden
+		width: 100%
+		height: 508px
+		img
+			position: absolute
+			left: 50%
+			margin-left: -300px
+			display: inline-block
+			width: 608px
+			height: 508px
+			transform: skew(18deg)
+	.item 
+		transform: skew(-18deg)
+	.img-event
+		position: absolute
+		left: 50%
+		margin-left: -218px
+		display: inline-block
+		width: 435px
+		height: 508px
+	.ourstock-content-wrapper
+		background: rgba($accent, .8)
+		position: absolute
+		bottom: 60px
+		left: 88px
+		width: 436px
+		left: 50%
+		margin-left: -218px
+	.ourstock-content
+		position: relative
+	.ourstock-content1
+		background: rgba($accent, .8)
+		color: #000
+	.ourstock-content2
+		background: rgba(#1a1e51, .8)
+		color: $accent
+	.ourstock-content3
+		background: rgba(#ff9516, .8)
+		color: #10122f
+	.ourstock-content__title
+		transform: skew(18deg)
+		text-transform: uppercase
+		+font("NeoSansPro-BoldItalic", 700, 27px)
+		width: 164px
+		line-height: 1.4
+		margin-left: 25px
+		padding: 11px 0px
+	.ourstock-content__post-title
+		transform: skew(18deg)
+		position: absolute
+		bottom: -18px
+		left: 34px
+		color: #fff
+		+font("NeoSansPro-Italic", 400, 16px)
+		text-transform: uppercase
+		opacity: 0
+
+// Ourstock_
+
+
+// Blonde
+
+.section-blonde
+	background: url('../img/@2x/bg-pixels-left.png') no-repeat center
+	background-size: cover
+	.section-inner
+	.blonde
+		width: 90%
+		margin: 0 auto
+	.blonde-flex
+		display: flex
+		justify-content: space-around
+	.blonde-leftside
+		width: 326px
+		height: 891px
+	.leftside-img
+		width: 326px
+		height: 891px
+		img
+			width: 326px
+			height: 891px
+	.blonde-rightside
+		padding-top: 115px
+	.rightside-sports-club
+		margin-bottom: 40px
+	.rightside-four-rounds
+		display: flex
+		justify-content: space-between
+		width: 630px
+		margin: 0 auto
+	.four-rounds__item
+		position: relative
+	.four-rounds__info
+		position: absolute
+		top: 0
+		right: 0
+		cursor: pointer
+		img
+			width: 35px
+			height: 35px
+	.rightside-text
+		+font("Solomon - Sans - Normal", 400, 19px)
+		color: #131434
+		max-width: 630px
+		margin: 0 auto
+		padding: 50px 0px
+	.rightside-button
+		margin: 0 auto
+		+font("NeoSansPro-BoldItalic", 400, 20px)
+		color: #202766
+		background: #f7941d
+		text-align: center
+		padding: 10px 0px
+		width: 420px
+		transform: skew(-16deg)
+		display: block
+		span
+			display: inline-block
+			transform: skew(16deg)
+
+
+
+
+// Blonde_
+
+// Numbers
+
+.section-numbers
+	position: relative
+	background: #131434
+	.section-inner
+	.numbers
+		width: 70%
+		margin: 0 auto
+		padding-bottom: 115px
+	.numbers-big-A
+		position: absolute
+		bottom: 0
+		left: 50%
+		margin-left: -249px
+		z-index: 2
+		width: 500px
+		height: 702px
+		img
+			width: 500px
+			height: 702px
+	.numbers-title
+		font-size: 50px
+		text-transform: uppercase
+		width: 594px
+		margin: 0 auto
+		padding-top: 40px
+		color: #e88b1f
+		z-index: 10
+	.numbers-columns
+		display: flex
+		justify-content: space-between
+		z-index: 10
+	.numbers-column
+		text-align: center
+	.numbers-column__block
+		margin-top: 80px
+	.numbers-column__value
+		color: #ef4136
+		font-size: 39px
+		text-transform: uppercase
+		height: 50px
+	.numbers-column__title
+		+font("NeoSansPro-Regular", 400, 18px)
+		color: #fff
+
+// Numbers_
+
+// Gallery
+
+.section-gallery
+	.section-inner
+	.section-gallery
+	.gallery
+		width: 90%
+		margin: 0 auto
+		padding-bottom: 40px
+	.gallery-title
+		font-size: 35px
+		color: $accent
+		text-transform: uppercase
+		width: 141px
+		margin: 0 auto
+		padding: 23px 0px
+	.gallery-blocks
+		display: flex
+		flex-wrap: wrap
+		margin: 0 auto
+		justify-content: space-evenly
+	.gallery-blocks-wrapper
+		display: flex
+		justify-content: center
+	.gallery-block
+		position: relative
+		text-align: center
+		overflow: hidden
+		width: 350px
+		height: 233px
+		img
+			width: 350px
+			height: 233px
+
+// Gallery_
+
+// Mobileapp
+
+.section-mobileapp
+	padding-top: 60px
+	padding-right: 40px
+	.section-inner
+	.mobileapp
+		background: url('../img/@2x/bg-pixels.png') no-repeat center
+		background-size: cover
+		box-shadow: 0px 0px 70px rgba(#000, .1)
+	.mobileapp-flex
+		display: flex
+		justify-content: space-between
+		width: 80%
+		margin: 0 auto
+		padding-top: 55px
+		padding-bottom: 55px
+	.grey-circle
+		display: inline-block
+		width: 8px
+		height: 8px
+		background: rgba(grey, .3)
+		border-radius: 10em
+		position: absolute
+		left: -20px
+		top: 12px
+	.mobileapp-leftside
+	.mobileapp-leftside__img
+		text-align: center
+	.mobileapp-leftside__buttons
+		display: flex
+		justify-content: space-between
+		width: 480px
+		padding-top: 35px
+	.google-play-big
+		width: 246px
+		height: 70px
+		img
+			width: 246px
+			height: 70px
+	.appstore-big
+		width: 211px
+		height: 72px
+		img
+			width: 211px
+			height: 72px
+
+
+	.mobileapp-rightside
+	.mobileapp-rightside__title
+		text-transform: uppercase
+		font-size: 21px 
+		color: #fff
+		width: 365px
+		background: #313563
+		padding: 8px 0px
+		text-align: center
+		transform: skew(-16deg)
+		font-weight: 400
+		span
+			display: inline-block
+			transform: skew(16deg)
+	.mobileapp-rightside__post-title
+		margin-top: 30px
+		margin-bottom: 20px
+		+font("NeoSansPro-BoldItalic", 700, 20px)
+		color: #2a2c6f
+		position: relative
+	.mobileapp-rightside__list
+		ul
+			li
+				list-style-type: decimal
+				list-style-position: inside
+				color: $accent
+				+font("NeoSansPro-BoldItalic", 700, 24px)
+				line-height: 1.25
+				margin-top: 30px
+				max-width: 1100px
+				span
+					+font("NeoSansPro-Regular", 600, 18px)
+					color: #000
+
+// Mobileapp_
+
+
+// Smartfitness
+
+.section-smartfitness
+	.section-inner
+	.smartfitness
+		padding: 40px 0px
+	.smartfitness-title
+		text-transform: uppercase
+		font-size: 18px
+		width: 400px
+		background: #313563
+		padding: 8px
+		text-align: center
+		color: #fff
+		transform: skew(-16deg)
+		margin: 0 auto
+		span
+			display: inline-block
+			transform: skew(16deg)
+	.smartfitness-post-title
+		+font("NeoSansPro-Regular", 600, 19px)
+		color: #101010
+		width: 770px
+		text-align: center
+		margin: 0 auto
+		padding-top: 25px
+	.smartfitness-flex
+		display: flex
+		width: 90%
+		margin: 0 auto
+		justify-content: space-between
+		padding-top: 40px
+	.smartfitness-leftside
+		margin-right: 45px
+	.smartfitness-leftside__title
+		+font("NeoSansPro-BoldItalic", 400, 25px)
+		color: $accent
+	.smartfitness-leftside__list
+		span
+			display: block
+			+font("Solomon-Sans-Bold", 700, 19px)
+			color: #1d1d1d
+			margin-left: 40px
+			max-width: 750px
+			em
+				position: absolute
+				font-style: normal
+				font-size: 30px
+				color: $accent
+				margin-right: 15px
+				left: 0
+				top: -10px
+				text-align: center
+				width: 25px
+				height: 60px
+		& > div
+			position: relative
+			margin-top: 30px
+			
+
+	.smartfitness-rightside
+		min-width: 550px
+		height: 350px
+	.smartfitness-rightside__videoWrapper
+		position: relative
+		padding-bottom: 56.25%
+		padding-top: 25px
+		iframe
+			position: absolute;
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			box-shadow: 25px 25px 0px 0px rgba(#232350, .4)
+
+
+
+// Smartfitness_
+
+
+// Trainer
+
+.section-trainer
+	background: url('../img/@2x/bg-pixels.png') no-repeat center
+	background-size: cover
+	.section-inner
+	.trainer
+		padding: 80px 0px
+		width: 90%
+		margin: 0 auto
+		position: relative
+	.trainer-return
+		+font("NeoSansPro-BoldItalic", 700, 17px)
+		color: $blue
+		transform: skew(-16deg)
+		background: #f7941d
+		width: 290px
+		padding: 6px 0px
+		text-align: center
+		position: absolute
+		top: 95px
+		left: 0
+		span
+			display: inline-block
+			transform: skew(16deg)
+	.trainer-title
+		width: 420px
+		text-align: center
+		background: $blue
+		padding: 8px 0px
+		box-sizing: border-box
+		transform: skew(-16deg)
+		height: 77px
+		margin: 0 auto
+		span:first-child
+			display: block
+			text-transform: uppercase
+			font-size: 26px
+			color: #fff
+			transform: skew(16deg)
+			height: 30px
+		span:last-child
+			+font("Solomon-Sans-Book", 300, 17px)
+			color: #fff
+			transform: skew(16deg)
+			display: inline-block
+
+	.trainer-flex-toprow
+	.toprow-special
+	.toprow-special__title
+	.toprow-special__items
+	.toprow-special__item
+
+
+	.toprow-img-center
+
+
+	.toprow-progress
+	.toprow-progress__title
+	.toprow-progress__items
+	.toprow-progress__item
+
+
+	
+	.trainer-flex-bottomrow
+	.bottomrow-education
+	.bottomrow-education__title
+	.bottomrow-education__items
+	.bottomrow-education__item
+
+
+	.bottomrow-exp
+	.bottomrow-exp__title
+	.bottomrow-exp__stars
+	.bottomrow-exp__star
+	.bottomrow-exp__years
+
+
+	.bottomrow-contacts
+	.bottomrow-contacts__title
+	.bottomrow-contacts__items
+	.bottomrow-contacts__item
+	.trainer-entry
+
+
+
+
+// Trainer_
 @import "_media"
