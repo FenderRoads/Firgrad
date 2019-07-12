@@ -48,6 +48,8 @@ gulp.task('scripts', function() {
 		'app/libs/owlcarousel/owl.carousel.min.js',
 		'app/libs/fancybox/jquery.fancybox.min.js',
 		'app/libs/select2/js/select2.min.js',
+		'app/libs/slick-slider/slick.min.js',
+		'app/libs/jquery migrate/jquery-migrate.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))

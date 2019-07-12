@@ -71,5 +71,55 @@ $(function() {
 
   // Select_
 
+  // Ourstock carousel
 
+  $('.ourstock-carousel').owlCarousel({
+    loop:true,
+    margin: 0,
+    nav:true,
+    dots: false,
+    responsive:{
+        0:{
+            items: 3
+        }
+    }
+  })
+
+  // Ourstock carousel_
+
+  // Megaslider
+
+  $('.megaslider-js').slick({
+    centerMode: true,
+    centerPadding: '60px',
+    slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+
+  // Megaslider_
+
+  // Summer-slider
+
+
+
+  // Summer-slider_
 });
