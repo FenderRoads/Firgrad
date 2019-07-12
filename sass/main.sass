@@ -1746,34 +1746,86 @@ b, strong
 			color: #fff
 			transform: skew(16deg)
 			display: inline-block
-
+	.trainer-title-block
+		width: 350px
+		background: $blue
+		padding: 7px 0px
+		transform: skew(-16deg)
+		text-align: center
+		color: #fff
+		text-transform: uppercase
+		font-size: 25px
+		margin: 0 auto
+		span
+			display: inline-block
+			transform: skew(16deg)
+	.trainer-item
+		position: relative
+		+font("Solomon-Sans-Normal", 400, 18px)
+		color: #3c3c3c
+	.trainer-icon
+		position: absolute
+		left: -30px
+		top: 0
 	.trainer-flex-toprow
+		display: flex
+		justify-content: space-between
+	.toprow-item
+		width: 33%
+		line-height: 1.3
 	.toprow-special
+		display: flex
+		flex-direction: column
+		flex-wrap: wrap
 	.toprow-special__title
+		transfrom: skew(16deg)
 	.toprow-special__items
+		display: flex
+		flex-direction: column
+		flex-wrap: wrap
+		height: 350px
+		width: 515px
+		padding-top: 30px
+		margin: 0 auto
 	.toprow-special__item
-
+		max-width: 225px
+		margin-top: 10px
+		
 
 	.toprow-img-center
+		text-align: center
 
 
 	.toprow-progress
 	.toprow-progress__title
 	.toprow-progress__items
+		padding-top: 30px
+		max-width: 360px
+		margin: 0 auto
 	.toprow-progress__item
+		margin-top: 5px
+		max-width: 360px
 
 
 	
 	.trainer-flex-bottomrow
+		display: flex
+		justify-content: space-between
 	.bottomrow-education
 	.bottomrow-education__title
 	.bottomrow-education__items
+		padding-top: 30px
 	.bottomrow-education__item
 
 
 	.bottomrow-exp
 	.bottomrow-exp__title
 	.bottomrow-exp__stars
+		display: flex
+		justify-content: space-between
+		max-width: 230px
+		margin: 0 auto
+		padding-top: 30px
 	.bottomrow-exp__star
 	.bottomrow-exp__years
 
@@ -1781,8 +1833,10 @@ b, strong
 	.bottomrow-contacts
 	.bottomrow-contacts__title
 	.bottomrow-contacts__items
+		padding-top: 30px
 	.bottomrow-contacts__item
 	.trainer-entry
+		text-align: center
 
 
 
