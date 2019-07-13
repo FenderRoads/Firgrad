@@ -89,30 +89,17 @@ $(function() {
 
   // Megaslider
 
-  $('.megaslider-js').slick({
-    centerMode: true,
-    centerPadding: '60px',
-    slidesToShow: 3,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 3
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          arrows: false,
-          centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 1
-        }
-      }
-    ]
+  $('.megaslider-js').owlCarousel({
+    items: 1,
+    dots: true,
+    nav: true,
+    margin: 40,
+    loop: true,
+    mouseDrag: false,
+    touchDrag: false,
+    smartSpeed: 700,
+    dots: false
+
   });
 
   // Megaslider_
@@ -122,4 +109,29 @@ $(function() {
 
 
   // Summer-slider_
+
+
+  // Maingallery
+
+  $('.js-maingallery').owlCarousel({
+    items: 1,
+    dots: true,
+    nav: true,
+    margin: 100
+  })
+
+  // Maingallery_
+
+
+  // Reviews-carousel
+
+  $('.reviews-carousel').owlCarousel({
+    items: 2,
+    loop: true,
+    dots: false,
+    nav: true,
+    margin: 100
+  })
+
+  // Reviews-carousel_
 });
