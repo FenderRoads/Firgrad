@@ -1303,6 +1303,9 @@ b, strong
 	.ourstock
 	.container-carousel
 	.ourstock-carousel
+		max-width: 1500px
+		width: 90%
+		margin: 0 auto
 	.ourstock-wrapper
 		width: 435px
 		margin-left: auto
@@ -1380,6 +1383,9 @@ b, strong
 		+font("NeoSansPro-Italic", 400, 16px)
 		text-transform: uppercase
 		opacity: 0
+
+	.owl-stage-outer
+		overflow: visible
 
 // Ourstock_
 
@@ -2018,16 +2024,25 @@ b, strong
 	.reviews-carousel
 		padding: 126px 0px
 	.item
+		position: relative
+		height: 100%
+		img
+			width: auto
+	.owl-item
+
+	
+	.reviews-block
+		transform: skew(-16deg)
 		transform: skew(16deg)
 		padding: 30px
 		box-shadow: 0px 0px 20px 10px rgba(#000, .2)
 		background: #fff
 		box-sizing: border-box
-		img
-			width: auto
-	.owl-item
-	.reviews-block
-		transform: skew(-16deg)
+		min-height: 500px
+		width: 100%
+
+	.owl-stage-outer
+		overflow: visible
 	.reviews-topline
 		display: flex
 		justify-content: space-between
@@ -2070,9 +2085,6 @@ b, strong
 		margin: 0 auto
 
 
-	.owl-stage-outer
-		margin: 0 auto
-		width: 100%
 
 // Reviews_
 
@@ -2088,8 +2100,8 @@ b, strong
 	.toppannel-button
 		width: 33%
 		transform: skew(-16deg)
-		background: $accent
 		padding: 6px 0px
+		cursor: pointer
 		span
 			display: inline-block
 			transform: skew(16deg)
@@ -2105,7 +2117,28 @@ b, strong
 		width: 800px
 		display: flex
 		margin: 0 auto
+		padding-top: 50px
 	.toppannel-address
+		+font("NeoSansPro-Regular", 400, 17px)
+		color: #fff
+		margin: 0 auto
+		width: 424px
+		padding-top: 25px
+	.megaslider-more
+		+font("NeoSansPro-BoldItalic", 400, 23px)
+		color: $blue
+		width: 400px
+		background: #f7941d
+		text-transform: uppercase
+		text-align: center
+		transform: skew(-16deg)
+		padding: 9px 0px
+		margin: 0 auto
+		span
+			display: inline-block
+			transform: skew(16deg)
+	.megaslider-more-wrapper
+		padding-bottom: 50px
 	.megaslider-img
 	.megaslider-img-wrapper
 		img
@@ -2199,4 +2232,69 @@ b, strong
 
 
 // Megaslider_
+
+// Directionlist
+
+.section-directionlist
+	.section-inner
+	.directionlist
+		position: relative
+		display: flex
+	.directionlist-button-absolute
+		position: absolute
+		bottom: 0
+		left: 0
+	.directionlist-leftside
+		align-self: flex-start
+		width: 80%
+	.leftside-img
+		img
+			display: block
+			width: 100%
+	
+	.directionlist-rightside
+		background: #1a1e51
+		width: 20%
+	.rightside-list
+		text-align: right
+		+font("NeoSansPro-Italic", 700, 20px)
+		color: #d5d6e8
+		height: 100%
+		box-sizing: border-box
+	.rightside-list-item
+		position: relative
+		box-sizing: border-box
+		height: 11.2%
+		padding: 0px 10%
+		display: flex
+		justify-content: flex-end
+		border-top: 1px solid #51586b
+		span
+			display: inline-block
+			align-self: center
+			cursor: pointer
+			&:hover
+				color: #fff
+				transition: color .25s ease
+		&:after
+			content: ''
+			position: absolute
+			top: 0
+			bottom: 0
+			left: -14px
+			right: 0
+			transform: skew(-16deg)
+			pointer-events: none
+	.rightside-list-item-active
+		background: $accent
+		color: $blue
+		transition: all .4s ease
+		&:after
+			background: $accent
+			width: 10%
+			height: 100%
+			
+
+
+// Directionlist_
 @import "_media"
