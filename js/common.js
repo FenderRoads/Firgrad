@@ -1,4 +1,21 @@
 $(function() {
+  // Button up
+
+
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 500) {
+      $('.top').addClass('active');
+    } else {
+      $('.top').removeClass('active');
+    }
+  });
+  $('.top').on('click', function() {
+    $('html, body').stop().animate({scrollTop: 0}, 'slow', 'swing');
+  })	
+
+  // Button up_
+
+
 
   // Carousel-1
 
@@ -122,12 +139,12 @@ $(function() {
 
   // Reviews-carousel
 
-  $('.reviews-carousel').owlCarousel({
-    items: 2,
-    loop: true,
-    dots: false,
-    nav: true,
-    margin: 5
+  $('.reviews-carousel').slick({
+    arrows: true,
+    dots: true,
+    infinite: false,
+    slidesToShow: 2,
+    slidesToScroll: 1
   })
 
   // Reviews-carousel_
