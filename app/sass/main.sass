@@ -8,6 +8,8 @@
 	margin: 0
 	outline: none
 
+
+
 	
 ::placeholder
 	color: #666
@@ -103,6 +105,7 @@ b, strong
 		display: flex
 		justify-content: space-between
 	.small-logo
+		display: block
 		background: #fff
 		transform: skew(-16deg)
 		height: 66px
@@ -173,7 +176,8 @@ b, strong
 		transform: skew(-16deg)
 		position: relative
 		box-sizing: border-box
-		cursor: pointer
+		cursor: pointe
+		margin-right: -10px
 		span
 			display: inline-block
 			transform: skew(16deg)
@@ -225,9 +229,13 @@ b, strong
 			height: 226px
 	.banner-rightside__title
 		width: 422px
-	.h1
+	.h2
 		font-size: 55px
 		color: #fff
+	@-moz-document url-prefix()
+		.banner-rightside__title
+			.h2
+				font-size: 53px
 	.banner-rightside__post-title
 		width: 380px
 		color: #ffffff
@@ -668,7 +676,7 @@ b, strong
 		text-transform: uppercase
 		text-align: center
 		margin: 0 auto
-		width: 600px
+		width: 625px
 		padding-top: 70px
 	.h2
 	.questions-button-wrapper
@@ -1140,6 +1148,8 @@ b, strong
 
 	.event-gallery
 	.event-gallery-images
+		max-width: 1600px
+		margin: 0 auto
 		display: flex
 		flex-wrap: wrap
 		justify-content: center
@@ -1149,8 +1159,8 @@ b, strong
 	.gallery-images-wrapper
 		margin: 0px 15px
 		overflow: hidden
-		width: 324px
-		height: 181px
+		width: 240px
+		height: 155px
 		transform: skew(-16deg)
 		margin-top: 20px
 		& > div
@@ -1214,6 +1224,7 @@ b, strong
 			transform: skew(16deg)
 			margin-top: 9px
 	.reserve-button
+		display: block
 		width: 230px
 		background: #fff
 		color: $accent
@@ -1295,7 +1306,7 @@ b, strong
 	.fitness-arguments
 		display: flex
 		flex-wrap: wrap
-		justify-content: space-between
+		justify-content: center
 		width: 70%
 	.fitness-arguments__item
 		display: flex
@@ -1336,8 +1347,10 @@ b, strong
 		color: #fff
 		margin-left: 15px
 	.fitness-arguments-column
-		width: 50%
-
+	.fitness-arguments-column2
+		width: 40%
+	.fitness-arguments-column1
+		width: 55%
 
 
 // Fitness_
@@ -1348,11 +1361,80 @@ b, strong
 .section-ourstock
 	.section-inner
 	.ourstock
+		position: relative
+
+	.ourstock-title
+		text-transform: uppercase
+		color: $accent
+		font-size: 40px
+		margin: 0 auto
+		padding: 32px 0px
+		width: 277px
 	.container-carousel
 	.ourstock-carousel
 		max-width: 1500px
 		width: 90%
 		margin: 0 auto
+		position: static
+		.owl-nav.disabled
+			display: block
+		.owl-nav
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			margin: auto
+			display: flex
+			justify-content: space-between
+			width: 100vw
+			height: 60px
+			pointer-events: none
+			color: #25295a
+			button.owl-prev
+				bottom: 0px
+				left: 0px
+				position: absolute
+				border-radius: 10em
+				border: 1px solid #1a1e51
+				font-size: 23px
+				line-height: 1
+				background: transparent
+				width: 50px
+				height: 50px
+				outline: none
+				margin-left: 60px
+				pointer-events: auto
+				&:hover
+					background: #transparent
+					color: #25295a
+				i
+					position: absolute
+					top: 13px
+					left: 15px
+			button.owl-next
+				bottom: 0px
+				right: 0px
+				position: absolute
+				border-radius: 10em
+				border: 1px solid #1a1e51
+				font-size: 23px
+				line-height: 1
+				background: transparent
+				width: 50px
+				height: 50px
+				outline: none
+				margin-right: 60px
+				pointer-events: auto
+				&:hover
+					background: transparent
+					color: #25295a
+				i
+					position: absolute
+					top: 13px
+					left: 18px
+				span
+					margin-left: 5px
 	.ourstock-wrapper
 		width: 435px
 		margin-left: auto
@@ -1386,13 +1468,12 @@ b, strong
 			height: 508px
 			transform: skew(18deg)
 	.item 
-		transform: skew(-18deg)
 	.img-event
 		position: absolute
 		left: 50%
 		margin-left: -218px
 		display: inline-block
-		width: 435px
+		width: 436px
 		height: 508px
 	.ourstock-content-wrapper
 		background: rgba($accent, .8)
@@ -1417,7 +1498,7 @@ b, strong
 		transform: skew(18deg)
 		text-transform: uppercase
 		+font("NeoSansPro-BoldItalic", 700, 27px)
-		width: 164px
+		width: 195px
 		line-height: 1.4
 		margin-left: 25px
 		padding: 11px 0px
@@ -1432,7 +1513,8 @@ b, strong
 		opacity: 0
 
 	.owl-stage-outer
-		overflow: visible
+		overflow: hidden
+		transform: skew(-18deg)
 
 // Ourstock_
 
@@ -1565,7 +1647,7 @@ b, strong
 	.section-inner
 	.section-gallery
 	.gallery
-		max-width: 1751px
+		max-width: 1335px
 		width: 90%
 		margin: 0 auto
 		padding-bottom: 40px
@@ -1580,19 +1662,29 @@ b, strong
 		display: flex
 		flex-wrap: wrap
 		margin: 0 auto
-		justify-content: space-evenly
 	.gallery-blocks-wrapper
 		display: flex
-		justify-content: center
 	.gallery-block
 		position: relative
 		text-align: center
 		overflow: hidden
-		width: 350px
-		height: 233px
+		width: 267px
+		height: 177px
 		img
-			width: 350px
-			height: 233px
+			width: 267px
+			height: 177px
+		&:after
+			position: absolute
+			content: ''
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			background: rgba(#000, .3)
+		&:hover 
+			&:after
+				background: rgba(#000, .0)
+				transition: all .5s ease
 
 // Gallery_
 
@@ -1632,12 +1724,14 @@ b, strong
 		width: 480px
 		padding-top: 35px
 	.google-play-big
+		display: block
 		width: 246px
 		height: 70px
 		img
 			width: 246px
 			height: 70px
 	.appstore-big
+		display: block
 		width: 211px
 		height: 72px
 		img
@@ -1646,6 +1740,8 @@ b, strong
 
 
 	.mobileapp-rightside
+		max-width: 1000px
+		margin-left: 50px
 	.mobileapp-rightside__title
 		text-transform: uppercase
 		font-size: 21px 
@@ -1671,9 +1767,9 @@ b, strong
 				list-style-type: decimal
 				list-style-position: inside
 				color: $accent
-				+font("NeoSansPro-BoldItalic", 700, 24px)
+				+font("NeoSansPro-BoldItalic", 700, 23px)
 				line-height: 1.25
-				margin-top: 30px
+				margin-top: 20px
 				max-width: 1100px
 				span
 					+font("NeoSansPro-Regular", 600, 18px)
@@ -2081,55 +2177,66 @@ b, strong
 // Reviews
 
 .section-reviews
-	background: url('../img/@2x/bg-reviews.png') no-repeat center
-	background-size: cover
 	.section-inner
 	.reviews
+		background: url('../img/@2x/bg-reviews.png') no-repeat center
+		background-size: cover
+		padding: 105px 0px
+		position: relative
+	.reviews-title
+		text-transform: uppercase
+		color: $accent
+		font-size: 40px
+		text-align: center
+		width: 595px
+		margin: 0 auto
+		padding: 32px 0px
 	.reviews-carousel
+		width: 90%
+		max-width: 1500px
+		margin: 0 auto
+		position: static
 	.item
 		position: relative
-		height: 100%
 		img
-			width: auto
 	.owl-item
-
-	
-	.reviews-block
+	.owl-stage-outer
+		overflow: hidden
 		transform: skew(16deg)
-		padding: 30px
-		box-shadow: 0px 0px 20px 10px rgba(#000, .2)
+		position: static
+	.reviews-block
+		padding: 24px
 		background: #fff
 		box-sizing: border-box
 		border: 1px solid red
-		height: 100%
-		width: 100%
+		width: 650px
+		height: 330px
+		margin: 0 auto
 		position: relative
-	.owl-stage-outer
-		overflow: visible
 	.slick-slide
 		border: 1px solid green
 		padding: 0px 70px
 	.reviews-topline
 		display: flex
 		justify-content: space-between
-		max-width: 430px
-		min-width: 300px
-		margin-left: 76px
+		max-width: 350px
+    min-width: 300px
+		margin-left: 99px
 		transform: skew(-16deg)
 	.reviews-topline__img
 		border-radius: 10em
 		box-shadow: 0px 0px 80px rgba(#000, .1)
 		img
 			display: block
-			width: 100%
+			width: 105px
 	.reviews-topline__data
 		align-self: center
 	.topline__data-name
 		text-transform: uppercase
-		font-size: 1.2vw
+		font-size: 19px
 		color: $accent
 	.topline__data-status
-		+font("Solomon-Sans-Normal", 400, 1vw)
+		+font("Solomon-Sans-Normal", 400, 15px)
 		color: #757575
 	.topline__data-contacts
 		display: flex
@@ -2142,19 +2249,80 @@ b, strong
 			left: 2px
 			top: 0
 		span
-			+font("Solomon-Sans-Normal", 400, 1vw)
+			+font("Solomon-Sans-Normal", 400, 15px)
 			color: #757575
 			display: inline-block
 			margin-left: 30px
 			
 	.reviews-bottomline
-		margin-top: 20px
+		margin-top: 12px
 		transform: skew(-16deg)
 	.reviews-bottomline__text
-		+font("Solomon-Sans-Normal", 400, 0.95vw)
+		+font("Solomon-Sans-Normal", 400, 13px)
 		color: #000
 		width: 80%
 		margin: 0 auto
+
+	.owl-nav.disabled
+		display: block
+	.owl-nav
+		position: absolute
+		top: 0
+		bottom: 0
+		left: 0
+		right: 0
+		margin: auto
+		display: flex
+		justify-content: space-between
+		width: 100vw
+		height: 60px
+		pointer-events: none
+		color: #25295a
+		button.owl-prev
+			bottom: 0px
+			left: 0px
+			position: absolute
+			border-radius: 10em
+			border: 1px solid #1a1e51
+			font-size: 23px
+			line-height: 1
+			background: transparent
+			width: 50px
+			height: 50px
+			outline: none
+			margin-left: 60px
+			pointer-events: auto
+			&:hover
+				background: #transparent
+				color: #25295a
+			i
+				position: absolute
+				top: 13px
+				left: 15px
+		button.owl-next
+			bottom: 0px
+			right: 0px
+			position: absolute
+			border-radius: 10em
+			border: 1px solid #1a1e51
+			font-size: 23px
+			line-height: 1
+			background: transparent
+			width: 50px
+			height: 50px
+			outline: none
+			margin-right: 60px
+			pointer-events: auto
+			&:hover
+				background: transparent
+				color: #25295a
+			i
+				position: absolute
+				top: 13px
+				left: 18px
+			span
+				margin-left: 5px
+
 
 
 
