@@ -204,44 +204,48 @@ b, strong
 
 // Banner
 
-.section-banner
+.section-wideanim
 	background: linear-gradient(90deg, rgba(25,29,80,1) 0%, rgba(9,9,121,1) 0%, rgba(25,29,80,1) 57%)
 	margin-top: 66px
 	.section-inner
-	.banner
+	.wideanim
 		display: flex
 		justify-content: flex-end
 		position: relative
-	.banner-rightside
+		overflow: hidden
+	.wideanim-rightside
 		position: absolute
 		width: 550px
-		top: 80px
+		top: 50%
+		margin-top: -266px
 		left: 270px
 		z-index: 2000
-	.banner-rightside__big-logo
+	.wideanim-rightside__big-logo
 		position: absolute
-		top: 50px
+		top: 30px
 		left: -208px
 		width: 170px
 		height: 226px
 		img
 			width: 170px
 			height: 226px
-	.banner-rightside__title
-		width: 422px
-	.h2
+	.wideanim-rightside__title
+		width: 550px
+	.h1
 		font-size: 55px
 		color: #fff
+		line-height: 1.2
 	@-moz-document url-prefix()
-		.banner-rightside__title
+		.wideanim-rightside__title
 			.h2
 				font-size: 53px
-	.banner-rightside__post-title
+	.wideanim-rightside__post-title
 		width: 380px
 		color: #ffffff
 		+font("Solomon-Sans-Book", 300, 21px)
 		text-transform: uppercase
-	.banner-rightside__button
+	.wideanim-rightside__button
+		display: block
 		+font("NeoSansPro-BoldItalic", 700, 23px)
 		color: $blue
 		background: #f7941d
@@ -250,7 +254,7 @@ b, strong
 		text-align: center
 		box-sizing: border-box
 		text-transform: uppercase
-		margin: 60px 0px 0px 0px
+		margin: 40px 0px 0px 0px
 		cursor: pointer
 		span
 			display: inline-block
@@ -331,29 +335,56 @@ b, strong
 				margin-left: 5px
 		
 
-
-	.banner-leftside
+	.carousel-1
+		height: calc(100vh - 66px)
+		min-height: 500px
+	.owl-stage-outer
+		height: 100%
+	.owl-stage
+		height: 100%
+	.owl-item
+		height: 100%
+	.item
+		min-height: 500px
+		position: relative
+	.wideanim-leftside
 		overflow: hidden
 		width: 100%
-	.banner-leftside-wrapper
-		position: relative
+		height: calc(100vh)
+		min-height: 500px
 		margin-right: -1em
-	.banner-leftside__bigoverlay
+	.wideanim-leftside-wrapper
+		position: relative
+		height: 100%
+		width: 100%
+	.wideanim-leftside__bigoverlay
 		position: absolute
-		right: -75px
+		right: -25px
 		bottom: 0
-		z-index: 2000
 		pointer-events: none
-		img
-			width: 20em
-	.banner-leftside__row
+		z-index: 3000
+		height: 100%
+		width: 100%
+		.leftside__bigoverlay
+			background: url('../img/@2x/bigaverlay-new.png') right bottom no-repeat
+			background-size: auto 83%
+			width: 100%
+			height: 100%
+			position: absolute
+			pointer-events: none
+	.wideanim-leftside__row
 		display: flex 
 		justify-content: flex-end
-	.banner-item
+		height: calc(100% / 15)
+		font-size: 1.3vh
+	.wideanim-item
 		display: block
 		width: 6.5em
+		min-width: 67px
 		overflow: hidden
-		height: 3.5em
+		height: calc(100% - 1px)
+		font-size: 1.8vh
+		min-height: 32px
 		cursor: pointer
 		box-sizing: border-box
 		margin: 0.5px
@@ -362,7 +393,7 @@ b, strong
 		&:hover a:before
 			opacity: 0
 			transition: opacity .5s ease
-		.banner-item-img
+		.wideanim-item-img
 			width: 130%
 			height: 100%
 			margin-left: -15%
@@ -385,86 +416,185 @@ b, strong
 		margin-right: -2em
 	#line-3
 		margin-right: -4em
-		.banner-item:first-child
+		.wideanim-item:first-child
 			margin-right: 15em
 	#line-4
-		.banner-item:first-child
+		.wideanim-item:first-child
 			margin-right: 9em	
 	#line-5
 		margin-right: -2.5em
-		.banner-item:first-child
+		.wideanim-item:first-child
 			margin-right: 7em	
 	#line-6
 		margin-right: -3em
-		.banner-item:first-child
+		.wideanim-item:first-child
 			margin-right: 14em	
 	#line-7
 		margin-right: -0.5em
-		.banner-item:first-child
+		.wideanim-item:first-child
 			margin-right: 11em	
 	#line-8
 		margin-right: -2.5em
-		.banner-item:first-child
+		.wideanim-item:first-child
 			margin-right: 8em	
 	#line-9
 		margin-right: -3.5em
-		.banner-item:first-child
+		.wideanim-item:first-child
 			margin-right: 15em	
 	#line-10
 		margin-right: -0.3em
-		.banner-item:first-child
+		.wideanim-item:first-child
 			margin-right: 6em	
 	#line-11
 		margin-right: -0.3em
-		.banner-item:first-child
+		.wideanim-item:first-child
 			margin-right: 12em	
 	#line-12
 		margin-right: -1em
-		.banner-item:first-child
+		.wideanim-item:first-child
 			margin-right: 22em	
 	#line-13
-		.banner-item:first-child
+		.wideanim-item:first-child
 			margin-right: 10em
 	#line-15
-		.banner-item:first-child
-			margin-right: 10em			
+		.wideanim-item:first-child
+			margin-right: 10em	
+
+
+	.background-video
+    overflow: hidden
+    z-index: -100
+    position: relative
+    height: 100%
+    width: 100%
+    padding-top: 70%
+	.fullscreen-bg__video 
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+	.overlay 
+		background: rgba(0,0,0,0.5)
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: 4
+	.overlay h1 
+		text-align: center
+		color: #fff
+		font-size: 70px
+		margin-top: 17%		
+	.owl-item
+		height: 100%
+
+
+	.stockitem
+		background: url('../img/@2x/bg-stock1.jpg') no-repeat center
+		background-size: cover
+		position: relative
+		width: 100%
+		height: 100vh
+		min-height: 500px
+	.stockitem-biglogo
+		position: absolute
+		top: 50%
+		margin-top: -235px
+		left: 80px
+		width: 170px
+		height: 226px
+		img
+			width: 170px
+			height: 226px
+	.stockitem-content
+		position: absolute
+		left: 310px
+		top: 50%
+		margin-top: -210px
+	.stockitem-content__title
+		width: 620px
+		.h2
+			font-size: 55px
+			color: #ffffff
+			line-height: 1.2
+			margin-bottom: .67em
+			text-align: left
+	@-moz-document url-prefix()
+		.stockitem-content__title
+			.h2
+				font-size: 53px
+	.stockitem-content__post-title
+		width: 480px
+		color: #ffffff
+		+font("Solomon-Sans-Book", 300, 21px)
+		text-transform: uppercase
+	.stockitem-content__button
+		display: block
+		+font("NeoSansPro-BoldItalic", 700, 23px)
+		color: #fff
+		background: $accent
+		transform: skew(16deg)
+		width: 280px
+		text-align: center
+		box-sizing: border-box
+		text-transform: uppercase
+		margin: 40px 0px 0px 0px
+		cursor: pointer
+		span
+			display: inline-block
+			transform: skew(-16deg)
+			padding: 7px 0px
+
+	.stockitem-bg-1
+		background: url('../img/@2x/bg-stock2.jpg') no-repeat center
+	.stockitem-content-1
+		position: absolute
+		right: 0
+		top: 50%
+		margin-top: -210px
+	.stockitem-content__title-1
+		.h2
+			color: $blue
 
 			
 // Banner_
 
 // Customers
 
-.section-bannercustomer
+.section-wideanimcustomer
 	background: linear-gradient(90deg, rgba(25,29,80,1) 0%, rgba(9,9,121,1) 0%, rgba(25,29,80,1) 57%)
 	margin-top: 66px
 	.section-inner
-	.bannercustomer
+	.wideanimcustomer
 		display: flex
 		justify-content: flex-end
 		position: relative
-	.bannercustomer-rightside
+		overflow: hidden
+	.wideanimcustomer-rightside
 		position: absolute
-		width: 550px
+		width: 700px
 		left: 75px
-		top: 200px
+		top: 50%
+		margin-top: -210px
 		z-index: 2000
-	.bannercustomer-rightside__big-logo
+	.wideanimcustomer-rightside__big-logo
 		position: absolute
 		top: 0
 		left: -240px
 		img
 			width: auto
-	.bannercustomer-rightside__title
-		width: 422px
-	.h2
+	.wideanimcustomer-rightside__title
+		width: 500px
+	.h1
 		font-size: 55px
 		color: #fff
-	.bannercustomer-rightside__post-title
-		width: 735px
+		line-height: 1.2
+	.wideanimcustomer-rightside__post-title
 		color: #ffffff
 		+font("Solomon-Sans-Book", 300, 17px)
 		text-transform: uppercase
-	.bannercustomer-rightside__button
+	.wideanimcustomer-rightside__button
 		+font("NeoSansPro-BoldItalic", 700, 23px)
 		color: $blue
 		background: #f7941d
@@ -481,29 +611,46 @@ b, strong
 			padding: 7px 0px
 
 
-	.bannercustomer-leftside
+	.wideanimcustomer-leftside
 		overflow: hidden
 		width: 100%
-	.bannercustomer-leftside-wrapper
-		position: relative
+		height: calc(100vh)
+		min-height: 500px
 		margin-right: -1em
-		margin-top: -8em
-	.bannercustomer-leftside__bigoverlay
+		margin-top: -4em
+	.wideanimcustomer-leftside-wrapper
+		position: relative
+		height: 100%
+		width: 100%
+	.wideanimcustomer-leftside__bigoverlay
 		position: absolute
-		right: -75px
-		bottom: -8px
-		z-index: 2000
+		right: -25px
+		bottom: 0px
 		pointer-events: none
-		img
-			width: 20em
-	.bannercustomer-leftside__row
+		z-index: 3000
+		height: 100%
+		width: 100%
+		.leftside__bigoverlay
+			background: url('../img/@2x/bigaverlay-new.png') right bottom no-repeat
+			background-size: auto 83%
+			width: 100%
+			height: 100%
+			position: absolute
+			pointer-events: none
+
+	.wideanimcustomer-leftside__row
 		display: flex 
 		justify-content: flex-end
-	.bannercustomer-item
+		height: calc(100% / 15)
+		font-size: 1.3vh
+	.wideanimcustomer-item
 		display: block
 		width: 6.5em
+		min-width: 67px
 		overflow: hidden
-		height: 3.5em
+		height: calc(100% - 1px)
+		font-size: 1.8vh
+		min-height: 32px
 		cursor: pointer
 		box-sizing: border-box
 		margin: 0.5px
@@ -512,7 +659,7 @@ b, strong
 		&:hover a:before
 			opacity: 0
 			transition: opacity .5s ease
-		.bannercustomer-item-img
+		.wideanimcustomer-item-img
 			width: 130%
 			height: 100%
 			margin-left: -15%
@@ -535,48 +682,48 @@ b, strong
 		margin-right: -2em
 	#line-3
 		margin-right: -4em
-		.bannercustomer-item:first-child
+		.wideanimcustomer-item:first-child
 			margin-right: 15em
 	#line-4
-		.bannercustomer-item:first-child
+		.wideanimcustomer-item:first-child
 			margin-right: 9em	
 	#line-5
 		margin-right: -2.5em
-		.bannercustomer-item:first-child
+		.wideanimcustomer-item:first-child
 			margin-right: 7em	
 	#line-6
 		margin-right: -3em
-		.bannercustomer-item:first-child
+		.wideanimcustomer-item:first-child
 			margin-right: 14em	
 	#line-7
 		margin-right: -0.5em
-		.bannercustomer-item:first-child
+		.wideanimcustomer-item:first-child
 			margin-right: 11em	
 	#line-8
 		margin-right: -2.5em
-		.bannercustomer-item:first-child
+		.wideanimcustomer-item:first-child
 			margin-right: 8em	
 	#line-9
 		margin-right: -3.5em
-		.bannercustomer-item:first-child
+		.wideanimcustomer-item:first-child
 			margin-right: 15em	
 	#line-10
 		margin-right: -0.3em
-		.bannercustomer-item:first-child
+		.wideanimcustomer-item:first-child
 			margin-right: 6em	
 	#line-11
 		margin-right: -0.3em
-		.bannercustomer-item:first-child
+		.wideanimcustomer-item:first-child
 			margin-right: 12em	
 	#line-12
 		margin-right: -1em
-		.bannercustomer-item:first-child
+		.wideanimcustomer-item:first-child
 			margin-right: 22em	
 	#line-13
-		.bannercustomer-item:first-child
+		.wideanimcustomer-item:first-child
 			margin-right: 10em
 	#line-15
-		.bannercustomer-item:first-child
+		.wideanimcustomer-item:first-child
 			margin-right: 10em
 
 	
@@ -644,21 +791,37 @@ b, strong
 // Background
 
 .section-background
-	background: url('../img/@2x/bg-barbell.jpg') no-repeat center
-	background-size: cover
-	min-height: 448px
+	background: transparent
+	height: 448px
 	position: relative
-	&:after
-		content: ''
-		position: absolute
-		top: 0
-		bottom: 0
-		left: 0
-		right: 0
-		background: rgba(#000, .3)
 	.section-inner
 		position: relative
 		
+	.background-video
+    overflow: hidden
+    z-index: -100
+    position: relative
+    height: 100%
+    width: 100%
+    padding-top: 45%
+	.fullscreen-bg__video 
+		position: absolute
+		top: -35%
+		left: 0
+		width: 100%
+	.overlay 
+		background: rgba(0,0,0,0.2)
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: 4
+	.overlay h1 
+		text-align: center
+		color: #fff
+		font-size: 70px
+		margin-top: 17%
 
 
 // Background_
@@ -1044,7 +1207,7 @@ b, strong
 		padding-top: 130px
 		padding-bottom: 70px
 		width: 90%
-		max-width: 1920px
+		max-width: 1500px
 		margin: 0 auto
 	.newsitem-topline
 		display: flex
@@ -1092,6 +1255,16 @@ b, strong
 			display: inline-block
 	.newsitem-rightside
 	.newsitem-rightside__img
+		width: 580px
+		height: 390px
+		position: relative
+		transform: skew(-16deg)
+		overflow: hidden
+		& > div
+			transform: skew(16deg)
+			overflow: hidden
+			width: 130%
+			margin-left: -10%
 		img
 			display: block
 			width: 100%
@@ -1362,7 +1535,7 @@ b, strong
 	.section-inner
 	.ourstock
 		position: relative
-
+		padding-bottom: 65px
 	.ourstock-title
 		text-transform: uppercase
 		color: $accent
@@ -1522,8 +1695,8 @@ b, strong
 // Blonde
 
 .section-blonde
-	background: url('../img/@2x/bg-pixels-left.png') no-repeat center
-	background-size: cover
+	// background: url('../img/@2x/bg-pixels-left.png') no-repeat center
+	// background-size: cover
 	.section-inner
 	.blonde
 		width: 90%
@@ -1560,9 +1733,42 @@ b, strong
 		top: 0
 		right: 0
 		cursor: pointer
+		width: 35px
+		height: 35px
 		img
 			width: 35px
 			height: 35px
+		&:hover .info-hover
+			opacity: 1
+			transition: opacity .5s ease
+	.info-hover
+		transform: skew(-16deg)
+		background: $accent
+		padding: 34px 20px
+		box-sizing: border-box
+		height: 201px
+		width: 465px
+		line-height: 1.3
+		color: #ffffff
+		font-weight: 400
+		position: absolute
+		top: -225px
+		left: -360px
+		pointer-events: none
+		opacity: 0
+		+font("Solomon-Sans-Normal", 400, 15px)
+		span
+			padding: 0px 15px
+			transform: skew(16deg)
+			display: inline-block
+		&:after
+			content: ''
+			transform: skew(16deg)
+			position: absolute
+			border: 17px solid transparent
+			border-top: 17px solid $accent
+			bottom: -31px
+			right: 36px
 	.small-ellipse
 		position: absolute
 		top: -5px
@@ -2003,11 +2209,15 @@ b, strong
 	.bottomrow-exp__title
 	.bottomrow-exp__stars
 		display: flex
-		justify-content: space-between
+		justify-content: center
 		max-width: 230px
 		margin: 0 auto
 		padding-top: 20px
+		img
+			width: 42px
+			height: 39px
 	.bottomrow-exp__star
+		margin: 0px 4px
 	.bottomrow-exp__years
 		color: #3c3c3c
 		text-align: center
@@ -2208,7 +2418,7 @@ b, strong
 		padding: 24px
 		background: #fff
 		box-sizing: border-box
-		border: 1px solid red
+		box-shadow: 0px 0px 90px rgba(#000, 0.1)
 		width: 650px
 		height: 330px
 		margin: 0 auto
@@ -2223,45 +2433,49 @@ b, strong
     min-width: 300px
 		margin-left: 99px
 		transform: skew(-16deg)
+		min-height: 130px
 	.reviews-topline__img
 		border-radius: 10em
 		box-shadow: 0px 0px 80px rgba(#000, .1)
+		width: 105px
+		height: 105px
 		img
 			display: block
 			width: 105px
 	.reviews-topline__data
-		align-self: center
 	.topline__data-name
 		text-transform: uppercase
 		font-size: 19px
 		color: $accent
+		height: 24px
 	.topline__data-status
 		+font("Solomon-Sans-Normal", 400, 15px)
 		color: #757575
 	.topline__data-contacts
-		display: flex
 		position: relative
-		margin-top: 10px
+		margin-top: 4px
 		img
 			width: 23px
 			height: 23px
 			position: absolute
 			left: 2px
 			top: 0
-		span
+		a
 			+font("Solomon-Sans-Normal", 400, 15px)
 			color: #757575
 			display: inline-block
 			margin-left: 30px
-			
+	.data-contact
+		position: relative
 	.reviews-bottomline
-		margin-top: 12px
+		margin-top: 8px
 		transform: skew(-16deg)
 	.reviews-bottomline__text
 		+font("Solomon-Sans-Normal", 400, 13px)
 		color: #000
 		width: 80%
 		margin: 0 auto
+		line-height: 1.4
 
 	.owl-nav.disabled
 		display: block
@@ -2293,7 +2507,7 @@ b, strong
 			margin-left: 60px
 			pointer-events: auto
 			&:hover
-				background: #transparent
+				background: transparent
 				color: #25295a
 			i
 				position: absolute
@@ -2349,6 +2563,7 @@ b, strong
 		background: #f7941d
 		+font("NeoSansPro-BoldItalic", 700, 27px)
 		color: $blue
+		transition: all .25s ease
 	.toppannel-buttons
 		+font("NeoSansPro-Italic", 400, 27px)
 		color: #fff
@@ -2359,12 +2574,17 @@ b, strong
 		margin: 0 auto
 		padding-top: 50px
 	.toppannel-address
+		text-align: center
 		+font("NeoSansPro-Regular", 400, 17px)
 		color: #fff
 		margin: 0 auto
-		width: 424px
+		width: 450px
 		padding-top: 25px
+		display: none
+	.toppannel-address-active
+		display: block
 	.megaslider-more
+		display: block
 		+font("NeoSansPro-BoldItalic", 400, 23px)
 		color: $blue
 		width: 400px
@@ -2401,16 +2621,25 @@ b, strong
 		width: 70%
 		margin: 0 auto
 		padding: 40px 0px
+		display: none
+		opacity: 0
+		transition: all .5s ease
+	.megaslider-js-active
+		display: block
+		opacity: 1
+		transition: all .5s ease
 	.owl-stage-outer
 		overflow: visible
 		transform: scale(0.5)
 		transition: all .5s ease
 	.owl-stage
 	.owl-item
+		cursor: pointer
 	.owl-item.active
 		transform: scale(2)
 		transition: all .5s ease
 		z-index: 2000
+		cursor: auto
 		.megaslider-img-wrapper:after 
 			background: transparent
 			box-shadow: 10px 10px 0px rgba(#fff, 1)
@@ -2480,10 +2709,28 @@ b, strong
 	.directionlist
 		position: relative
 		display: flex
+	.directionlist-button-wrapper
+		position: absolute
+		width: 100vw
+		bottom: -24px
+		z-index: 3000
 	.directionlist-button-absolute
+		display: block
 		position: absolute
 		bottom: 0
 		left: 0
+		margin-left: 7%
+		+font("NeoSansPro-Italic", 700, 22px)
+		color: #fff
+		transform: skew(-16deg)
+		text-align: center
+		width: 300px
+		background: #f7941d
+		padding: 7px 0px
+		text-transform: uppercase
+		span
+			display: inline-block
+			transform: skew(16deg)
 	.directionlist-leftside
 		align-self: flex-start
 		width: 80%
@@ -2501,10 +2748,13 @@ b, strong
 		color: #d5d6e8
 		height: 100%
 		box-sizing: border-box
+		a
+			color: #d5d6e8
 	.rightside-list-item
+		display: block
 		position: relative
 		box-sizing: border-box
-		height: 11.2%
+		height: 12.5%
 		padding: 0px 10%
 		display: flex
 		justify-content: flex-end
@@ -2525,6 +2775,7 @@ b, strong
 			right: 0
 			transform: skew(-16deg)
 			pointer-events: none
+			z-index: 3000
 	.rightside-list-item-active
 		background: $accent
 		color: $blue
@@ -2537,4 +2788,197 @@ b, strong
 
 
 // Directionlist_
+
+
+// Eventlist
+
+.section-eventlist
+	.section-inner
+	.eventlist
+		width: 90%
+		margin: 0 auto
+		max-width: 1500px
+	.eventlist-flex
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		padding-top: 70px
+		padding-bottom: 70px
+	.eventlist-block
+		transform: skew(-5deg)
+		overflow: hidden
+		width: 410px
+		height: 310px
+		position: relative
+		box-shadow: 25px -18px 0px rgba(#202766, .15)
+		margin-top: 90px
+	.eventlist-block__img
+		width: 130%
+		margin-left: -10%
+		position: relative
+		transform: skew(5deg)
+		img
+			display: block
+			width: 100%
+		&:after
+			content: ''
+			position: absolute
+			top: 0
+			bottom: 0
+			right: 0
+			left: 0
+			background: rgba(#000, .55)
+
+	.eventlist-block__date
+		position: absolute
+		top: 15px
+		left: 25px
+		+font("Solomon-Sans-Bold-Italic", 700, 14px)
+		color: #fff
+		text-decoration: underline
+		transform: skew(5deg)
+	.eventlist-block__content
+		transform: skew(5deg)
+		position: absolute
+		bottom: 7px
+		left: 19px
+		width: 373px
+		text-align: center
+	.eventlist-block__title
+		+font("Solomon-Sans-Bold", 700, 19px)
+		color: #fff
+		text-align: center
+	.eventlist-block__more
+		+font("Solomon-Sans-Bold-Italic", 700, 14px)
+		color: $accent
+		text-decoration: underline
+		display: block
+
+// Eventlist_
+
+
+// FAQ
+
+.section-faq
+	.section-inner
+	.faq
+		width: 90%
+		max-width: 1200px
+		margin: 0 auto
+		padding-top: 120px
+		padding-bottom: 40px
+	.faq-toggle
+		+font("NeoSansPro-Regular", 700, 30px)
+		display: flex
+		justify-content: space-between
+		width: 500px
+		line-height: 1.2
+		color: rgba(#000, .5)
+		padding-bottom: 20px
+		span
+			cursor: pointer
+	.faq-toggle-active
+		color: #000
+	.faq-often
+		width: 195px
+	.faq-other
+		width: 200px
+	.faq-accordion
+		display: none
+	.faq-accordion-active
+		display: block
+	.pass-wrapper
+		display: flex
+		justify-content: space-between
+		width: 900px
+		margin: 0 auto
+		padding-bottom: 40px
+	.pass-column
+		display: flex
+		justify-content: space-between
+		width: 430px
+		position: relative
+	.pass-column__img
+	.pass-column__title
+		+font("NeoSansPro-Regular", 700, 16px)
+		width: 200px
+		span
+			display: block
+		span:first-child
+			font-size: 35px
+		span:last-child
+			font-size: 20px
+
+	.pass-column__bracels
+		position: absolute
+		width: 300px
+		height: 303px
+		bottom: -45px
+		left: 110px
+		animation: howtoEnterkey 2.5s infinite
+		img
+			width: 300px
+			height: 303px
+	.pass-column__arm
+		position: absolute
+		bottom: -300px
+		left: 50px
+		animation: howtoEnterfinger 2.5s infinite
+		
+
+	.ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content
+		overflow: hidden
+		background: #f7941d
+	.ui-accordion-content-active
+		background: #f7941d
+
+	.ui-button, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, html .ui-button.ui-state-disabled:active
+		border: none
+		background: #fff
+		color: #000
+		+font("NeoSansPro-Regular", 400, 23px)
+	.accordion-number
+		font-size: 40px
+		margin-right: 10px
+		font-weight: 700
+	.ui-accordion .ui-accordion-header
+		padding: 20px 60px
+		margin: 0
+	.ui-accordion-header.ui-corner-top.ui-state-default.ui-accordion-icons.ui-accordion-header-active.ui-state-active
+		background: #f7941d
+		border: none
+	.ui-accordion .ui-accordion-content
+		padding: 1em 75px
+		border: none
+		+font("NeoSansPro-Regular", 400, 17px)
+@keyframes howtoEnterkey 
+	0% 
+		left: 110px
+	
+	40% 
+		left: 15px
+	
+	80% 
+		left: 5px
+	
+	100% 
+		left: 110px
+    
+@keyframes howtoEnterfinger 
+	0% 
+		bottom: -300px
+	
+	25% 
+		bottom: -250px
+	
+	80% 
+		bottom: -240px
+	
+	100% 
+		bottom: -300px
+	
+
+
+
+// FAQ_
 @import "_media"

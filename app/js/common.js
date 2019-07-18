@@ -34,8 +34,8 @@ $(function() {
 
   // Banner
 
-  const items = document.querySelectorAll('.banner-item');
-  const costumerItems = document.querySelectorAll('.bannercustomer-item');
+  const items = document.querySelectorAll('.wideanim-item');
+  const costumerItems = document.querySelectorAll('.wideanimcustomer-item');
 
 
   [...items].map(randomFactory(1.5, 5)(scale))
@@ -81,6 +81,7 @@ $(function() {
   // Banner_
 
   // Select
+
   $('.js-tour-select').select2({
     minimumResultsForSearch: Infinity,
     width: 'style'
@@ -101,12 +102,17 @@ $(function() {
 
   // Megaslider
 
-  $('.megaslider-js').owlCarousel({
+  var $owl = $('.megaslider-js');
+
+  $owl.children().each( function( index ) {
+    $(this).attr( 'data-position', index ); // NB: .attr() instead of .data()
+  });
+
+  $owl.owlCarousel({
     items: 1,
     dots: true,
     nav: true,
     margin: 40,
-    loop: true,
     mouseDrag: false,
     touchDrag: false,
     smartSpeed: 700,
@@ -114,14 +120,26 @@ $(function() {
 
   });
 
+  $(document).on('click', '.owl-item>div', function() {
+    $owl.trigger('to.owl.carousel', $(this).data( 'position' ) );
+  });
+
+  
+
+  $('.toppannel-buttons').on('click', '.toppannel-button:not(.toppannel-button-active)', function() {
+    $(this)
+      .addClass('toppannel-button-active').siblings().removeClass('toppannel-button-active')
+      .closest('div.megaslider').find('div.megaslider-js').removeClass('megaslider-js-active').eq($(this).index()).addClass('megaslider-js-active');
+  });
+
+  $('.toppannel-buttons').on('click', '.toppannel-button:not(.toppannel-button-active)', function() {
+    $(this)
+      .addClass('toppannel-button-active').siblings().removeClass('toppannel-button-active')
+      .closest('div.megaslider-toppannel').find('div.toppannel-address').removeClass('toppannel-address-active').eq($(this).index()).addClass('toppannel-address-active');
+  });
+
+
   // Megaslider_
-
-  // Summer-slider
-
-
-
-  // Summer-slider_
-
 
   // Maingallery
 
@@ -131,7 +149,9 @@ $(function() {
     nav: true,
     margin: 100,
     smartSpeed: 400
-  })
+  });
+
+  $(".js-maingallery").trigger("to.owl.carousel", [10, 7])
 
   // Maingallery_
 
@@ -144,4 +164,19 @@ $(function() {
   })
 
   // Reviews-carousel_
+
+
+  // Accordion
+
+  $('.faq-accordion').accordion({
+    heightStyle: "content"
+  })
+
+
+  $('.faq-toggle').on('click', '.faq-button:not(.faq-toggle-active)', function() {
+    $(this)
+      .addClass('faq-toggle-active').siblings().removeClass('faq-toggle-active')
+      .closest('div.faq').find('div.faq-accordion').removeClass('faq-accordion-active').eq($(this).index()).addClass('faq-accordion-active');
+  });
+  // Accordion_
 });
