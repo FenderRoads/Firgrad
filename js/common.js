@@ -20,7 +20,7 @@ $(function() {
   // Carousel-1
 
   $('.carousel-1').owlCarousel({
-    loop: true,
+    loop: false,
     nav: true,
     margin: 0,
     responsive: {
@@ -28,14 +28,32 @@ $(function() {
         items: 1
       }
     }
+    // onChange: function counter(event) {
+    //   let items     = event.item.count;     
+    //   let item     = event.item.index;
+  
+    //   if (window.matchMedia('(max-width: 780px)').matches) {
+    //     $(".owl-carousel").trigger('remove.owl.carousel', [0]).trigger('refresh.owl.carousel');
+    //     console.log(1);
+    //   } else {
+    //     if (item < 6) {
+    //       $(".owl-carousel").trigger('add.owl.carousel', ['<div class="item bgvideo-item"><div class="background-video"><div class="overlay"></div><video loop muted autoplay class="fullscreen-bg__video"><source src="/app/video/image landing1.mp4" type="video/mp4"></video></div></div>']).trigger('refresh.owl.carousel');
+    //     console.log(0); 
+    //     } 
+    //   }
+    // }
   })
 
+  // let x = window.matchMedia('(max-width: 780px)')
+  // counter()
+  // x.addListener(counter)
+  
   // Carousel-1_
 
   // Banner
 
-  const items = document.querySelectorAll('.banner-item');
-  const costumerItems = document.querySelectorAll('.bannercustomer-item');
+  const items = document.querySelectorAll('.wideanim-item');
+  const costumerItems = document.querySelectorAll('.wideanimcustomer-item');
 
 
   [...items].map(randomFactory(1.5, 5)(scale))
@@ -81,6 +99,7 @@ $(function() {
   // Banner_
 
   // Select
+
   $('.js-tour-select').select2({
     minimumResultsForSearch: Infinity,
     width: 'style'
@@ -94,19 +113,32 @@ $(function() {
     margin: 0,
     dots: false,
     items: 3,
-    nav: true // Nav включен в стилях
+    nav: true, // Nav включен в стилях
+    responsive: {
+      780:{
+        items: 1
+      },
+      0:{
+        items: 1
+      }
+    }
   })
 
   // Ourstock carousel_
 
   // Megaslider
 
-  $('.megaslider-js').owlCarousel({
+  var $owl = $('.megaslider-js');
+
+  $owl.children().each( function( index ) {
+    $(this).attr( 'data-position', index ); // NB: .attr() instead of .data()
+  });
+
+  $owl.owlCarousel({
     items: 1,
     dots: true,
     nav: true,
     margin: 40,
-    loop: true,
     mouseDrag: false,
     touchDrag: false,
     smartSpeed: 700,
@@ -114,14 +146,26 @@ $(function() {
 
   });
 
+  $(document).on('click', '.owl-item>div', function() {
+    $owl.trigger('to.owl.carousel', $(this).data( 'position' ) );
+  });
+
+  
+
+  $('.toppannel-buttons').on('click', '.toppannel-button:not(.toppannel-button-active)', function() {
+    $(this)
+      .addClass('toppannel-button-active').siblings().removeClass('toppannel-button-active')
+      .closest('div.megaslider').find('div.megaslider-js').removeClass('megaslider-js-active').eq($(this).index()).addClass('megaslider-js-active');
+  });
+
+  $('.toppannel-buttons').on('click', '.toppannel-button:not(.toppannel-button-active)', function() {
+    $(this)
+      .addClass('toppannel-button-active').siblings().removeClass('toppannel-button-active')
+      .closest('div.megaslider-toppannel').find('div.toppannel-address').removeClass('toppannel-address-active').eq($(this).index()).addClass('toppannel-address-active');
+  });
+
+
   // Megaslider_
-
-  // Summer-slider
-
-
-
-  // Summer-slider_
-
 
   // Maingallery
 
@@ -131,7 +175,9 @@ $(function() {
     nav: true,
     margin: 100,
     smartSpeed: 400
-  })
+  });
+
+  $(".js-maingallery").trigger("to.owl.carousel", [10, 7])
 
   // Maingallery_
 
@@ -144,4 +190,19 @@ $(function() {
   })
 
   // Reviews-carousel_
+
+
+  // Accordion
+
+  $('.faq-accordion').accordion({
+    heightStyle: "content"
+  })
+
+
+  $('.faq-toggle').on('click', '.faq-button:not(.faq-toggle-active)', function() {
+    $(this)
+      .addClass('faq-toggle-active').siblings().removeClass('faq-toggle-active')
+      .closest('div.faq').find('div.faq-accordion').removeClass('faq-accordion-active').eq($(this).index()).addClass('faq-accordion-active');
+  });
+  // Accordion_
 });

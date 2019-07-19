@@ -52,10 +52,9 @@
 
   .section-reviews
     .reviews-block
-      padding: 24px
+      padding: 18px
       background: #fff
       box-sizing: border-box
-      border: 1px solid red
       width: 500px
       height: 310px
       margin: 0 auto
@@ -67,9 +66,12 @@
       min-width: 300px
       margin-left: 56px
       transform: skew(-16deg)
+      min-height: 130px
     .reviews-topline__img
       border-radius: 10em
       box-shadow: 0px 0px 80px rgba(#000, .1)
+      width: 85px
+      height: 85px
       img
         display: block
         width: 85px
@@ -81,26 +83,27 @@
       +font("Solomon-Sans-Normal", 400, 14px)
       color: #757575
     .topline__data-contacts
-      display: flex
       position: relative
-      margin-top: 10px
+      margin-top: 0px
       img
-        width: 23px
-        height: 23px
+        width: 18px
+        height: 18px
         position: absolute
-        left: 2px
-        top: 0
-      span
+        left: 0px
+        top: 4px
+      a
         +font("Solomon-Sans-Normal", 400, 14px)
         color: #757575
-        display: inline-block
-        margin-left: 30px
+        display: block
+        margin-left: 24px
+
     .reviews-bottomline__text
       +font("Solomon-Sans-Normal", 400, 13px)
       color: #000
       width: 90%
       margin: 0 auto
-      line-height: 1.3
+      line-height: 1.2
+      margin-top: 6px
   
   .section-gallery
     .gallery-block
@@ -133,11 +136,173 @@
           span
             font-size: 15px
 
+  .section-eventlist
+    .eventlist
+      max-width: 1300px
+    .eventlist-block
+      width: 330px
+      height: 260px
+    .eventlist-block__content
+      width: 315px
+      left: 9px
+      bottom: 10px
+    .eventlist-block__title
+      font-size: 17px
+    .eventlist-block__date
+      font-size: 13px
+
+  .section-newsitem
+    .newsitem-leftside__text
+      font-size: 15px
+      line-height: 1.5
+    .newsitem-rightside__img
+      width: 500px
+      height: 340px
+    .newsitem-leftside__title1
+      font-size: 24px
+    .newsitem-leftside__title2
+      font-size: 22px
+    .newsitem-leftside__title3
+      font-size: 20px
+
+  .section-wideanim
+    .fullscreen-bg__video 
+      width: auto
+    .background-video
+      padding-top: 120%
+
+  .section-header
+    .menu
+      li
+        padding: 20px 12px
+    .to-book-button
+      padding: 11px 15px
+    .consultation-button
+      padding: 20px 15px
+    .telephone
+      span
+        padding: 21px 85px 18px 60px
 
 
 @media only screen and (max-width: 1200px)
   .section-header
 
 
-@media only screen and (max-width: 768px)
+@media only screen and (max-width: 780px)
   .section-header
+    .header-topline
+      display: none
+    .header-mobile
+      display: flex
+      justify-content: space-between
+      min-width: 320px
+      margin: 0 auto
+    .header-mobile-logo
+      display: flex
+      align-items: center
+      padding-left: 20px
+      padding-right: 10px
+      img
+        display: block
+        width: 20px
+    .header-mobile-leftside
+      display: flex
+      align-items: center
+    .header-mobile-rightside
+      display: flex
+    .to-book-button
+      padding: 14px 0px
+      border-left: 1px solid #c0c5f5
+      span
+        margin: 0 auto
+        width: 100px
+        margin-left: 7px
+        font-size: 12px
+    .consultation-button
+      padding: 14px 0px
+      span
+        margin: 0 auto
+        width: 100px
+        font-size: 12px
+    .header-mobile-telephone
+      display: flex
+      align-items: center
+      padding: 0px 8px
+      img
+        display: block
+        width: 30px
+    .consultation-button
+      white-space: normal
+    .to-book-button
+      
+    .header-mobile-menu
+      position: relative
+      width: 35px
+      height: 27px
+      margin-top: 20px
+      cursor: pointer
+      span
+        width: 35px
+        height: 2px
+        background: $blue
+        position: absolute
+      span:first-child
+        top: 0px
+        left: 0px
+      span:last-child
+        top: 16px
+        left: 0px
+        &:after, &:before
+          content: ''
+          width: 35px
+          height: 2px
+          background: $blue
+          position: absolute
+        &:after
+          top: -8px
+        &:before
+          top: 8px
+  
+  .section-wideanim
+    .bgvideo-item
+
+  .section-blonde
+    .blonde-leftside
+      display: none
+    .blonde-rightside
+      padding-bottom: 50px
+    .rightside-four-rounds
+      flex-wrap: wrap
+      width: 290px
+    .rightside-sports-club
+      text-align: center
+      img
+        width: 300px
+        height: 67px
+    .rightside-text
+      font-size: 16px
+    .rightside-button
+      width: 200px
+      line-height: 1.3
+
+  .section-megaslider
+    .toppannel-buttons
+      flex-direction: column
+      align-items: center
+
+  .section-contacts
+    .contacts
+      flex-wrap: wrap
+
+  .section-reviews
+    .reviews-title
+      font-size: 21px
+      width: 300px
+
+  .section-directionlist
+    .directionlist-rightside
+      display: none
+    .directionlist-leftside
+      width: 100%
+    .directionlist-button-absolute
+      display: none
