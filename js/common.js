@@ -116,7 +116,7 @@ $(function() {
     nav: true, // Nav включен в стилях
     responsive: {
       780:{
-        items: 1
+        items: 3
       },
       0:{
         items: 1
