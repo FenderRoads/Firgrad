@@ -20,7 +20,7 @@ $(function() {
   // Carousel-1
 
   $('.carousel-1').owlCarousel({
-    loop: true,
+    loop: false,
     nav: true,
     margin: 0,
     responsive: {
@@ -28,8 +28,26 @@ $(function() {
         items: 1
       }
     }
+    // onChange: function counter(event) {
+    //   let items     = event.item.count;     
+    //   let item     = event.item.index;
+  
+    //   if (window.matchMedia('(max-width: 780px)').matches) {
+    //     $(".owl-carousel").trigger('remove.owl.carousel', [0]).trigger('refresh.owl.carousel');
+    //     console.log(1);
+    //   } else {
+    //     if (item < 6) {
+    //       $(".owl-carousel").trigger('add.owl.carousel', ['<div class="item bgvideo-item"><div class="background-video"><div class="overlay"></div><video loop muted autoplay class="fullscreen-bg__video"><source src="/app/video/image landing1.mp4" type="video/mp4"></video></div></div>']).trigger('refresh.owl.carousel');
+    //     console.log(0); 
+    //     } 
+    //   }
+    // }
   })
 
+  // let x = window.matchMedia('(max-width: 780px)')
+  // counter()
+  // x.addListener(counter)
+  
   // Carousel-1_
 
   // Banner
@@ -95,7 +113,15 @@ $(function() {
     margin: 0,
     dots: false,
     items: 3,
-    nav: true // Nav включен в стилях
+    nav: true, // Nav включен в стилях
+    responsive: {
+      780:{
+        items: 1
+      },
+      0:{
+        items: 1
+      }
+    }
   })
 
   // Ourstock carousel_
