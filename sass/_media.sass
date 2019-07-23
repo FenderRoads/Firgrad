@@ -6,8 +6,17 @@
       width: 330px
       margin-left: auto
       margin-right: auto
-      &:hover .img-event
+      &:hover .img-event1
         background: rgba($accent, .7)
+        transition: all .5s ease
+      &:hover .img-event2
+        background: rgba(#1a1e51, .7)
+        transition: all .5s ease
+      &:hover .img-event3
+        background: rgba(#ff9516, .7)
+        transition: all .5s ease
+      &:hover .ourstock-content-wrapper
+        background: transparent
         transition: all .5s ease
     .ourstock-img
       position: relative
@@ -22,6 +31,8 @@
         width: 490px
         height: 375px
         transform: skew(18deg)
+    .ourstock-content
+      height: 82px
     .ourstock-content1
       background: rgba($accent, .8)
       color: #000
@@ -49,6 +60,7 @@
       width: 164px
     .ourstock-content__post-title
       font-size: 14px
+      bottom: -49px
 
   .section-reviews
     .reviews-block
@@ -183,6 +195,54 @@
       span
         padding: 21px 85px 18px 60px
 
+  .section-news
+    .news-block
+      padding: 0px 0px 0px 0px
+      width: 48%
+    .content-text
+      line-height: 1.2
+    .content-title
+      line-height: 1.2
+      font-size: 15px
+    .content-date
+      font-size: 12px
+    .content-more
+      span
+        font-size: 14px
+        &:hover
+          font-size: 15px
+    .news-block__content
+      max-width: 300px
+
+  .section-reasons
+    .reasons-block
+      width: 235px
+    .reasons-block__title
+      font-size: 20px
+    .wrapper-number
+      left: 64px
+
+  .section-ourtrainers
+    .ourtrainers
+      max-width: 1200px
+    .ourtrainers-block
+      position: relative
+      width: 180px
+      height: 235px
+      margin-top: 80px
+    .ourtrainers-block__img
+      width: 180px
+      height: 235px
+      img
+        width: 180px
+        height: 235px
+
+    .ourtrainers-block__title
+      width: 160px
+      font-size: 14px
+      padding: 7px 0px
+
+
 
 @media only screen and (max-width: 1200px)
   .section-header
@@ -200,7 +260,7 @@
     .header-mobile-logo
       display: flex
       align-items: center
-      padding-left: 20px
+      padding-left: 6px
       padding-right: 10px
       img
         display: block
@@ -210,6 +270,8 @@
       align-items: center
     .header-mobile-rightside
       display: flex
+    .dn-sports-club
+      display: none
     .to-book-button
       padding: 14px 0px
       border-left: 1px solid #c0c5f5
@@ -227,7 +289,7 @@
     .header-mobile-telephone
       display: flex
       align-items: center
-      padding: 0px 8px
+      padding: 0px 6px
       img
         display: block
         width: 30px
@@ -235,12 +297,13 @@
       white-space: normal
     .to-book-button
       
-    .header-mobile-menu
+    .header-mobile-hamburger
       position: relative
       width: 35px
       height: 27px
       margin-top: 20px
       cursor: pointer
+      padding-right: 10px
       span
         width: 35px
         height: 2px
@@ -262,9 +325,72 @@
           top: -8px
         &:before
           top: 8px
+
+    
+    .header-mobile-menu
+      height: 729px
+      max-height: 729px
+      width: 100%
+      overflow-y: scroll
+      position: absolute
+      z-index: 9999
+      display: none
+      nav
+      ul
+        li
+          height: 55px
+          box-sizing: border-box
+          text-transform: uppercase
+          font-weight: 700
+          text-align: center
+          padding: 14px 0px
+          border: 1px solid rgba(#e9efff, .5)
+          background: #fff
+          a
+            color: $accent
+
+        .li-to-book-button
+          background: #e9efff
+          color: $blue
+          line-height: 1.2
+          padding: 8px 0px
+          a
+            color: $blue
+        .li-consultation-button
+          background: $accent
+          a
+            color: #fff
+        .li-telephone
+          position: relative
+          a
+            color: $blue
+          img
+            position: absolute
+            left: 0
+            top: 0
+    .header-mobile-location
+    .location-blocks
+
   
   .section-wideanim
     .bgvideo-item
+    .owl-dots
+      margin-left: -45px
+    .owl-nav
+      button.owl-prev
+        width: 45px
+        height: 45px
+        font-size: 21px
+        i
+          top: 13px
+          left: 14px
+      button.owl-next
+        width: 45px
+        height: 45px
+        font-size: 21px
+        i
+          top: 13px
+          left: 18px
 
   .section-blonde
     .blonde-leftside
@@ -274,6 +400,38 @@
     .rightside-four-rounds
       flex-wrap: wrap
       width: 290px
+    .four-rounds__item
+      .info-hover
+        width: 290px
+        padding: 23px 4px
+        top: -215px
+        left: -245px
+        font-size: 13px
+        transform: skew(-5deg)
+        span
+          transform: skew(5deg)
+        &:after
+          transform: skew(5deg)
+        &:after
+          right: 0
+
+      &:first-child
+        .info-hover
+          left: -83px
+          &:after
+            left: 94px
+            right: auto
+      &:nth-child(3)
+        margin-top: 45px
+        .info-hover
+          left: -83px
+          &:after
+            left: 94px
+            right: auto
+      &:nth-child(4)
+        margin-top: 45px
+        .info-hover
+          width: 290px
     .rightside-sports-club
       text-align: center
       img
@@ -289,15 +447,98 @@
     .toppannel-buttons
       flex-direction: column
       align-items: center
+      font-size: 21px
+      width: auto
+    .toppannel-button
+      width: 250px
+    .toppannel-button-active
+      font-size: 21px
+
+    .toppannel-address
+      width: 290px
+    .megaslider-js
+      width: 100%
+    .megaslider-img
+      transform: skew(0deg)
+      box-shadow: none
+    .megaslider-img-wrapper
+      transform: skew(0deg)
+    .owl-item.active
+      .megaslider-img
+        box-shadow: none
+    .megaslider-more-wrapper
+      padding-top: 30px
+      .megaslider-more
+        width: 220px
+        font-size: 21px
+        line-height: 1.3
+        padding: 10px 0px
+    .owl-dots
+      position: absolute
+      bottom: 0
+      left: 50%
+      margin-left: -40px
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      .owl-dot
+        span
+          background: #fff
+          width: 11px
+          height: 11px
+          margin: 5px 2px
+        &:hover
+          span
+            background: #fff
+      .owl-dot.active
+        span
+          background: #fff
+          transform: scale(1.3)
+          transfition: scale .25s ease
+    .owl-nav
+      top: auto
+      bottom: -15px
+      width: 100vw
+      button.owl-prev
+        width: 45px
+        height: 45px
+        font-size: 21px
+        i
+          top: 13px
+          left: 14px
+      button.owl-next
+        width: 45px
+        height: 45px
+        font-size: 21px
+        i
+          top: 13px
+          left: 18px
+
 
   .section-contacts
     .contacts
       flex-wrap: wrap
+      flex-direction: column
+    .contacts-leftside
+      margin: 0 auto
+    .contacts-leftside__blocks
+      flex-direction: column
+      flex-wrap: wrap
+      justify-content: space-evenly
+    .contacts-leftside__block
+      margin: 8px 15px
+    .contacts-rightside
+      margin: 0 auto
+    .contacts-rightside__social
+      justify-content: center
+    .contacts-rightside
+      padding-bottom: 40px
 
   .section-reviews
     .reviews-title
-      font-size: 21px
-      width: 300px
+      font-size: 25px
+      width: 270px
+      padding: 0
 
   .section-directionlist
     .directionlist-rightside
@@ -306,3 +547,454 @@
       width: 100%
     .directionlist-button-absolute
       display: none
+
+  .section-ourstock
+    .owl-stage-outer
+      transform: skew(0deg)
+    .ourstock-img
+      img
+        width: 520px
+        margin-left: -306px
+        transform: skew(0deg)
+    .nohover
+      pointer-events: none
+    .img-event
+      width: 290px
+      margin-left: -145px
+    .ourstock-wrapper
+      width: 290px
+      &:hover .img-event1
+        background: rgba($accent, 0)
+        transition: all .5s ease
+      &:hover .img-event2
+        background: rgba(#1a1e51, 0)
+        transition: all .5s ease
+      &:hover .img-event3
+        background: rgba(#ff9516, 0)
+        transition: all .5s ease
+      &:hover .ourstock-content-wrapper
+        background: transparent
+        transition: all .5s ease
+    .ourstock-content__title
+      transform: skew(0deg)
+      margin-left: 10px
+    .ourstock-content__post-title
+      transform: skew(0deg)
+    .ourstock-content-wrapper
+      height: 120px
+      bottom: 0
+      width: 290px
+      margin-left: -145px
+    .ourstock-content__post-title
+      opacity: 1
+      left: 10px
+      line-height: 1.2
+      bottom: -32px
+      height: 40px
+      padding-right: 10px
+
+    .ourstock-title
+      width: 270px
+      text-align: center
+      font-size: 25px
+    .ourstock-carousel
+      .owl-nav
+        top: auto
+        button.owl-prev
+          width: 45px
+          height: 45px
+          font-size: 21px
+          i
+            top: 12px
+            left: 14px
+        button.owl-next
+          width: 45px
+          height: 45px
+          font-size: 21px
+          i
+            top: 12px
+            left: 17px
+    .owl-dots
+      position: absolute
+      bottom: 15px
+      left: 50%
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      width: 300px
+      margin-left: -150px
+      pointer-events: none
+      .owl-dot
+        pointer-events: auto
+        span
+          background: $blue
+          width: 11px
+          height: 11px
+          margin: 5px 3px
+        &:hover
+          span
+            background: $blue
+      .owl-dot.active
+        span
+          background: $blue
+          transform: scale(1.3)
+          transfition: scale .25s ease
+
+  .section-maingallery
+    .owl-nav
+      bottom: -65px
+      width: 100vw
+      top: auto
+      color: $blue
+      button.owl-prev
+        background: transparent
+        border: 1px solid $blue
+        line-height: 1
+        &:hover
+          background: transparent
+          color: $blue
+        i
+          top: 13px
+      button.owl-next
+        background: transparent
+        border: 1px solid $blue
+        line-height: 1
+        &:hover
+          background: transparent
+          color: $blue
+        i
+          top: 13px
+    .maingallery-title
+      width: 270px
+      font-size: 25px
+    .js-maingallery
+      width: 100%
+    .owl-dots
+      margin-left: -112px
+      max-width: 224px
+      width: 70%
+      display: flex
+      justify-content: center
+      flex-wrap: wrap
+      line-height: 1
+      .owl-dot
+        span
+          background: $blue
+          width: 9px
+          height: 9px
+          margin: 5px 2px
+        &:hover
+          span
+            background: $blue
+      .owl-dot.active
+        span
+          background: #1a1e51
+          transform: scale(1.4)
+          transfition: scale .25s ease
+  
+  .section-questions
+    .questions-title
+      width: 290px
+      font-size: 19px
+
+  .section-reviews
+    overflow: hidden
+    .owl-stage-outer
+      transform: skew(0deg)
+      padding: 70px 0px
+    .reviews
+      background: url('../img/@2x/bg-reviews-mobile.jpg') no-repeat center
+    .reviews-topline
+      flex-direction: column
+      align-items: center
+      justify-content: flex-start
+      min-width: auto
+      width: auto
+      transform: skew(0deg)
+      margin-left: 0
+      height: 201px
+    .reviews-topline__data
+      display: flex
+      flex-direction: column
+      align-items: center
+      font-weight: 700
+      .topline__data-name
+      .topline__data-status
+        font-weight: 700
+        color: #000
+      .topline__data-contacts
+        font-weight: 700
+      .data-contact
+        a
+          color: #000000
+          font-weight: 700
+    .reviews-bottomline
+      transform: skew(0deg)
+    .reviews-bottomline__text
+      width: 95%
+      span
+        font-size: 16px
+    .reviews-block
+      box-shadow: none
+      padding: 0
+      width: 300px
+      height: auto
+      background: transparent
+    .owl-nav
+      top: auto
+      button.owl-next
+        margin-right: 0
+      button.owl-prev
+        margin-left: 0
+    .owl-dots
+      position: absolute
+      bottom: 17px
+      left: 50%
+      margin-left: -94px
+      display: flex
+      justify-content: center
+      flex-wrap: wrap
+      width: 70%
+      max-width: 200px  
+      .owl-dot
+        span
+          background: $blue
+          width: 11px
+          height: 11px
+          margin: 5px 3px
+        &:hover
+          span
+            background: $blue
+      .owl-dot.active
+        span
+          background: $blue
+          transform: scale(1.3)
+          transfition: scale .25s ease
+
+
+  .section-footer
+    font-size: 18px
+    text-transform: uppercase
+    font-style: italic
+    .footer-links
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      padding-bottom: 50px
+      a
+        margin: 4px 0px
+    .footer-copyright
+      color: $accent
+      font-weight: 700
+
+  .section-wideanim
+    .wideanim-rightside
+      left: 50%
+      margin-left: -150px
+      width: 300px
+      margin-top: -110px
+    .wideanim-rightside__title
+      text-align: center
+      width: 280px
+      margin: 0 auto
+      height: 152px
+      padding-bottom: 35px
+      .h1
+        font-size: 31px
+        left: 0
+        top: 0
+    .wideanim-rightside__big-logo
+      left: 88px
+      top: -150px
+      img
+        width: 120px
+        height: 159px
+
+    .wideanim-rightside__post-title
+      font-size: 17px
+      width: 290px
+      height: 80px
+      text-align: center
+      line-height: 1.2
+      margin: 0 auto
+    .wideanim-rightside__button
+      width: 210px
+      font-size: 18px
+      margin: 20px auto 0px auto
+    .owl-nav
+      button.owl-prev
+        margin-left: 2px
+      button.owl-next
+        margin-right: 2px
+
+    .stockitem-content__title
+      width: 280px
+      margin: 0 auto
+      height: 152px
+      padding-bottom: 35px
+      .h2
+        font-size: 32px
+        text-align: center
+    .stockitem
+      min-height: 600px
+    .carousel-1
+      min-height: 600px
+    .wideanim-leftside
+      min-height: 600px
+    .stockitem-biglogo
+      width: 120px
+      height: 159px
+      margin-top: -262px
+      left: 50%
+      margin-left: -58px
+      img
+        width: 120px
+        height: 159px
+    .stockitem-content__post-title
+      line-height: 1.2
+      width: 290px
+      height: 80px
+      text-align: center
+      font-size: 17px
+      margin: 0 auto
+    .stockitem-content-1
+      width: 300px
+      margin-top: -90px
+      right: 50%
+      margin-right: -151px  
+    .stockitem-content__button
+      font-size: 18px
+      margin: 20px auto 0px auto
+      width: 230px
+    .wideanim-leftside
+      width: 105%
+    .stockitem-content
+      width: 300px
+      margin-top: -90px
+      left: 50%
+      margin-left: -148px
+
+  .section-tour
+    .select2-container
+      width: 95px
+      font-size: 28px
+    .select2-container--default .select2-selection--single .select2-selection__arrow b
+      display: none
+    .select2-container .select2-selection--single .select2-selection__rendered
+      white-space: normal
+      line-height: 29px
+
+    .select2-selection--single
+      height: 65px
+      display: flex
+      align-items: center
+    .title-page
+      bottom: 4px 
+      font-size: 18px
+      width: 270px
+      left: 50%
+      margin-left: -135px
+
+
+  .section-data
+    .data-blocks
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      padding-top: 20px
+    .data-block
+      width: 100%
+      max-width: 700px
+      min-width: 300px
+      margin-top: 40px
+    .data-block-line1
+      display: none
+    .data-block-line2
+      display: none
+    .data-block__address
+      font-size: 18px
+    .data-block__title
+      width: 180px
+      font-size: 18px
+    .data-block__tel
+      font-size: 20px
+
+  .section-event
+    .event-topline
+      display: block
+    .event-topline__return
+      width: 255px
+      text-align: center
+      margin: 0 auto
+      font-size: 16px
+    .event-topline__date
+      text-align: center
+      padding-top: 20px
+    .gallery-images-wrapper
+      transform: skew(0deg)
+      width: 300px
+      height: 200px
+      & > div
+        transform: skew(0deg)
+
+  .section-news
+    .news-blocks
+      display: flex
+      flex-direction: column
+      align-items: center
+    .news-block
+      flex-direction: column-reverse
+      padding-top: 15px
+      width: 100%
+      min-width: 300px
+      max-width: 150px
+    .content-date
+      font-size: 13px
+    .content-title
+      font-size: 16px
+    .content-text
+      font-weight: 700
+
+
+  .section-wideanimcustomer
+    .wideanimcustomer-rightside
+      left: 0
+      width: 100%
+      max-width: 700px
+      min-width: 300px
+    .wideanimcustomer-rightside__title
+      font-size: 40px
+    .wideanimcustomer-rightside__post-title
+      font-size: 17px
+
+  .section-conditions
+    .conditions-post-title
+      width: 100%
+      min-width: 300px
+      max-width: 700px
+      line-height: 1.3
+    .conditions-title
+      font-size: 23px
+      width: 100%
+      max-width: 700px
+      min-width: 300px
+    .conditions-block__title
+      display: none
+    .conditions-block__img
+      .cond-round
+        width: 125px
+        height: 125px
+      .cond-info
+        width: 35px
+        height: 35px
+        right: 15px
+    .conditions-block
+      width: 50%
+
+    
+
+
+    
+    
+    
+    
