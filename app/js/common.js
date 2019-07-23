@@ -1,4 +1,10 @@
 $(function() {
+  // Wowjs
+
+  new WOW().init()
+
+  //Wowjs_
+
   // Button up
 
 
@@ -15,14 +21,25 @@ $(function() {
 
   // Button up_
 
+  // Eventblock fade
+    // let $target = $('.eventlist-block');
+    // let hold = 500;
 
+    // $.each($target,function(i,t){
+    //     var $this = $(t);
+    //     setTimeout(function(){ $this.fadeIn('normal'); },i*hold);
+    // });
+
+
+  // Eventblock fade_
 
   // Carousel-1
 
   $('.carousel-1').owlCarousel({
-    loop: false,
+    loop: true,
     nav: true,
     margin: 0,
+    smartSpeed: 1000,
     responsive: {
       0:{
         items: 1
@@ -105,20 +122,28 @@ $(function() {
     width: 'style'
   })
 
+  $('.js-adress-select').select2({
+    minimumResultsForSearch: Infinity,
+    width: 'style'
+  })
+
+  $('.select2-container').append('<img src="img/@2x/logo-mobile-white.svg" alt="" class="logo-white">')
   // Select_
 
   // Ourstock carousel
 
   $('.ourstock-carousel').owlCarousel({
+    loop: true,
     margin: 0,
-    dots: false,
     items: 3,
     nav: true, // Nav включен в стилях
     responsive: {
       780:{
+        dots: false,
         items: 3
       },
       0:{
+        dots: true,
         items: 1
       }
     }
@@ -135,14 +160,21 @@ $(function() {
   });
 
   $owl.owlCarousel({
+    loop: true,
     items: 1,
-    dots: true,
     nav: true,
     margin: 40,
     mouseDrag: false,
     touchDrag: false,
-    smartSpeed: 700,
-    dots: false
+    smartSpeed: 500,
+    responsive: {
+      0: {
+        dots: true
+      },
+      780: {
+        dots: false
+      }
+    }
 
   });
 
@@ -170,6 +202,7 @@ $(function() {
   // Maingallery
 
   $('.js-maingallery').owlCarousel({
+    loop: true,
     items: 1,
     dots: true,
     nav: true,
@@ -186,7 +219,17 @@ $(function() {
 
   $('.reviews-carousel').owlCarousel({
     loop: true,
-    items: 2
+    nav: true,
+    responsive: {
+      780: {
+        items: 2,
+        dots: false
+      },
+      0: {
+        items: 1,
+        dots: true
+      }
+    }
   })
 
   // Reviews-carousel_

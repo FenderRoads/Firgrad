@@ -52,6 +52,7 @@ gulp.task('scripts', function() {
 		'app/libs/jquery migrate/jquery-migrate.js',
 		'app/libs/parallax.js/parallax.min.js',
 		'app/libs/jquery-ui-1.12.1.custom/jquery-ui.min.js',
+		'app/libs/wowjs/wow.min.js',
 		'app/js/common.js', // Always at the end
 		])
 	.pipe(concat('scripts.min.js'))

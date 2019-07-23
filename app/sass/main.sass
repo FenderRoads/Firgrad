@@ -28,6 +28,8 @@
 
 a
 	text-decoration: none
+	&:visited, &:active
+		color: inherit
 
 .h1, .h2, .h3, .h4, .h5, .h6
 	text-transform: uppercase
@@ -202,6 +204,17 @@ b, strong
 		justify-content: flex-end
 
 
+	.header-mobile-menu
+		display: none
+
+
+
+
+
+
+
+
+
 // Header_
 
 // Banner
@@ -221,7 +234,7 @@ b, strong
 		top: 50%
 		margin-top: -266px
 		left: 270px
-		z-index: 2000
+		z-index: 3000
 	.wideanim-rightside__big-logo
 		position: absolute
 		top: 30px
@@ -250,7 +263,7 @@ b, strong
 		display: block
 		+font("NeoSansPro-BoldItalic", 700, 23px)
 		color: $blue
-		background: #f7941d
+		background: $orange
 		transform: skew(-16deg)
 		width: 240px
 		text-align: center
@@ -347,7 +360,6 @@ b, strong
 	.owl-item
 		height: 100%
 	.item
-		min-height: 500px
 		position: relative
 	.wideanim-leftside
 		overflow: hidden
@@ -364,7 +376,7 @@ b, strong
 		right: -25px
 		bottom: 0
 		pointer-events: none
-		z-index: 3000
+		z-index: 2000
 		height: 100%
 		width: 100%
 		.leftside__bigoverlay
@@ -550,6 +562,7 @@ b, strong
 
 	.stockitem-bg-1
 		background: url('../img/@2x/bg-stock2.jpg') no-repeat center
+		background-size: cover
 	.stockitem-content-1
 		position: absolute
 		right: 0
@@ -596,10 +609,11 @@ b, strong
 		color: #ffffff
 		+font("Solomon-Sans-Book", 300, 17px)
 		text-transform: uppercase
+		line-height: 1.4	
 	.wideanimcustomer-rightside__button
 		+font("NeoSansPro-BoldItalic", 700, 23px)
 		color: $blue
-		background: #f7941d
+		background: $orange
 		transform: skew(-16deg)
 		width: 240px
 		text-align: center
@@ -748,7 +762,7 @@ b, strong
 	.conditions-title
 		text-align: center
 		font-size: 30px
-		color: #f7941d
+		color: $orange
 		text-transform: uppercase
 		padding-top: 50px
 	.h2
@@ -782,6 +796,47 @@ b, strong
 			top: 0
 			right: 0
 			cursor: pointer
+	.conditions-block__info
+		position: absolute
+		top: 0
+		right: 0
+		cursor: pointer
+		width: 45px
+		height: 45px
+		img
+			width: 45px
+			height: 45px
+		&:hover .info-hover
+			opacity: 1
+			transition: opacity .5s ease
+	.info-hover
+		transform: skew(-16deg)
+		background: $accent
+		padding: 34px 20px
+		box-sizing: border-box
+		height: 201px
+		width: 465px
+		line-height: 1.3
+		color: #ffffff
+		font-weight: 400
+		position: absolute
+		top: -225px
+		left: -356px
+		pointer-events: none
+		opacity: 0
+		+font("Solomon-Sans-Normal", 400, 15px)
+		span
+			padding: 0px 15px
+			transform: skew(16deg)
+			display: inline-block
+		&:after
+			content: ''
+			transform: skew(16deg)
+			position: absolute
+			border: 17px solid transparent
+			border-top: 17px solid $accent
+			bottom: -31px
+			right: 36px
 	.conditions-block__title
 		color: #1e245e
 		+font("NeoSansPro-Italic", 500, 19px)
@@ -852,7 +907,7 @@ b, strong
 		+font('Solomon-Sans-Bold-Italic', 700, 19px)
 		color: #fff
 		width: 230px
-		background: #000
+		background: $blue
 		text-align: center
 		padding: 10px 0px
 		transform: skew(-16deg)
@@ -863,6 +918,10 @@ b, strong
 		span
 			display: inline-block
 			transform: skew(16deg)
+		&:hover
+			background: $orange
+			color: $blue
+			transition: all .5s ease
 
 // Questions_
 
@@ -899,6 +958,9 @@ b, strong
 		font-family: "NeoSansPro-Italic", sans-serif
 		text-transform: uppercase
 		margin-right: 30px
+		width: 140px
+		&:last-child
+			margin-right: 0
 	.leftside__block-title
 		font-size: 18px
 		text-decoration: underline
@@ -1014,7 +1076,8 @@ b, strong
 		align-self: flex-start
 		padding-top: 55px
 
-
+	.logo-white
+		display: none
 	.select2-container
 		+font("NeoSansPro-BoldItalic", 700, 20px)
 		transform: skew(-16deg)
@@ -1022,9 +1085,9 @@ b, strong
 		outline: none
 		width: 260px
 		color: #2f2a60
-		background: #f7941d
+		background: $orange
 	.select2-container--default .select2-selection--single
-		background: #f7941d
+		background: $orange
 		border: none
 	.select2-container .select2-selection--single .select2-selection__rendered
 		line-height: 44px
@@ -1042,9 +1105,9 @@ b, strong
 	.select2-results__options
 		background: #000
 	.select2-dropdown
-		background-color: #f7941d
+		background-color: $orange
 	.select2-dropdown--below
-		background-color: #f7941d
+		background-color: $orange
 
 	.title-page-wrapper
 		width: 100vw
@@ -1052,11 +1115,11 @@ b, strong
 		height: 60px
 	.title-page
 		position: absolute
-		bottom: 0
+		bottom: 0px
 		left: 0
 		width: 325px
 		background: $accent
-		padding: 8px 0px
+		padding: 8px 10px
 		text-align: center
 		text-transform: uppercase
 		color: #fff
@@ -1064,9 +1127,13 @@ b, strong
 		font-size: 23px
 		z-index: 1000
 		margin-left: 20%
+		box-sizing: border-box
+		display: table
 		span
 			transform: skew(16deg)
-			display: inline-block
+			display: table-cell
+			vertical-align: middle
+
 
 // Tour_
 
@@ -1100,7 +1167,7 @@ b, strong
 		margin: 0 auto
 		cursor: pointer
 		&:hover
-			background: #f7941d
+			background: $orange
 			color: #313563
 			transition: all .30s ease
 		span
@@ -1156,7 +1223,7 @@ b, strong
 		flex-wrap: wrap
 		justify-content: space-between
 		width: 95%
-		max-width: 1920px
+		max-width: 1500px
 		margin: 0 auto
 		padding-top: 75px
 	.news-block
@@ -1166,36 +1233,64 @@ b, strong
 		justify-content: space-between
 		padding: 6px
 		margin-bottom: 55px
+		&:hover .news-block__img:after
+			background: rgba(#000, .35)
+			transition: all .5s ease
+		&:hover .news-block__img img
+			transform: scale(1.5) rotate(10deg)
+			transition: all .5s ease
 	.news-block__content
 		padding: 10px
-		max-width: 600px
+		max-width: 360px
 	.content-date
 		text-align: right
-		+font("Solomon-Sans-Bold-Italic", 700, 14px)
+		+font("Solomon-Sans-Bold-Italic", 700, 13px)
 		text-decoration: underline
 		padding-bottom: 6px
+		color: $blue
 	.content-title
 		+font("Solomon-Sans-Black", 700, 16px)
-		line-height: 1.4
+		line-height: 1.3
 		width: 90%
+		color: $blue
 	.content-text
 		+font("Solomon-Sans-Book", 300, 13px)
-		line-height: 1.4
+		line-height: 1.3
 		width: 90%
 		max-width: 600px
 	.content-more
-		+font("Solomon-Sans-Bold-Italic", 700, 15px)
 		color: $accent
 		text-decoration: underline
-		cursor: pointer
 		padding-top: 10px
+		transition: all .5s ease
+		span
+			+font("Solomon-Sans-Bold-Italic", 700, 15px)
+			cursor: pointer
+			&:hover
+				font-size: 16px
+				transition: all .5s ease
+
 	.news-block__img
-		width: 270px
+		position: relative
+		max-width: 365px
 		height: 220px
 		align-self: center
+		overflow: hidden
+		transition: all .5s ease
 		img
 			width: 270px
 			height: 220px
+			transition: all .5s ease
+		&:after
+			content: ''
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			position: absolute
+			background: rgba(#000, .55)
+			transition: all .5s ease
+			
 
 // News_
 
@@ -1219,13 +1314,17 @@ b, strong
 		+font("NeoSansPro-BoldItalic", 700, 18px)
 		color: #1a1e51
 		text-transform: uppercase
-		background: #f7941d
+		background: $orange
 		transform: skew(-16deg)
 		padding: 6px 15px
 		display: block
 		span
 			display: inline-block
 			transform: skew(16deg)
+		&:hover
+			background: $blue
+			color: #fff
+			transition: all .5s ease
 	.newsitem-topline__date
 		+font("Solomon-Sans-SemiBold", 600, 20px)
 		color: #313563
@@ -1298,13 +1397,17 @@ b, strong
 		+font("NeoSansPro-BoldItalic", 700, 18px)
 		color: #1a1e51
 		text-transform: uppercase
-		background: #f7941d
+		background: $orange
 		transform: skew(-16deg)
 		padding: 6px 15px
 		display: block
 		span
 			transform: skew(16deg)
 			display: inline-block
+		&:hover
+			background: $blue
+			color: #fff
+			transition: all .5s ease
 	.event-topline__date
 		+font("Solomon-Sans-SemiBold", 600, 20px)
 		color: #313563
@@ -1342,7 +1445,7 @@ b, strong
 			transform: skew(16deg)
 			position: relative
 			width: 130%
-			left: -10%
+			left: -11%
 
 
 
@@ -1392,7 +1495,7 @@ b, strong
 			margin-top: 9px
 	.reserve-buttons-price__second
 		width: 50%
-		background: #f7941d
+		background: $orange
 		transform: skew(-16deg)
 		span
 			display: inline-block
@@ -1457,6 +1560,12 @@ b, strong
 		width: 100%
 		min-height: 210px
 		background: #131434
+	.stockpage-bg
+		background: #fff
+		box-shadow: 0px 0px 70px rgba(#000, .2) inset
+		min-height: 145px
+		.reserve-title
+			padding-top: 40px
 	.reserve-title
 		padding-top: 120px
 		width: 811px
@@ -1562,7 +1671,7 @@ b, strong
 			margin: auto
 			display: flex
 			justify-content: space-between
-			width: 100vw
+			width: 94vw
 			height: 60px
 			pointer-events: none
 			color: #25295a
@@ -1575,13 +1684,13 @@ b, strong
 				font-size: 23px
 				line-height: 1
 				background: transparent
-				width: 50px
-				height: 50px
+				width: 45px
+				height: 45px
 				outline: none
-				margin-left: 60px
+				margin-left: 0px
 				pointer-events: auto
 				&:hover
-					background: #transparent
+					background: transparent
 					color: #25295a
 				i
 					position: absolute
@@ -1599,7 +1708,7 @@ b, strong
 				width: 50px
 				height: 50px
 				outline: none
-				margin-right: 60px
+				margin-right: 0px
 				pointer-events: auto
 				&:hover
 					background: transparent
@@ -1660,6 +1769,7 @@ b, strong
 		margin-left: -218px
 	.ourstock-content
 		position: relative
+		height: 96px
 	.ourstock-content1
 		background: rgba($accent, .8)
 		color: #000
@@ -1680,9 +1790,10 @@ b, strong
 	.ourstock-content__post-title
 		transform: skew(18deg)
 		position: absolute
-		bottom: -18px
+		bottom: -50px
 		left: 34px
 		color: #fff
+		height: 60px
 		+font("NeoSansPro-Italic", 400, 16px)
 		text-transform: uppercase
 		opacity: 0
@@ -1785,7 +1896,7 @@ b, strong
 		margin: 0 auto
 		+font("NeoSansPro-BoldItalic", 400, 20px)
 		color: #202766
-		background: #f7941d
+		background: $orange
 		text-align: center
 		padding: 10px 0px
 		width: 420px
@@ -1794,6 +1905,10 @@ b, strong
 		span
 			display: inline-block
 			transform: skew(16deg)
+		&:hover
+			background: $blue
+			color: #fff
+			transition: all .5s ease
 
 
 
@@ -2084,7 +2199,7 @@ b, strong
 		+font("NeoSansPro-BoldItalic", 700, 17px)
 		color: $blue
 		transform: skew(-16deg)
-		background: #f7941d
+		background: $orange
 		width: 290px
 		padding: 6px 0px
 		text-align: center
@@ -2094,6 +2209,10 @@ b, strong
 		span
 			display: inline-block
 			transform: skew(16deg)
+		&:hover
+			background: $blue
+			color: #fff
+			transition: all .5s ease
 	.trainer-title
 		width: 420px
 		text-align: center
@@ -2170,7 +2289,7 @@ b, strong
 		position: relative
 	.trainer-ellipse
 			position: absolute
-			top: -5px
+			top: 0px
 			left: 0
 			bottom: 0
 			right: 0
@@ -2178,7 +2297,22 @@ b, strong
 			width: 280px
 			height: 280px
 	.trainer-img
+		margin: 0 auto
 		width: 270px
+		height: 270px
+		border-radius: 10em
+		overflow: hidden
+		display: flex
+		position: relative
+		img
+			width: 308px
+			height: 403px
+			position: absolute
+			left: 50%
+			top: 50%
+			margin-left: -170px
+			margin-top: -197px
+			
 
 
 	.toprow-progress
@@ -2239,17 +2373,15 @@ b, strong
 		margin: 0 auto
 	.bottomrow-contacts__item
 		margin-top: 15px
-		img
-			width: 24px
-			height: 24px
 	.trainer-entry-wrapper
 		padding-top: 30px
 	.trainer-entry
+		display: block
 		text-align: center
 		text-transform: uppercase
 		+font("NeoSansPro-BoldItalic", 700, 20px)
 		color: $blue
-		background: #f7941d
+		background: $orange
 		width: 400px
 		transform: skew(-16deg)
 		padding: 7px 0px
@@ -2257,6 +2389,10 @@ b, strong
 		span
 			display: inline-block
 			transform: skew(16deg)
+		&:hover
+			background: $blue
+			color: #fff
+			transition: all .5s ease
 
 
 
@@ -2269,10 +2405,10 @@ b, strong
 
 .section-maingallery
 	padding-bottom: 100px
+	overflow: hidden
 	.section-inner
 	.maingallery
 		position: relative
-		overflow: hidden
 	.js-maingallery
 		width: 75%
 		margin: 0 auto
@@ -2397,7 +2533,7 @@ b, strong
 	.reviews
 		background: url('../img/@2x/bg-reviews.png') no-repeat center
 		background-size: cover
-		padding: 105px 0px
+
 		position: relative
 	.reviews-title
 		text-transform: uppercase
@@ -2420,6 +2556,7 @@ b, strong
 		overflow: hidden
 		transform: skew(16deg)
 		position: static
+		padding: 105px 0px
 	.reviews-block
 		padding: 24px
 		background: #fff
@@ -2482,7 +2619,6 @@ b, strong
 		width: 80%
 		margin: 0 auto
 		line-height: 1.4
-
 	.owl-nav.disabled
 		display: block
 	.owl-nav
@@ -2567,7 +2703,7 @@ b, strong
 			display: inline-block
 			transform: skew(16deg)
 	.toppannel-button-active
-		background: #f7941d
+		background: $orange
 		+font("NeoSansPro-BoldItalic", 700, 27px)
 		color: $blue
 		transition: all .25s ease
@@ -2595,7 +2731,7 @@ b, strong
 		+font("NeoSansPro-BoldItalic", 400, 23px)
 		color: $blue
 		width: 400px
-		background: #f7941d
+		background: $orange
 		text-transform: uppercase
 		text-align: center
 		transform: skew(-16deg)
@@ -2604,10 +2740,24 @@ b, strong
 		span
 			display: inline-block
 			transform: skew(16deg)
+		&:hover
+			background: $blue
+			color: #fff
+			transition: all .5s ease
 	.megaslider-more-wrapper
 		padding-bottom: 50px
+	.item
 	.megaslider-img
+		overflow: hidden
+		position: relative
+		transform: skew(-5deg)
+		max-height: 800px
 	.megaslider-img-wrapper
+		max-height: 800px
+		overflow: hidden
+		width: calc(115%)
+		margin-left: calc(-5%)
+		transform: skew(5deg)	
 		img
 			display: block
 			user-select: none
@@ -2619,11 +2769,9 @@ b, strong
 			right: 0
 			top: 0
 			margin: auto
-			width: 95%
-			transform: skew(-5deg)
+			width: 100%
 			background: rgba($blue, .65)
 			transition: all .5s ease
-	.owl-item
 	.megaslider-js
 		width: 70%
 		margin: 0 auto
@@ -2650,6 +2798,10 @@ b, strong
 		.megaslider-img-wrapper:after 
 			background: transparent
 			box-shadow: 10px 10px 0px rgba(#fff, 1)
+			transition: all .5s ease
+		.megaslider-img
+			background: transparent
+			box-shadow: 10px 10px 0px rgba(#fff, 0.9)
 			transition: all .5s ease
 	.owl-nav
 		position: absolute
@@ -2732,12 +2884,16 @@ b, strong
 		transform: skew(-16deg)
 		text-align: center
 		width: 300px
-		background: #f7941d
+		background: $orange
 		padding: 7px 0px
 		text-transform: uppercase
 		span
 			display: inline-block
 			transform: skew(16deg)
+		&:hover
+			background: $blue
+			color: #fff
+			transition: all .5s ease
 	.directionlist-leftside
 		align-self: flex-start
 		width: 80%
@@ -2819,14 +2975,23 @@ b, strong
 		position: relative
 		box-shadow: 25px -18px 0px rgba(#202766, .15)
 		margin-top: 90px
+		transition: all .5s ease
+		&:hover .eventlist-block__img:after
+			background: rgba(#000, .35)
+			transition: all .5s ease
+		&:hover .eventlist-block__img img
+			transform: scale(1.5) rotate(10deg)
+			transition: all .5s ease
 	.eventlist-block__img
 		width: 130%
 		margin-left: -10%
 		position: relative
 		transform: skew(5deg)
+		transition: all .5s ease
 		img
 			display: block
 			width: 100%
+			transition: all .5s ease
 		&:after
 			content: ''
 			position: absolute
@@ -2835,6 +3000,7 @@ b, strong
 			right: 0
 			left: 0
 			background: rgba(#000, .55)
+			transition: all .5s ease
 
 	.eventlist-block__date
 		position: absolute
@@ -2856,10 +3022,17 @@ b, strong
 		color: #fff
 		text-align: center
 	.eventlist-block__more
-		+font("Solomon-Sans-Bold-Italic", 700, 14px)
 		color: $accent
 		text-decoration: underline
 		display: block
+		span
+			+font("Solomon-Sans-Bold-Italic", 700, 14px)
+			transition: all .5s ease
+			&:hover
+				font-size: 16px
+				transition: all .5s ease
+
+
 
 // Eventlist_
 
@@ -2935,9 +3108,9 @@ b, strong
 
 	.ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content
 		overflow: hidden
-		background: #f7941d
+		background: $orange
 	.ui-accordion-content-active
-		background: #f7941d
+		background: $orange
 
 	.ui-button, .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, html .ui-button.ui-state-disabled:active
 		border: none
@@ -2952,7 +3125,7 @@ b, strong
 		padding: 20px 60px
 		margin: 0
 	.ui-accordion-header.ui-corner-top.ui-state-default.ui-accordion-icons.ui-accordion-header-active.ui-state-active
-		background: #f7941d
+		background: $orange
 		border: none
 	.ui-accordion .ui-accordion-content
 		padding: 1em 75px
@@ -2988,4 +3161,204 @@ b, strong
 
 
 // FAQ_
+
+
+// Reasons
+
+.section-reasons
+	background: url('../img/@2x/bg-pixels.png') no-repeat center
+	background-size: cover
+	.section-inner
+	.reasons
+		margin: 0 auto
+		max-width: 1500px
+	.reasons-title
+		text-align: center
+		text-transform: uppercase
+		color: $accent
+		font-size: 27px
+		padding: 40px 0px
+		.h2
+	.reasons-blocks
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-evenly
+	.reasons-block
+		margin-top: 50px
+		width: 290px
+	.reasons-block__img
+		position: relative
+		text-align: center
+		img
+			display: block
+			margin: 20px auto 25px auto
+	.img-weight
+	.img-tile
+
+	.wrapper-number
+		width: 110px
+		height: 106px
+		position: absolute
+		left: 91px
+		top: 39px
+		z-index: 1000
+		color: #fff
+		font-size: 74px
+		font-weight: 700
+		text-align: center
+		span
+	.reasons-block__title
+		text-align: center
+		margin: auto
+		font-size: 25px
+		text-transform: uppercase
+		color: #131434
+		line-height: 1.2
+
+// Reasons_
+
+
+// Ourtrainers
+
+.section-ourtrainers
+	.section-inner
+	.ourtrainers
+		display: flex
+		max-width: 1500px
+		margin: 0 auto
+		padding-top: 50px
+		padding-bottom: 80px
+	.ourtrainers-sidebar
+		padding-top: 30px
+	.adress-select
+		margin-bottom: 30px
+	.js-adress-select
+	.select-trainer
+		width: 310px
+		.select-trainer-active
+			color: #fff
+			font-weight: 700
+			background: $accent
+			border: none
+			transform: scale(1.02)
+			&:after
+				opacity: 1
+				z-index: 1000
+		li
+			position: relative
+			cursor: pointer
+			padding: 14px 15px 14px 55px
+			background: #f2f6ff
+			+font("NeoSansCyr-Regular", 400, 22px)
+			border: 1px solid rgba(#51586b, .35)
+			border-bottom: none
+			color: #000
+			&:last-child
+				border-bottom: 1px solid rgba(#51586b, .35)
+			&:after
+				content: ''
+				position: absolute
+				right: -12px
+				top: 0
+				height: 100%
+				transform: skew(16deg)
+				background: $accent
+				width: 30px
+				opacity: 0
+				pointer-events: none
+			span
+	.ourtrainers-blocks
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-evenly
+		position: relative
+		padding-top: 60px
+	.ourtrainers-address
+		display: none
+		position: absolute
+		top: 60px
+		left: 30px
+		+font("Solomon-Sans-Bold", 700, 25px)
+		color: $blue
+	.ourtrainers-address-active
+		display: block
+	.ourtrainers-block
+		display: block
+		position: relative
+		width: 257px
+		height: 327px
+		margin-top: 80px
+		transition: all .5s ease
+		&:hover .ourtrainers-block__img img
+			transform: scale(1.4)
+			transition: all .5s ease
+	.ourtrainers-block__img
+		width: 257px
+		height: 327px
+		overflow: hidden
+		img
+			width: 257px
+			height: 327px
+			transition: all .5s ease
+	.ourtrainers-block__title
+		display: block
+		position: absolute
+		bottom: -19px
+		left: -11px
+		transform: skew(-16deg)
+		background: #1a1e51
+		+font("NeoSansPro-Regular", 700, 17px)
+		color: #fff
+		width: 220px
+		padding: 10px 0px
+		transition: all .5s ease
+		span
+			transform: skew(16deg)
+			display: inline-block
+			margin-left: 10px
+		&:hover
+			background: $orange
+			color: $blue
+			transition: all .5s ease
+		
+
+
+	
+	.logo-white
+		position: absolute
+		left: 15px
+		bottom: 10px
+		width: 25px
+	.select2-container
+		width: 310px
+		background: $orange
+		color: #ffffff
+		text-align: center
+		text-transform: uppercase
+		+font("NeoSansPro-BoldItalic", 700, 22px)
+	.select2-container--default .select2-selection--single
+		background: $orange
+		border: none
+	.select2-container--default .select2-selection--single .select2-selection__rendered
+		line-height: 56px
+		color: #fff
+	.select2-selection--single
+		height: 55px
+	.select2-selection--single .select2-selection__arrow
+		top: 10px
+		right: 36px
+	.select2-container--default .select2-selection--single .select2-selection__arrow b
+		border-width: 14px 8px 0 8px
+		border-color: #fff transparent transparent transparent
+	.select2-results__option[aria-selected]
+
+// Ourtrainers_
+
+// Timetable
+
+.section-timetable
+	padding: 100px 0px
+
+// Timetable
 @import "_media"
+
