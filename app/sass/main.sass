@@ -146,10 +146,14 @@ b, strong
 		text-align: center
 		cursor: pointer
 		line-height: 1.6
+		transition: all .5s ease
 		span
 			display: inline-block
 			transform: skew(16deg)
 			font-size: 14px
+		&:hover
+			background: darken(#e9efff, 3%)
+			transition: all .5s ease
 	.consultation-button
 		display: block
 		background: $accent
@@ -163,10 +167,14 @@ b, strong
 		cursor: pointer
 		line-height: 1.6
 		white-space: nowrap
+		transition: all .5s ease
 		span
 			display: inline-block
 			transform: skew(16deg)
 			font-size: 14px
+		&:hover
+			background: darken($accent, 15%)
+			transition: all .5s ease
 	.consultation-button-second
 		@extend .consultation-button
 		line-height: 1.6
@@ -195,6 +203,12 @@ b, strong
 			position: absolute
 			top: 19px
 			left: 23px
+		&:hover img
+			animation-name: shake-little
+			animation-duration: 100ms
+			animation-timing-function: ease-in-out
+			animation-iteration-count: infinite
+
 	.topline-leftside
 		display: flex
 		margin-left: 55px
@@ -1165,11 +1179,6 @@ b, strong
 		color: #fff
 		transform: skew(-16deg)
 		margin: 0 auto
-		cursor: pointer
-		&:hover
-			background: $orange
-			color: #313563
-			transition: all .30s ease
 		span
 			display: inline-block
 			transform: skew(16deg)
@@ -1564,14 +1573,13 @@ b, strong
 		background: #fff
 		box-shadow: 0px 0px 70px rgba(#000, .2) inset
 		min-height: 145px
-		.reserve-title
-			padding-top: 40px
 	.reserve-title
-		padding-top: 120px
-		width: 811px
+		padding-top: 40px
+		width: 840px
 		margin: 0 auto
 		font-size: 30px
 		color: #ff9500
+		text-align: center
 	.fitness
 		max-width: 1350px
 		width: 80%
@@ -2285,12 +2293,19 @@ b, strong
 
 	.toprow-img-center
 		text-align: center
+		
 	.trainer-wrapper-img
 		position: relative
+		width: 270px
+		height: 270px
+		margin: 0 auto
+		&:hover .trainer-img img
+			transform: scale(1.2)
+			transition: all .5s ease
 	.trainer-ellipse
 			position: absolute
-			top: 0px
-			left: 0
+			top: 0
+			left: -5px
 			bottom: 0
 			right: 0
 			margin: auto
@@ -2311,7 +2326,11 @@ b, strong
 			left: 50%
 			top: 50%
 			margin-left: -170px
-			margin-top: -197px
+			margin-top: -180px
+			transition: all .5s ease
+		&:hover 
+			
+		
 			
 
 
@@ -3186,6 +3205,11 @@ b, strong
 	.reasons-block
 		margin-top: 50px
 		width: 290px
+		&:hover .reasons-block__img .img-weight
+			animation-name: shake-little-notskew
+			animation-duration: 100ms
+			animation-timing-function: ease-in-out
+			animation-iteration-count: infinite
 	.reasons-block__img
 		position: relative
 		text-align: center
