@@ -3,6 +3,11 @@ $(function() {
 
   new WOW().init()
 
+  $('.ws_bullets > div').on('click', '.rightside-list-item:not(.rightside-list-item-active)', function() {
+    $(this)
+      .addClass('ws_selbull').siblings().removeClass('ws_selbull');
+      // .closest('div.megaslider-toppannel').find('div.toppannel-address').removeClass('toppannel-address-active').eq($(this).index()).addClass('toppannel-address-active');
+  });
   //Wowjs_
 
   // Button up

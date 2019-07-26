@@ -188,7 +188,7 @@
       li
         padding: 20px 12px
     .to-book-button
-      padding: 11px 15px
+      padding: 12px 15px
     .consultation-button
       padding: 20px 15px
     .telephone
@@ -242,7 +242,12 @@
       font-size: 14px
       padding: 7px 0px
 
-
+  .section-directionlist
+    #wowslider-container1
+      .tooltip-title
+        font-size: 33px
+      .tooltip-post-title
+        font-size: 18px
 
 @media only screen and (max-width: 1200px)
   .section-header
@@ -549,71 +554,71 @@
       display: none
 
   .section-ourstock
+  .ourstock-img
+    img
+      width: 520px
+      margin-left: -306px
+      transform: skew(0deg)
+  .nohover
+    pointer-events: none
+  .img-event
+    width: 290px
+    margin-left: -145px
+  .ourstock-wrapper
+    width: 290px
+    &:hover .img-event1
+      background: rgba($accent, 0)
+      transition: all .5s ease
+    &:hover .img-event2
+      background: rgba(#1a1e51, 0)
+      transition: all .5s ease
+    &:hover .img-event3
+      background: rgba(#ff9516, 0)
+      transition: all .5s ease
+    &:hover .ourstock-content-wrapper
+      background: transparent
+      transition: all .5s ease
+  .ourstock-content__title
+    transform: skew(0deg)
+    margin-left: 10px
+  .ourstock-content__post-title
+    transform: skew(0deg)
+  .ourstock-content-wrapper
+    height: 120px
+    bottom: 0
+    width: 290px
+    margin-left: -145px
+  .ourstock-content__post-title
+    opacity: 1
+    left: 10px
+    line-height: 1.2
+    bottom: -32px
+    height: 40px
+    padding-right: 10px
+
+  .ourstock-title
+    width: 270px
+    text-align: center
+    font-size: 25px
+  .ourstock-carousel
     .owl-stage-outer
       transform: skew(0deg)
-    .ourstock-img
-      img
-        width: 520px
-        margin-left: -306px
-        transform: skew(0deg)
-    .nohover
-      pointer-events: none
-    .img-event
-      width: 290px
-      margin-left: -145px
-    .ourstock-wrapper
-      width: 290px
-      &:hover .img-event1
-        background: rgba($accent, 0)
-        transition: all .5s ease
-      &:hover .img-event2
-        background: rgba(#1a1e51, 0)
-        transition: all .5s ease
-      &:hover .img-event3
-        background: rgba(#ff9516, 0)
-        transition: all .5s ease
-      &:hover .ourstock-content-wrapper
-        background: transparent
-        transition: all .5s ease
-    .ourstock-content__title
-      transform: skew(0deg)
-      margin-left: 10px
-    .ourstock-content__post-title
-      transform: skew(0deg)
-    .ourstock-content-wrapper
-      height: 120px
-      bottom: 0
-      width: 290px
-      margin-left: -145px
-    .ourstock-content__post-title
-      opacity: 1
-      left: 10px
-      line-height: 1.2
-      bottom: -32px
-      height: 40px
-      padding-right: 10px
-
-    .ourstock-title
-      width: 270px
-      text-align: center
-      font-size: 25px
-    .ourstock-carousel
-      .owl-nav
-        top: auto
-        button.owl-prev
-          width: 45px
-          height: 45px
-          font-size: 21px
-          i
-            top: 12px
-            left: 14px
-        button.owl-next
-          width: 45px
-          height: 45px
-          font-size: 21px
-          i
-            top: 12px
-            left: 17px
+    .owl-nav
+      top: auto
+      button.owl-prev
+        width: 45px
+        height: 45px
+        font-size: 21px
+        i
+          top: 12px
+          left: 14px
+      button.owl-next
+        width: 45px
+        height: 45px
+        font-size: 21px
+        i
+          top: 12px
+          left: 17px
     .owl-dots
       position: absolute
       bottom: 15px
