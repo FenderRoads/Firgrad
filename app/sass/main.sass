@@ -2927,10 +2927,13 @@ b, strong
 		.ws_thumbs
 			width: 20%
 			overflow: visible !important
+			background: $blue
 			.ws_selthumb
 				background: $accent
 				border-color: transparent
 				position: relative
+				transform: scale(1.05)
+				z-index: 4000
 				&:before
 					content: ''
 					position: absolute
@@ -2971,6 +2974,27 @@ b, strong
 					transition: all .25s ease
 			& > div
 				height: 100%
+		
+		.ws_images-tooltip
+			color: red
+			font-size: 20px
+			position: absolute
+			top: 10%
+			left: 10%
+			opacity: .85
+			span
+				display: block
+				line-height: 1.3
+		.tooltip-title
+			text-decoration: underline
+			text-transform: uppercase
+			color: #f2f5fd
+			+font("NeoSansPro-Regular", 400, 40px)
+		.tooltip-post-title
+			width: 570px
+			+font("NeoSansPro-Italic", 400, 20px)
+			color: #f2f5fd
+			margin-top: 15px
 	
 	.directionlist-rightside
 		background: #1a1e51
