@@ -2,65 +2,65 @@
 
 @media only screen and (max-width: 1500px)
   .section-ourstock
-    .ourstock-wrapper
-      width: 330px
-      margin-left: auto
-      margin-right: auto
-      &:hover .img-event1
-        background: rgba($accent, .7)
-        transition: all .5s ease
-      &:hover .img-event2
-        background: rgba(#1a1e51, .7)
-        transition: all .5s ease
-      &:hover .img-event3
-        background: rgba(#ff9516, .7)
-        transition: all .5s ease
-      &:hover .ourstock-content-wrapper
-        background: transparent
-        transition: all .5s ease
-    .ourstock-img
-      position: relative
-      overflow: hidden
-      width: 100%
-      height: 375px
-      img
-        position: absolute
-        left: 50%
-        margin-left: -247px
-        display: inline-block
-        width: 490px
-        height: 375px
-        transform: skew(18deg)
-    .ourstock-content
-      height: 82px
-    .ourstock-content1
-      background: rgba($accent, .8)
-      color: #000
-    .ourstock-content2
-      background: rgba(#1a1e51, .8)
-      color: $accent
-    .ourstock-content3
-      background: rgba(#ff9516, .8)
-      color: #10122f
-    .img-event
+  .ourstock-wrapper
+    width: 330px
+    margin-left: auto
+    margin-right: auto
+    &:hover .img-event1
+      background: rgba($accent, .7)
+      transition: all .5s ease
+    &:hover .img-event2
+      background: rgba(#1a1e51, .7)
+      transition: all .5s ease
+    &:hover .img-event3
+      background: rgba(#ff9516, .7)
+      transition: all .5s ease
+    &:hover .ourstock-content-wrapper
+      background: transparent
+      transition: all .5s ease
+  .ourstock-img
+    position: relative
+    overflow: hidden
+    width: 100%
+    height: 375px
+    img
       position: absolute
       left: 50%
-      margin-left: -218px
+      margin-left: -247px
       display: inline-block
-      width: 384px
+      width: 490px !important
       height: 375px
-    .ourstock-content-wrapper
-      position: absolute
-      bottom: 51px
-      width: 330px
-      left: 50%
-      margin-left: -165px
-    .ourstock-content__title
-      font-size: 22px
-      width: 164px
-    .ourstock-content__post-title
-      font-size: 14px
-      bottom: -49px
+      transform: skew(18deg)
+  .ourstock-content
+    height: 82px
+  .ourstock-content1
+    background: rgba($accent, .8)
+    color: #000
+  .ourstock-content2
+    background: rgba(#1a1e51, .8)
+    color: $accent
+  .ourstock-content3
+    background: rgba(#ff9516, .8)
+    color: #10122f
+  .img-event
+    position: absolute
+    left: 50%
+    margin-left: -218px
+    display: inline-block
+    width: 384px
+    height: 375px
+  .ourstock-content-wrapper
+    position: absolute
+    bottom: 51px
+    width: 330px
+    left: 50%
+    margin-left: -165px
+  .ourstock-content__title
+    font-size: 22px
+    width: 164px
+  .ourstock-content__post-title
+    font-size: 14px
+    bottom: -49px
 
   .section-reviews
     .reviews-block
@@ -188,12 +188,14 @@
       li
         padding: 20px 12px
     .to-book-button
-      padding: 12px 15px
+      padding: 12px 12px
     .consultation-button
-      padding: 20px 15px
+      padding: 20px 12px
     .telephone
       span
-        padding: 21px 85px 18px 60px
+        padding: 21px 50px 18px 50px
+      img
+        left: 16px
 
   .section-news
     .news-block
@@ -252,11 +254,21 @@
         a
           font-size: 18px
 
+
+  .section-stocklist
+    .stocklist-items
+      justify-content: center
+    .stocklist-item
+      width: 33%
+    .ourstock-wrapper
+      margin-right: auto
+      margin-left: auto
+
 @media only screen and (max-width: 1200px)
   .section-header
 
 
-@media only screen and (max-width: 780px)
+@media only screen and (max-width: 760px)
   .section-header
     .header-topline
       display: none
@@ -264,7 +276,9 @@
       display: flex
       justify-content: space-between
       min-width: 320px
+      min-height: 67px
       margin: 0 auto
+      border-bottom: 1px solid #c0c5f5
     .header-mobile-logo
       display: flex
       align-items: center
@@ -276,10 +290,16 @@
     .header-mobile-leftside
       display: flex
       align-items: center
+    .dn-sports-club
+      img
+        width: 245px
     .header-mobile-rightside
       display: flex
     .dn-sports-club
       display: none
+      position: absolute
+      top: 3px
+      left: 17px
     .to-book-button
       padding: 14px 0px
       border-left: 1px solid #c0c5f5
@@ -290,6 +310,8 @@
         font-size: 12px
     .consultation-button
       padding: 14px 0px
+      white-space: normal
+      transition: all 0s ease 0s
       span
         margin: 0 auto
         width: 100px
@@ -301,48 +323,67 @@
       img
         display: block
         width: 30px
-    .consultation-button
-      white-space: normal
     .to-book-button
-      
-    .header-mobile-hamburger
-      position: relative
-      width: 35px
-      height: 27px
-      margin-top: 20px
-      cursor: pointer
-      padding-right: 10px
-      span
-        width: 35px
-        height: 2px
+      transition: all 0s ease 0s
+    // .header-mobile-hamburger
+    //   position: relative
+    //   width: 35px
+    //   height: 27px
+    //   margin-top: 20px
+    //   cursor: pointer
+    //   padding-right: 10px
+    //   span
+    //     width: 35px
+    //     height: 2px
+    //     background: $blue
+    //     position: absolute
+    //   span:first-child
+    //     top: 0px
+    //     left: 0px
+    //   span:last-child
+    //     top: 16px
+    //     left: 0px
+    //     &:after, &:before
+    //       content: ''
+    //       width: 35px
+    //       height: 2px
+    //       background: $blue
+    //       position: absolute
+    //     &:after
+    //       top: -8px
+    //     &:before
+    //       top: 8px
+    .hamburger
+      padding: 0px 8px 0px 2px
+      opacity: 1
+      .hamburger-inner
         background: $blue
-        position: absolute
-      span:first-child
-        top: 0px
-        left: 0px
-      span:last-child
-        top: 16px
-        left: 0px
+        height: 3px
         &:after, &:before
-          content: ''
-          width: 35px
-          height: 2px
           background: $blue
-          position: absolute
-        &:after
-          top: -8px
-        &:before
-          top: 8px
+          height: 3px
+      .hamburger-box
+        margin-top: 7px
+    .header-mobile-hide
+      display: none
+    .is-active
+      .hamburger-inner
+        opacity: 1
+        &:after, &:before
+          opacity: 1
+    .header-mobile-hamburger-active
+      span:first-child
+        transform: rotate(35deg) translateY(1px) translateX(1px)
+
 
     
     .header-mobile-menu
-      height: 729px
-      max-height: 729px
       width: 100%
-      overflow-y: scroll
+      height: 100%
+      overflow-y: auto
+      min-height: 90vh
       position: absolute
       z-index: 9999
-      display: none
       nav
       ul
         li
@@ -356,28 +397,88 @@
           background: #fff
           a
             color: $accent
+            transition: all .25s ease
+            &:hover
+              color: $blue
+              transition: all .25s ease
 
         .li-to-book-button
           background: #e9efff
           color: $blue
           line-height: 1.2
           padding: 8px 0px
+          transition: all .5s ease
           a
             color: $blue
+          &:hover
+            background: darken(#e9efff, 3%)
+            transition: all .5s ease
         .li-consultation-button
           background: $accent
+          transition: all .5s ease
           a
             color: #fff
+          &:hover
+            background: darken($accent, 15%)
+            transition: all .5s ease
         .li-telephone
-          position: relative
           a
             color: $blue
+          span
+            position: relative
+            display: inline-block
+            padding-left: 24px
           img
             position: absolute
-            left: 0
-            top: 0
+            left: -9px
+            top: -1px
     .header-mobile-location
+      background: #fff
     .location-blocks
+      padding-bottom: 35px
+    .location-block
+      text-align: center
+      padding-top: 35px
+    .location-block__title
+      +font("NeoSansPro-BoldItalic", 700, 20px)
+      color: $accent
+      text-transform: uppercase
+      span
+        display: inline-block
+        position: relative
+      i
+        color: $accent
+        font-size: 24px
+        position: absolute
+        top: -1px
+        left: -23px
+    .location-block__address
+      +font("NeoSansPro-Italic", 400, 20px)
+      color: $blue
+      text-transform: uppercase
+      width: 150px
+      margin: 0 auto
+      text-align: center
+      line-height: 1.3
+      margin-bottom: 5px
+    .location-block__about
+      display: block
+      color: #212869
+      text-transform: uppercase
+      +font("NeoSansPro-BoldItalic", 700, 18px)
+      transform: skew(16deg)
+      background: $orange
+      width: 150px
+      margin: 0 auto
+      padding: 6px 0px
+      transition: all .5s ease
+      span
+        display: inline-block
+        transform: skew(-16deg)
+      &:hover
+        background: $blue
+        color: #fff
+        transition: all .5s ease
 
   
   .section-wideanim
@@ -549,17 +650,48 @@
       padding: 0
 
   .section-directionlist
+    #wowslider-container1
+      .ws_images
+        width: 100%
+        max-width: 100%
+      .ws_thumbs
+        display: none
+      .ws_controls
+        display: block
+        position: absolute
+        width: 100vw
+        .ws_next, .ws_prev
+          border: none
+          width: 45px
+          height: 45px
+          background: transparent
+          background: rgba(#98a3cc, .7)
+          &:after
+            display: none
+          &:hover
+            background: rgba(#98a3cc, .7)
+          i
+            font-size: 21px
+            position: absolute
+            top: 12px
+            left: 13px
+            color: #fff
+          .fa-chevron-right
+            left: 17px
+      .ws_images-tooltip
+        display: none
     .directionlist-rightside
       display: none
     .directionlist-leftside
       width: 100%
     .directionlist-button-absolute
       display: none
+    
 
   .section-ourstock
   .ourstock-img
     img
-      width: 520px
+      width: 520px !important
       margin-left: -306px
       transform: skew(0deg)
   .nohover
@@ -782,8 +914,13 @@
 
   .section-footer
     font-size: 18px
-    text-transform: uppercase
     font-style: italic
+    .footer-links-leftside
+      width: 75%
+      margin: 0 auto
+      .footer-copyright
+        text-align: center
+        font-size: 17px
     .footer-links
       flex-direction: column
       justify-content: center
@@ -794,6 +931,13 @@
     .footer-copyright
       color: $accent
       font-weight: 700
+    .footer-links-rightside
+      width: 90%
+      flex-direction: column
+      justify-content: center
+    .footer-link
+      text-align: center
+      font-size: 17px
 
   .section-wideanim
     .wideanim-rightside
@@ -849,6 +993,17 @@
       min-height: 600px
     .wideanim-leftside
       min-height: 600px
+      &:after
+        position: absolute
+        content: ''
+        top: 0
+        bottom: 0
+        right: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: rgba($blue, .4)
+        z-index: 2500
     .stockitem-biglogo
       width: 120px
       height: 159px
@@ -945,7 +1100,7 @@
     .event-topline
       display: block
     .event-topline__return
-      width: 255px
+      width: 260px
       text-align: center
       margin: 0 auto
       font-size: 16px
@@ -979,15 +1134,35 @@
 
 
   .section-wideanimcustomer
+    .wideanimcustomer
+      max-height: 436px
     .wideanimcustomer-rightside
-      left: 0
-      width: 100%
-      max-width: 700px
-      min-width: 300px
+      left: 50%
+      margin-left: -150px
+      margin-top: -180px
+      width: 310px
+      z-index: 4000
     .wideanimcustomer-rightside__title
-      font-size: 40px
+      width: 320px
+      margin: 0 auto
+      .h1
+        font-size: 33px
     .wideanimcustomer-rightside__post-title
-      font-size: 17px
+      font-size: 15px
+      line-height: 1.3
+    .wideanimcustomer-leftside
+      width: 105%
+      &:after
+        position: absolute
+        content: ''
+        top: 0
+        bottom: 0
+        right: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: rgba($blue, .4)
+        z-index: 2500
 
   .section-conditions
     .conditions-post-title
@@ -995,8 +1170,9 @@
       min-width: 300px
       max-width: 700px
       line-height: 1.3
+      font-size: 19px
     .conditions-title
-      font-size: 23px
+      font-size: 21px
       width: 100%
       max-width: 700px
       min-width: 300px
@@ -1012,6 +1188,217 @@
         right: 15px
     .conditions-block
       width: 50%
+
+  .section-newsitem
+    .newsitem-topline
+      flex-direction: column
+      justify-content: center
+    .newsitem-topline__return
+      width: 260px
+      text-align: center
+      margin: 0 auto
+      font-size: 16px
+    .newsitem-topline__date
+      text-align: center
+      padding-top: 20px
+    .newsitem-flex
+      flex-direction: column-reverse
+      justify-content: center
+    .newsitem-rightside__img
+      width: 295px
+      height: 210px
+      margin: 0 auto
+      transform: skew(0deg)
+      div
+        transform: skew(0deg)
+    .newsitem-leftside
+      padding-top: 20px
+    .newsitem-leftside__text
+      margin-left: auto
+      margin-right: auto
+      line-height: 1.35
+      width: 95%
+    .newsitem-leftside__title
+      padding-left: 28px
+
+  .section-trainer
+    .trainer-flex-toprow
+      flex-direction: column
+    .trainer-flex-bottomrow
+      flex-direction: column
+      .bottomrow-exp 
+        display: none
+
+    .trainer-item
+      font-size: 18px
+    .trainer-icon
+      left: -33px
+    .trainer-return
+      width: 260px
+      text-align: center
+      margin: 0 auto
+      font-size: 16px
+      position: absolute
+      left: 50%
+      margin-left: -136px
+      top: 70px
+    .trainer-title
+      margin-left: auto
+      margin-right: auto
+      margin-top: 70px
+      width: 265px
+      span:last-child
+        line-height: 1.1
+    .toprow-item
+      width: 100%
+    .toprow-img-center
+      order: -1
+    .hide-bottomrow-exp
+      display: block
+      margin-top: 35px
+      margin-bottom: 35px
+    .bottomrow-exp__title
+      width: 130px
+    .bottomrow-exp__star
+      img
+        width: 33px
+        height: 30px
+    
+
+    .toprow-special__items
+      flex-wrap: nowrap
+      height: auto
+      width: auto
+      padding-bottom: 40px
+      padding-left: 30px
+    .toprow-special__item
+      max-width: 280px
+    .toprow-special__title-wrapper
+      padding: 0
+
+    .toprow-progress__items
+      width: auto
+      height: auto
+      max-width: 285px
+      padding-bottom: 40px
+      padding-left: 30px
+    .toprow-progress__title-wrapper
+      padding: 0
+
+
+    .bottomrow-education__item
+      max-width: 285px
+    .bottomrow-education__items
+      padding-bottom: 40px
+      padding-left: 30px
+
+    .bottomrow-contacts__items
+      flex-wrap: nowrap
+      width: 150px
+      height: auto
+    .trainer-entry-wrapper
+      padding-top: 40px
+    .trainer-entry
+      width: 210px
+      line-height: 1.4
+      font-size: 23px
+  
+  .section-mobileapp
+    padding-right: 0px
+    .mobileapp-flex
+      flex-direction: column
+      justify-content: center
+    .mobileapp-leftside
+      padding-bottom: 20px
+    .mobileapp-rightside
+      margin-left: 0px
+    .mobileapp-leftside__buttons
+      width: 100%
+      max-width: 270px
+      margin: 0 auto
+      flex-direction: row-reverse
+    .mobileapp-rightside__title-mobile
+      text-align: center
+      margin: 0 auto
+      width: 260px
+      line-height: 1.3
+      display: block
+    .mobileapp-rightside__title
+      text-align: center
+      margin: 0 auto
+      width: 260px
+      line-height: 1.3
+      display: none
+    .mobileapp-rightside__post-title
+      text-align: center
+      .grey-circle
+        display: none
+    .google-play-big
+      width: 135px
+      height: 38px
+      img
+        width: 135px
+        height: auto
+    .appstore-big
+      width: 110px
+      height: 39px
+      img
+        width: 110px
+        height: auto
+    .mobileapp-leftside__img
+      padding-top: 35px 
+
+  .section-smartfitness
+    .smartfitness-flex
+      flex-direction: column-reverse
+      width: 100%
+    .smartfitness-title
+      width: 275px
+    .smartfitness-post-title
+      width: 90%
+      max-width: 700px
+      min-width: 300px
+      line-height: 1.4
+      font-size: 15px
+    .smartfitness-rightside
+      min-width: 0
+      height: auto
+      margin-bottom: 35px
+    .smartfitness-leftside
+      margin-right: 0px
+      width: 90%
+      margin: 0 auto
+    .smartfitness-leftside__list
+      div
+        line-height: 1.2
+        span
+          font-size: 16px
+          margin-left: 33px
+    .smartfitness-rightside__videoWrapper
+      iframe
+        box-shadow: none
+
+  .section-background
+    background: url('../img/@2x/bg-barbell.jpg') no-repeat center
+    background-size: cover
+    height: 350px
+    position: relative 
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      background: rgba(#000, .5)
+    .background-video
+      display: none
+
+      
+
+
+
+
 
     
 

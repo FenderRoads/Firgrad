@@ -254,4 +254,22 @@ $(function() {
       .closest('div.faq').find('div.faq-accordion').removeClass('faq-accordion-active').eq($(this).index()).addClass('faq-accordion-active');
   });
   // Accordion_
+
+
+  // Hamburger
+
+  $('.hamburger').on('click', function() {
+    $('.hamburger').toggleClass('is-active')
+    $('.header-mobile-menu').animate({
+      width: 'toggle'
+    }, 200)
+    $('.header-mobile-telephone').fadeToggle(500)
+    $('.consultation-button').fadeToggle(500)
+    $('.header-mobile-logo').fadeToggle(500)
+    $('.to-book-button').fadeToggle(500)
+    $('.dn-sports-club').fadeToggle(500)
+  })
+
+  
+  // Hamburger_
 });

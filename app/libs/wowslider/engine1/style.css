@@ -398,7 +398,6 @@ _:-ms-input-placeholder, :root #wowslider-container1 .ws_playpause:after {line-h
 }
 #wowslider-container1 div.ws_shadow {
 	right: 14.5em;
-	// margin-right: -$frameL$%;
 	width: auto;
 }
 #wowslider-container1 .ws_thumbs {
