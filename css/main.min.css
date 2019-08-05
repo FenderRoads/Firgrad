@@ -15892,31 +15892,26 @@ strong {
   text-transform: uppercase;
 }
 
-.section-header .menu li {
-  padding: 20px 21px;
-  border-left: 1px solid #c0c5f5;
-  -webkit-transform: skew(-16deg);
-      -ms-transform: skew(-16deg);
-          transform: skew(-16deg);
-  background: #fff;
-}
-
-.section-header .menu li:last-child {
-  border-right: 1px solid #c0c5f5;
+.section-header .menu li:hover .li-club-dropdown-outer {
+  display: block;
 }
 
 .section-header .menu li a {
   display: inline-block;
   text-transform: uppercase;
   color: #ef3e36;
-  -webkit-transform: skew(16deg);
-      -ms-transform: skew(16deg);
-          transform: skew(16deg);
+  -webkit-transform: skew(-16deg);
+      -ms-transform: skew(-16deg);
+          transform: skew(-16deg);
   font-size: 13px;
   white-space: nowrap;
   -webkit-transition: all .25s ease;
   -o-transition: all .25s ease;
   transition: all .25s ease;
+  padding: 22px 21px;
+  border-left: 1px solid #c0c5f5;
+  background: #fff;
+  position: relative;
 }
 
 .section-header .menu li a:hover {
@@ -15924,6 +15919,54 @@ strong {
   -webkit-transition: all .25s ease;
   -o-transition: all .25s ease;
   transition: all .25s ease;
+}
+
+.section-header .menu li a span {
+  display: inline-block;
+  -webkit-transform: skew(16deg);
+      -ms-transform: skew(16deg);
+          transform: skew(16deg);
+}
+
+.section-header .menu li .li-club-dropdown-outer {
+  position: absolute;
+  bottom: -119px;
+  left: -10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  display: none;
+  pointer-events: none;
+  height: 300px;
+}
+
+.section-header .menu li .li-club-dropdown {
+  background: #fff;
+  width: 200px;
+  pointer-events: auto;
+}
+
+.section-header .menu li .li-club-dropdown__item {
+  display: block;
+  font-size: 18px;
+  padding: 4px 7px;
+  -webkit-transition: all .1s ease;
+  -o-transition: all .1s ease;
+  transition: all .1s ease;
+  color: #ef3e36;
+}
+
+.section-header .menu li .li-club-dropdown__item:hover {
+  background: #ef3e36;
+  color: #fff;
+  -webkit-transition: all .1s ease;
+  -o-transition: all .1s ease;
+  transition: all .1s ease;
 }
 
 .section-header .to-book-button {
@@ -20113,6 +20156,9 @@ strong {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
   margin: 0 auto;
   padding-top: 50px;
 }
@@ -21313,16 +21359,60 @@ strong {
   border-color: #fff transparent transparent transparent;
 }
 
-.section-timetable {
-  padding: 100px 0px;
-}
-
 .section-timetable .timetable {
+  padding: 100px 0px;
   width: 100%;
   max-width: 1500px;
   min-width: 320px;
   margin: 0 auto;
   min-height: 1000px;
+}
+
+.section-timetable .timetable-widget {
+  display: none;
+}
+
+.section-timetable .timetable-widget-active {
+  display: block;
+}
+
+.section-timetable .timetable-tabs {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 40px;
+}
+
+.section-timetable .timetable-button {
+  width: 200px;
+  -webkit-transform: skew(-16deg);
+      -ms-transform: skew(-16deg);
+          transform: skew(-16deg);
+  text-align: center;
+  text-transform: uppercase;
+  background: #f7941d;
+  color: #fff;
+  padding: 9px 0px;
+  margin: 0px 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.section-timetable .timetable-button span {
+  display: inline-block;
+  -webkit-transform: skew(16deg);
+      -ms-transform: skew(16deg);
+          transform: skew(16deg);
+}
+
+.section-timetable .timetable-button-active {
+  background: #1a1e51;
 }
 
 .section-stocklist .stocklist {
@@ -21611,8 +21701,8 @@ strong {
   .section-wideanim .background-video {
     padding-top: 120%;
   }
-  .section-header .menu li {
-    padding: 20px 12px;
+  .section-header .menu li a {
+    padding: 22px 12px;
   }
   .section-header .to-book-button {
     padding: 12px 12px;
