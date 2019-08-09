@@ -26,6 +26,10 @@
 	width: 100%
 	
 
+h1, h2, h3, h4, h5, h6
+	margin: 0
+	font-size: 100%
+
 a
 	text-decoration: none
 	&:visited, &:active
@@ -114,8 +118,13 @@ b, strong
 		background: #fff
 		transform: skew(-16deg)
 		height: 66px
-		img
-			padding: 20px 20px
+		&:hover .logo
+			background: url('../img/@2x/logo-red.svg') no-repeat center
+			background-size: 15px 22px
+		.logo
+			background: url('../img/@2x/logo.svg') no-repeat center
+			background-size: 15px 22px
+			padding: 32px 25px
 			transform: skew(16deg)
 	.active-nav
 		background: #f2f5fd
@@ -123,9 +132,11 @@ b, strong
 		display: flex
 		text-transform: uppercase
 		li
-			&:hover .li-club-dropdown-outer
-				display: block
-			a
+			&:first-child
+				&:hover .li-club-dropdown
+					display: block
+					animation: rotateIn 0.5s ease
+			& > a
 				display: inline-block
 				text-transform: uppercase
 				color: $accent
@@ -143,19 +154,12 @@ b, strong
 				span
 					display: inline-block
 					transform: skew(16deg)
-			.li-club-dropdown-outer
-				position: absolute
-				bottom: -119px
-				left: -10px
-				display: flex
-				align-items: flex-end
-				display: none
-				pointer-events: none
-				height: 300px
 			.li-club-dropdown
 				background: #fff
 				width: 200px
-				pointer-events: auto
+				position: absolute
+				left: 86px
+				display: none
 			.li-club-dropdown__item
 				display: block
 				font-size: 18px
@@ -236,10 +240,7 @@ b, strong
 			top: 19px
 			left: 23px
 		&:hover img
-			animation-name: shake-little
-			animation-duration: 100ms
-			animation-timing-function: ease-in-out
-			animation-iteration-count: infinite
+			animation: shakeSkew .1s ease-in-out infinite
 
 	.topline-leftside
 		display: flex
@@ -281,12 +282,12 @@ b, strong
 		position: absolute
 		width: 550px
 		top: 50%
-		margin-top: -266px
+		margin-top: -215px
 		left: 270px
 		z-index: 3000
 	.wideanim-rightside__big-logo
 		position: absolute
-		top: 30px
+		top: -5px
 		left: -185px
 		width: 140px
 		height: 186px
@@ -295,6 +296,7 @@ b, strong
 			height: 186px
 	.wideanim-rightside__title
 		width: 550px
+		margin-bottom: 30px
 	.h1
 		font-size: 55px
 		color: #fff
@@ -955,6 +957,7 @@ b, strong
 		margin: 0 auto
 		width: 625px
 		padding-top: 70px
+		font-size: 38px
 	.h2
 	.questions-button-wrapper
 		padding-bottom: 40px
@@ -999,38 +1002,44 @@ b, strong
 	background: url('../img/@2x/bg-contacts.jpg') no-repeat center
 	background-size: cover
 	color: #fff
-	min-height: 146px
 	.section-inner
 	.contacts
 		display: flex
 		justify-content: space-between
+		align-items: center
 		width: 90%
 		margin: 0 auto
-		max-width: 1500px 
+		max-width: 1500px
+		padding: 30px 0px 
 	.contacts-leftside
-		padding-top: 30px
 	.contacts-leftside__blocks
 		display: flex
 	.contacts-leftside__block
 		font-family: "NeoSansPro-Italic", sans-serif
 		text-transform: uppercase
 		margin-right: 30px
-		width: 140px
+		width: 150px
 		&:last-child
 			margin-right: 0
 	.leftside__block-title
 		font-size: 17px
 		text-decoration: underline
+		a
+			transition: all .25s ease
+			&:hover
+				color: $accent
+				transition: all .25s ease
 	.leftside__block-address
 		font-size: 14px
 		margin-top: 3px
 	.leftside__block-tel
 		font-size: 14px
 		margin-top: 5px
+	.dn-dekstop-icon
+		display: none
 
 
 	.contacts-rightside
-		padding-top: 30px
 	.contacts-rightside__social
 		display: flex
 		justify-content: flex-end
@@ -1049,6 +1058,10 @@ b, strong
 		background: #7d7abe
 		text-align: center
 		cursor: pointer
+		transition: all .25s ease
+		&:hover
+			background: $accent
+			transition: all .25s ease
 	.rightside__social-vk
 		.fab
 			margin-top: 1px
@@ -1096,6 +1109,10 @@ b, strong
 		text-decoration: underline
 		color: #1a1e51
 		+font("NeoSansPro-Italic", 400, 15px)
+		transition: all .25s ease
+		&:hover
+			color: $accent
+			transition: all .25s ease
 
 
 // Footer_
@@ -1146,7 +1163,7 @@ b, strong
 			right: 70px
 			transform: skew(16deg)
 			border: 6px solid transparent
-			border-top: 10px solid #313563
+			border-top: 10px solid #fff
 	.tour-select-dropdown
 		position: absolute
 		width: 260px
@@ -1167,6 +1184,7 @@ b, strong
 				transition: all .05s ease
 	.tour-select-dropdown-active
 		display: block
+		animation: fadeInUp 0.5s ease
 	.logo-white
 		display: none
 	.select2-container
@@ -1225,7 +1243,7 @@ b, strong
 		box-sizing: border-box
 		display: table
 		line-height: 1.1
-		span
+		h1
 			transform: skew(16deg)
 			display: table-cell
 			vertical-align: middle
@@ -1254,18 +1272,23 @@ b, strong
 		position: relative
 		padding-top: 35px
 	.data-block__title
+		display: block
 		+font("Solomon-Sans-Black Italic", 400, 20px)
 		text-align: center
 		width: 230px
-		background: #313563
+		background: $orange
 		padding: 7px 0px
-		color: #fafa78
+		color: #fff
 		transform: skew(-16deg)
 		margin: 0 auto
 		text-transform: uppercase
+		transition: all .5s ease
 		span
 			display: inline-block
 			transform: skew(16deg)
+		&:hover
+			background: $blue
+			transition: all .5s ease
 	.data-block-line1
 		position: absolute
 		right: 0
@@ -1368,12 +1391,12 @@ b, strong
 	.news-block__img
 		position: relative
 		max-width: 365px
-		height: 220px
+		max-height: 220px
 		align-self: center
 		overflow: hidden
 		transition: all .5s ease
 		img
-			width: 270px
+			max-width: 250px
 			height: 220px
 			transition: all .5s ease
 		&:after
@@ -1428,11 +1451,16 @@ b, strong
 		display: flex
 		justify-content: space-between
 	.newsitem-leftside
-
+		ul
+			li
+				list-style: disc inside
+		ol
+			li
+				list-style: decimal inside
 	.newsitem-leftside__title
-		color: #000
 		+font("Solomon-Sans-Black", 900, 25px)
 		color: #313563
+		width: 95%
 	.newsitem-leftside__title
 	.newsitem-leftside__title2
 		font-size: 23px
@@ -1442,7 +1470,7 @@ b, strong
 	.newsitem-leftside__text
 		+font("Solomon-Sans-Normal", 400, 16px)
 		margin: 7px 0px
-		width: 90%
+		width: 95%
 		max-width: 1000px
 		&:last-child
 			span:last-child
@@ -1454,13 +1482,10 @@ b, strong
 		width: 580px
 		height: 390px
 		position: relative
-		transform: skew(-16deg)
+		transform: skew(0deg)
 		overflow: hidden
 		& > div
-			transform: skew(16deg)
-			overflow: hidden
-			width: 130%
-			margin-left: -10%
+			transform: skew(0deg)
 		img
 			display: block
 			width: 100%
@@ -1540,17 +1565,18 @@ b, strong
 			display: block
 			width: 100%
 	.gallery-images-wrapper
-		margin: 0px 15px
+		margin: 0px 10px
 		overflow: hidden
-		width: 240px
+		width: 225px
 		height: 155px
 		transform: skew(-16deg)
 		margin-top: 20px
 		& > div
 			transform: skew(16deg)
 			position: relative
-			width: 130%
-			left: -11%
+			overflow: hidden
+			width: 122%
+			margin-left: -8%
 
 
 
@@ -1649,9 +1675,14 @@ b, strong
 		text-align: center
 		padding: 4px 0px
 		margin: 0 auto
+		transition: all .1s ease
 		span
 			display: inline-block
 			transform: skew(16deg)
+		&:hover
+			color: #ffffff
+			background: $accent
+			transition: all .1s ease
 	.reserve-conditions
 		+font("NeoSansPro-LightItalic", 200, 15px)
 		color: #fff9f9
@@ -1708,6 +1739,7 @@ b, strong
 		font-size: 30px
 		color: #ff9500
 		text-align: center
+		font-size: 40px
 	.fitness
 		max-width: 1350px
 		width: 80%
@@ -1954,7 +1986,7 @@ b, strong
 	.blonde-leftside
 		width: 265px
 		height: 724px
-		padding-top: 30px
+		padding-top: 50px
 	.leftside-img
 		width: 265px
 		height: 724px
@@ -1963,6 +1995,7 @@ b, strong
 			height: 724px
 	.blonde-rightside
 		padding-top: 90px
+		align-self: flex-start
 	.rightside-sports-club
 		margin-bottom: 40px
 	.rightside-four-rounds
@@ -1986,8 +2019,8 @@ b, strong
 			width: 30px
 			height: 30px
 		&:hover .info-hover
-			opacity: 1
-			transition: opacity .5s ease
+			display: flex
+			animation: zoomIn .25s ease
 	.info-hover
 		transform: skew(-16deg)
 		background: $accent
@@ -2001,10 +2034,8 @@ b, strong
 		position: absolute
 		top: -85px
 		left: -267px
-		pointer-events: none
-		opacity: 0
 		+font("Solomon-Sans-Normal", 400, 15px)
-		display: flex
+		display: none
 		align-items: center
 		text-align: center
 		span
@@ -2024,12 +2055,12 @@ b, strong
 		top: -5px
 		left: -5px
 	.rightside-text
-		+font("Solomon - Sans - Normal", 400, 19px)
+		+font("Solomon - Sans - Normal", 400, 17px)
 		color: #131434
 		max-width: 630px
 		margin: 0 auto
 		padding: 30px 0px
-		line-height: 1.5
+		line-height: 1.4
 	.rightside-button
 		margin: 0 auto
 		+font("NeoSansPro-BoldItalic", 400, 20px)
@@ -2198,25 +2229,27 @@ b, strong
 			transform: skew(16deg)
 	.mobileapp-leftside__img
 		text-align: center
+		img
+			width: 260px
 	.mobileapp-leftside__buttons
 		display: flex
 		justify-content: space-between
-		width: 480px
-		padding-top: 35px
+		width: 415px
+		padding-top: 20px
 	.google-play-big
 		display: block
-		width: 246px
-		height: 70px
+		width: 200px
+		height: 57px
 		img
-			width: 246px
-			height: 70px
+			width: 200px
+			height: 57px
 	.appstore-big
 		display: block
-		width: 211px
-		height: 72px
+		width: 166px
+		height: 58px
 		img
-			width: 211px
-			height: 72px
+			width: 166px
+			height: 58px
 
 
 	.mobileapp-rightside
@@ -2543,6 +2576,9 @@ b, strong
 		margin-top: 15px
 	.trainer-entry-wrapper
 		padding-top: 30px
+		display: flex
+		justify-content: center
+		position: relative
 	.trainer-entry
 		display: block
 		text-align: center
@@ -2550,10 +2586,10 @@ b, strong
 		+font("NeoSansPro-BoldItalic", 700, 20px)
 		color: $blue
 		background: $orange
-		width: 400px
 		transform: skew(-16deg)
-		padding: 7px 0px
+		padding: 7px 40px
 		margin: 0 auto
+		cursor: pointer
 		span
 			display: inline-block
 			transform: skew(16deg)
@@ -2561,6 +2597,23 @@ b, strong
 			background: $blue
 			color: #fff
 			transition: all .5s ease
+	.trainer-contacts
+		position: absolute
+		left: 50%
+		margin-left: -189px
+		top: -86px
+		display: none
+		background: $accent
+		width: 390px
+		text-align: center
+		padding: 20px 0px
+		.trainer-contact
+			color: #fff
+			font-size: 18px
+			+font("Solomon-Sans-Normal", 300, 18px)
+	.trainer-contacts-active
+		display: block
+		animation: flipInX .5s ease
 
 
 
@@ -2741,7 +2794,7 @@ b, strong
 	.reviews-topline
 		display: flex
 		justify-content: space-between
-		max-width: 350px
+		max-width: 425px
     min-width: 300px
 		margin-left: 99px
 		transform: skew(-16deg)
@@ -2749,12 +2802,13 @@ b, strong
 	.reviews-topline__img
 		border-radius: 10em
 		box-shadow: 0px 0px 80px rgba(#000, .1)
-		width: 105px
-		height: 105px
+		width: 110px
+		height: 110px
 		img
 			display: block
-			width: 105px
+			width: 110px
 	.reviews-topline__data
+		width: 300px
 	.topline__data-name
 		text-transform: uppercase
 		font-size: 19px
@@ -2779,6 +2833,11 @@ b, strong
 			margin-left: 30px
 	.data-contact
 		position: relative
+		a
+			transition: all .1s ease
+			&:hover
+				color: $accent
+				transition: all .1s ease
 	.reviews-bottomline
 		margin-top: 8px
 		transform: skew(-16deg)
@@ -2864,7 +2923,7 @@ b, strong
 		overflow: hidden
 	.megaslider-toppannel
 	.toppannel-button
-		width: 33%
+		width: 50%
 		transform: skew(-16deg)
 		padding: 6px 0px
 		cursor: pointer
@@ -2883,7 +2942,7 @@ b, strong
 		text-align: center
 		width: 800px
 		display: flex
-		justify-content: space-around
+		justify-content: center
 		margin: 0 auto
 		padding-top: 50px
 	.toppannel-address
@@ -2921,12 +2980,10 @@ b, strong
 		overflow: hidden
 		position: relative
 		transform: skew(-5deg)
-		max-height: 650px
 	.megaslider-img-wrapper
-		max-height: 650px
 		overflow: hidden
 		width: calc(115%)
-		margin-left: calc(-5%)
+		margin-left: calc(-8%)
 		transform: skew(5deg)	
 		img
 			display: block
@@ -2943,7 +3000,7 @@ b, strong
 			background: rgba($blue, .65)
 			transition: all .5s ease
 	.megaslider-js
-		width: 70%
+		width: 60%
 		margin: 0 auto
 		padding: 0px 0px
 		display: none
@@ -2982,7 +3039,7 @@ b, strong
 		margin: auto
 		display: flex
 		justify-content: space-between
-		width: 60vw
+		width: 49vw
 		height: 60px
 		pointer-events: none
 		color: #fff
@@ -3282,7 +3339,7 @@ b, strong
 		color: $accent
 		text-decoration: underline
 		display: block
-		span
+		a
 			+font("Solomon-Sans-Bold-Italic", 700, 14px)
 			transition: all .5s ease
 			&:hover
@@ -3437,6 +3494,7 @@ b, strong
 		color: $accent
 		font-size: 33px
 		padding: 40px 0px 0px 0px
+		font-size: 48px
 		.h2
 	.reasons-blocks
 		display: flex
@@ -3445,11 +3503,11 @@ b, strong
 	.reasons-block
 		margin-top: 50px
 		width: 215px
+		animation: bounce 1s ease 
 		&:hover .reasons-block__img .img-weight
-			animation-name: shake-little-notskew
-			animation-duration: 100ms
-			animation-timing-function: ease-in-out
-			animation-iteration-count: infinite
+			animation: bounce 1s ease
+		&:hover .reasons-block__img .wrapper-number
+			animation: bounce 1s ease 
 	.reasons-block__img
 		position: relative
 		text-align: center
@@ -3540,6 +3598,7 @@ b, strong
 		justify-content: space-evenly
 		position: relative
 		padding-top: 60px
+		margin-left: 30px
 	.ourtrainers-address
 		display: none
 		position: absolute

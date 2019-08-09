@@ -282,6 +282,56 @@
   }
 }
 
+@-webkit-keyframes shakeSkew {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0) skew(16deg);
+    transform: translate3d(0, 0, 0) skew(16deg);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-1.5px, 0, 0) skew(16deg);
+    transform: translate3d(-1.5px, 0, 0) skew(16deg);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(1.5px, 0, 0) skew(16deg);
+    transform: translate3d(1.5px, 0, 0) skew(16deg);
+  }
+}
+
+@keyframes shakeSkew {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0) skew(16deg);
+    transform: translate3d(0, 0, 0) skew(16deg);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-1.5px, 0, 0) skew(16deg);
+    transform: translate3d(-1.5px, 0, 0) skew(16deg);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(1.5px, 0, 0) skew(16deg);
+    transform: translate3d(1.5px, 0, 0) skew(16deg);
+  }
+}
+
 .shake {
   -webkit-animation-name: shake;
   animation-name: shake;

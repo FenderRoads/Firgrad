@@ -1,5 +1,7 @@
 @import "vars"
 
+
+
 @media only screen and (max-width: 1500px)
   .section-ourstock
   .ourstock-wrapper
@@ -45,9 +47,9 @@
   .img-event
     position: absolute
     left: 50%
-    margin-left: -218px
+    margin-left: -166px
     display: inline-block
-    width: 384px
+    width: 332px
     height: 375px
   .ourstock-content-wrapper
     position: absolute
@@ -74,7 +76,7 @@
     .reviews-topline
       display: flex
       justify-content: space-between
-      max-width: 310px
+      max-width: 350px
       min-width: 300px
       margin-left: 56px
       transform: skew(-16deg)
@@ -87,6 +89,8 @@
       img
         display: block
         width: 85px
+    .reviews-topline__data
+      width: 250px
     .topline__data-name
       text-transform: uppercase
       font-size: 18px
@@ -188,7 +192,7 @@
     .menu
       li
         a
-          padding: 22px 12px
+          padding: 22px 15px
     .to-book-button
       padding: 12px 12px
     .consultation-button
@@ -201,7 +205,7 @@
 
   .section-news
     .news-block
-      padding: 0px 0px 0px 0px
+      padding: 0px 6px 0px 0px
       width: 48%
     .content-text
       line-height: 1.2
@@ -265,6 +269,18 @@
     .ourstock-wrapper
       margin-right: auto
       margin-left: auto
+
+
+@media (min-width: 1340px) and (max-width: 1400px) 
+  .section-header
+    .menu
+      li
+        a
+          padding: 22px 21px
+    .to-book-button
+      padding: 12px 25px
+    .consultation-button
+      padding: 20px 25px
 
 @media only screen and (max-width: 1200px)
   .section-header
@@ -436,6 +452,9 @@
             top: -1px
     .header-mobile-location
       background: #fff
+    .header-mobile-menu-active
+      display: block
+      animation: jackInTheBox 0.5s ease
     .location-blocks
       padding-bottom: 35px
     .location-block
@@ -569,6 +588,8 @@
       width: 290px
     .megaslider-js
       width: 100%
+    .owl-stage-outer
+      transform: scale(0.5)
     .megaslider-img
       transform: skew(0deg)
       box-shadow: none
@@ -644,6 +665,23 @@
       justify-content: center
     .contacts-rightside
       padding-bottom: 40px
+    .leftside__block-address
+      position: relative
+      padding-left: 17px
+      img
+        position: absolute
+        left: -3px
+        top: 0
+        width: 15px
+    .leftside__block-tel
+      position: relative
+      padding-left: 17px
+      img
+        position: absolute
+        left: -3px
+        top: 0
+    .dn-dekstop-icon
+      display: block
 
   .section-reviews
     .reviews-title
@@ -837,8 +875,11 @@
   .section-questions
     .questions-title
       width: 290px
-      font-size: 19px
-
+      font-size: 29px
+      padding-top: 35px
+    .questions-button
+      margin-top: 20px
+      padding: 17px 0px
   .section-reviews
     overflow: hidden
     .owl-stage-outer
@@ -874,6 +915,7 @@
       transform: skew(0deg)
     .reviews-bottomline__text
       width: 95%
+      margin-top: 15px
       span
         font-size: 16px
     .reviews-block

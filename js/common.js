@@ -36,6 +36,10 @@ $(function() {
 
   // Carousel-1
 
+  $('.carousel-1').children().each( function( index ) {
+    $(this).attr( 'data-position', index );
+  });
+
   $('.carousel-1').owlCarousel({
     loop: true,
     nav: true,
@@ -46,6 +50,8 @@ $(function() {
         items: 1
       }
     }
+
+    
     // onChange: function counter(event) {
     //   let items     = event.item.count;     
     //   let item     = event.item.index;
@@ -59,8 +65,20 @@ $(function() {
     //     console.log(0); 
     //     } 
     //   }
-    // }
-  })
+    // }             
+  });
+
+  if (window.matchMedia("(max-width: 760px)").matches) {
+    $(".carousel-1").trigger('remove.owl.carousel', $('.item').data( 'bgvideo' )).trigger('refresh.owl.carousel'); 
+  } else {
+    
+  }
+
+  
+  // $(document).on('click', '.owl-item>div', function() {
+  //   $('.carousel-1').trigger('to.owl.carousel', $(this).data( 'position' ) );
+  // });
+
 
   // let x = window.matchMedia('(max-width: 780px)')
   // counter()
@@ -120,7 +138,52 @@ $(function() {
 
   $('.tour-select-title').on('click', function() {
     $('.tour-select-dropdown').toggleClass('tour-select-dropdown-active')
-  })
+  });
+
+  // $($('*:not(.tour-select-title)', document).on('click', function(){
+  //   $('.tour-select-dropdown').removeClass('tour-select-dropdown-active')
+  // });
+
+//   $(document).mouseup(function (e) {
+//     var container = $(".tour-select-dropdown");
+//     if (container.has(e.target).length === 0){
+//       container.removeClass('tour-select-dropdown-active')
+//     }
+// });
+
+  $(document).mouseup(function (e) {
+    var a = document.querySelector('tour-select-dropdown');
+    if ($("tour-select-dropdown").has(e.target).length === 0){
+        a.className = (a.className == 'tour-select-dropdown-active' ? '' : '');
+    }
+  });
+
+// $(document).ready(function(){
+//   $(".tour-select-dropdown").click(function(){
+//       if ($(this).hasClass('tour-select-dropdown-active')) {
+//           $(this).removeClass('tour-select-dropdown-active');
+//       } else {
+//           $(this).addClass('tour-select-dropdown-active');
+//       }
+//       $('.tour-select-dropdown').not(this).removeClass('tour-select-dropdown-active'); //тут закроем все кроме нажатого
+//   });
+// });
+
+// $(document).click(function(e){ 
+//   var elem = $(".tour-select-dropdown"); 
+//   if (e.target!=elem[0]&&!elem.has(e.target).length) { 
+//     elem.removeClass('tour-select-dropdown-active')
+//   } 
+// });
+
+
+  // $('.tour-select-title').focusout(function() {
+  //   $('.tour-select-dropdown').removeClass('tour-select-dropdown-active')
+  // })
+
+  // $(document).on('click', '*:not(.tour-select-title)', function() {
+  //   $('.tour-select-dropdown').removeClass('tour-select-dropdown-active')
+  // })
 
 
   $('.js-tour-select').select2({
@@ -188,7 +251,9 @@ $(function() {
     $owl.trigger('to.owl.carousel', $(this).data( 'position' ) );
   });
 
-  
+  // Megaslider_
+
+  // Tabs
 
   $('.toppannel-buttons').on('click', '.toppannel-button:not(.toppannel-button-active)', function() {
     $(this)
@@ -208,10 +273,7 @@ $(function() {
       .closest('.timetable-widgets').find('.timetable-widget').removeClass('timetable-widget-active').eq($(this).index()).addClass('timetable-widget-active');
   });
 
-
-
-
-  // Megaslider_
+  // Tabs_
 
   // Maingallery
 
@@ -268,9 +330,7 @@ $(function() {
 
   $('.hamburger').on('click', function() {
     $('.hamburger').toggleClass('is-active')
-    $('.header-mobile-menu').animate({
-      width: 'toggle'
-    }, 200)
+    $('.header-mobile-menu').toggleClass('header-mobile-menu-active')
     $('.header-mobile-telephone').fadeToggle(500)
     $('.consultation-button').fadeToggle(500)
     $('.header-mobile-logo').fadeToggle(500)
@@ -332,10 +392,11 @@ $(".fitness-flex .js-parallax-block").each(function() {scrollParallax($(this))})
 
   // Parallax-block_
 
+  // Sign up to trainer
 
-  // li-dropdown
+  $('.trainer-entry').on('click', function() {
+    $('.trainer-contacts').addClass('trainer-contacts-active')
+  });
 
-  
-
-  // li-dropdown_
+  // Sign up to trainer_
 });
