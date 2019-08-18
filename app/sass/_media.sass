@@ -59,7 +59,7 @@
     margin-left: -165px
   .ourstock-content__title
     font-size: 22px
-    width: 164px
+    height: 82px
   .ourstock-content__post-title
     font-size: 14px
     bottom: -49px
@@ -127,11 +127,11 @@
       position: relative
       text-align: center
       overflow: hidden
-      width: 240px
-      height: 155px
+      width: 215px
+      height: 143px
       img
-        width: 240px
-        height: 155px
+        width: 215px
+        height: 143px
       &:after
         position: absolute
         content: ''
@@ -144,6 +144,7 @@
       max-width: 1200px
     .gallery-blocks
       max-width: 1200px
+      justify-content: center
 
   .section-mobileapp
     .mobileapp-rightside__list
@@ -172,6 +173,10 @@
     .newsitem-leftside__text
       font-size: 15px
       line-height: 1.5
+    .newsitem-leftside
+      & > p
+        font-size: 15px
+        line-height: 1.5
     .newsitem-rightside__img
       width: 500px
       height: 340px
@@ -405,43 +410,45 @@
       nav
       ul
         li
-          height: 55px
-          box-sizing: border-box
-          text-transform: uppercase
-          font-weight: 700
-          text-align: center
-          padding: 14px 0px
-          border: 1px solid rgba(#e9efff, .5)
           background: #fff
           a
             color: $accent
             transition: all .25s ease
+            height: 55px
+            box-sizing: border-box
+            text-transform: uppercase
+            font-weight: 700
+            text-align: center
+            padding: 14px 0px
+            border: 1px solid rgba(#e9efff, .5)
+            background: #fff
+            display: block
             &:hover
               color: $blue
               transition: all .25s ease
+          .mobile-clubs-button
+            cursor: default
+            &:hover
+              color: $accent
 
         .li-to-book-button
-          background: #e9efff
           color: $blue
+          background: #e9efff
           line-height: 1.2
           padding: 8px 0px
           transition: all .5s ease
-          a
-            color: $blue
           &:hover
             background: darken(#e9efff, 3%)
             transition: all .5s ease
         .li-consultation-button
+          color: #fff
           background: $accent
-          transition: all .5s ease
-          a
-            color: #fff
           &:hover
             background: darken($accent, 15%)
+            color: #ffffff
             transition: all .5s ease
         .li-telephone
-          a
-            color: $blue
+          color: $blue
           span
             position: relative
             display: inline-block
@@ -450,8 +457,24 @@
             position: absolute
             left: -9px
             top: -1px
+    .mobile-clubs
+      display: none
+      .mobile-clubs__item
+        color: $blue
+        transition: all .25s ease
+        height: 55px
+        box-sizing: border-box
+        text-transform: uppercase
+        font-weight: 700
+        text-align: center
+        padding: 14px 0px
+        background: #fff
+        display: block
+        &:hover
+          color: $accent
+          transition: all .25s ease
     .header-mobile-location
-      background: #fff
+      background: url('../img/@2x/bg-blue-pixels.png') no-repeat center
     .header-mobile-menu-active
       display: block
       animation: jackInTheBox 0.5s ease
@@ -460,28 +483,50 @@
     .location-block
       text-align: center
       padding-top: 35px
+      display: flex
+      flex-direction: column
     .location-block__title
       +font("NeoSansPro-BoldItalic", 700, 20px)
       color: $accent
       text-transform: uppercase
+      text-align: center
+      margin: 0 auto
+      background: $orange
+      color: #fff
+      transform: skew(-16deg)
+      padding: 7px 45px
+      display: block
+      transition: all .25s ease
       span
         display: inline-block
         position: relative
+        transform: skew(16deg)
       i
-        color: $accent
+        color: #fff
         font-size: 24px
         position: absolute
-        top: -1px
-        left: -23px
+        top: 1px
+        left: -22px
+      &:hover
+        background: $blue
+        transition: all .25s ease
     .location-block__address
-      +font("NeoSansPro-Italic", 400, 20px)
-      color: $blue
+      +font("NeoSansPro-LightItalic", 400, 20px)
+      color: #fff
       text-transform: uppercase
-      width: 150px
+      width: 75%
       margin: 0 auto
       text-align: center
       line-height: 1.3
       margin-bottom: 5px
+      margin-top: 5px
+      display: flex
+      flex-direction: column
+      align-items: center
+      .tel
+        display: block
+        color: #fff
+        
     .location-block__about
       display: block
       color: #212869
@@ -581,11 +626,15 @@
       width: auto
     .toppannel-button
       width: 250px
+      span
+        border-bottom: 2px dashed $orange
+        line-height: 1.1
     .toppannel-button-active
-      font-size: 21px
 
     .toppannel-address
       width: 290px
+      padding-top: 10px
+      padding-bottom: 10px
     .megaslider-js
       width: 100%
     .owl-stage-outer
@@ -599,20 +648,21 @@
       .megaslider-img
         box-shadow: none
     .megaslider-more-wrapper
-      padding-top: 30px
+      padding-top: 70px
       .megaslider-more
         width: 220px
         font-size: 21px
         line-height: 1.3
         padding: 10px 0px
     .owl-dots
-      position: absolute
-      bottom: 0
-      left: 50%
-      margin-left: -40px
-      display: flex
-      flex-wrap: wrap
-      justify-content: center
+      position: static
+      margin-top: 15px
+      // bottom: 0
+      // left: 50%
+      // margin-left: -40px
+      // display: flex
+      // flex-wrap: wrap
+      // justify-content: center
       .owl-dot
         span
           background: #fff
@@ -629,7 +679,7 @@
           transfition: scale .25s ease
     .owl-nav
       top: auto
-      bottom: -15px
+      bottom: -10px
       width: 100vw
       button.owl-prev
         width: 45px
@@ -665,21 +715,22 @@
       justify-content: center
     .contacts-rightside
       padding-bottom: 40px
+      padding-top: 20px
     .leftside__block-address
       position: relative
       padding-left: 17px
       img
         position: absolute
         left: -3px
-        top: 0
+        top: -3px
         width: 15px
     .leftside__block-tel
       position: relative
       padding-left: 17px
       img
         position: absolute
-        left: -3px
-        top: 0
+        left: -2px
+        top: 1px
     .dn-dekstop-icon
       display: block
 
@@ -699,7 +750,11 @@
       .ws_controls
         display: block
         position: absolute
-        width: 100vw
+        width: 70vw
+        bottom: -22px
+        left: 0
+        right: 0
+        margin: 0 auto
         .ws_next, .ws_prev
           border: none
           width: 45px
@@ -726,6 +781,44 @@
       width: 100%
     .directionlist-button-absolute
       display: none
+    .directionlist-bottom
+      display: block
+    .directionlist
+      display: block
+    .directionlist-bottom
+      background: $blue
+      padding: 20px
+    .tooltip-item.tooltip-item-active
+      display: block
+    .tooltip-items
+      padding-bottom: 30px
+      padding-top: 55px
+    .tooltip-item
+      display: none
+      color: #fff
+      line-height: 1.5
+      +font("NeoSansPro-Italic", 400, 16px)
+    .directionlist-bottom__button
+      background: $orange
+      color: #fff
+      transform: skew(-16deg)
+      padding: 10px 0px 
+      width: 240px
+      text-align: center
+      margin: 0 auto
+      text-transform: uppercase
+      font-size: 20px
+      transition: all .5s ease
+      display: flex
+      align-items: center
+      span
+        display: inline-block
+        transform: skew(16deg)
+        line-height: 1.2
+      &:hover
+        background: $blue
+        transition: all .5s ease
+
     
 
   .section-ourstock
@@ -756,8 +849,10 @@
   .ourstock-content__title
     transform: skew(0deg)
     margin-left: 10px
+    height: 70px
   .ourstock-content__post-title
     transform: skew(0deg)
+    font-size: 12px
   .ourstock-content-wrapper
     height: 120px
     bottom: 0
@@ -822,7 +917,7 @@
 
   .section-maingallery
     .owl-nav
-      bottom: -65px
+      bottom: -17px
       width: 100vw
       top: auto
       color: $blue
@@ -850,13 +945,17 @@
     .js-maingallery
       width: 100%
     .owl-dots
-      margin-left: -112px
-      max-width: 224px
+      // margin-left: -112px
+      // max-width: 224px
+      // width: 70%
+      // display: flex
+      // justify-content: center
+      // flex-wrap: wrap
+      // line-height: 1
+      margin-top: 15px
       width: 70%
-      display: flex
-      justify-content: center
-      flex-wrap: wrap
-      line-height: 1
+      margin-left: auto
+      margin-right: auto
       .owl-dot
         span
           background: $blue
@@ -880,11 +979,13 @@
     .questions-button
       margin-top: 20px
       padding: 17px 0px
+
   .section-reviews
     overflow: hidden
     .owl-stage-outer
       transform: skew(0deg)
-      padding: 70px 0px
+      padding-top: 70px
+      padding-bottom: 0px
     .reviews
       background: url('../img/@2x/bg-reviews-mobile.jpg') no-repeat center
     .reviews-topline
@@ -926,20 +1027,15 @@
       background: transparent
     .owl-nav
       top: auto
+      bottom: 21px
       button.owl-next
         margin-right: 0
       button.owl-prev
         margin-left: 0
     .owl-dots
-      position: absolute
-      bottom: 17px
-      left: 50%
-      margin-left: -94px
-      display: flex
-      justify-content: center
-      flex-wrap: wrap
-      width: 70%
-      max-width: 200px  
+      position: static
+      margin-top: 0px
+      padding: 30px 0px
       .owl-dot
         span
           background: $blue
@@ -988,7 +1084,7 @@
       left: 50%
       margin-left: -150px
       width: 300px
-      margin-top: -110px
+      margin-top: -90px
     .wideanim-rightside__title
       text-align: center
       width: 280px
@@ -1001,7 +1097,7 @@
         top: 0
     .wideanim-rightside__big-logo
       left: 88px
-      top: -150px
+      top: -171px
       img
         width: 120px
         height: 159px
@@ -1095,6 +1191,8 @@
       height: 65px
       display: flex
       align-items: center
+    .tour-select
+      padding-top: 40px
     .tour-select-title
       width: 95px
       font-size: 30px
@@ -1111,6 +1209,7 @@
         font-size: 15px
     .title-page-wrapper
       justify-content: center
+      top: 163px
     .title-page
       font-size: 18px
       width: 270px
@@ -1118,6 +1217,8 @@
 
 
   .section-data
+    background: url('../img/@2x/bg-pixels.png') no-repeat left
+    background-size: cover
     .data-blocks
       flex-direction: column
       justify-content: center
@@ -1257,11 +1358,11 @@
         transform: skew(0deg)
     .newsitem-leftside
       padding-top: 20px
-    .newsitem-leftside__text
-      margin-left: auto
-      margin-right: auto
-      line-height: 1.35
-      width: 95%
+      & > p
+        margin-left: auto
+        margin-right: auto
+        line-height: 1.35
+        width: 95%
     .newsitem-leftside__title
       padding-left: 28px
 
@@ -1437,6 +1538,338 @@
       background: rgba(#000, .5)
     .background-video
       display: none
+
+  .section-stocklist
+    .stocklist-items
+      flex-wrap: wrap
+    .stocklist-item
+      width: 100%
+      margin-top: 50px
+
+  .section-reserve
+    .reserve-biglogo
+      width: 280px
+      height: 373px
+      img
+        width: 280px
+    .reserve-biglogo__name
+      font-size: 24px
+    .reserve-biglogo__address
+      font-size: 17px
+      width: 155px
+    .reserve-biglogo__info
+      bottom: 98px
+      left: -11px
+    .reserve-buttons-price
+      justify-content: center
+      width: 290px
+    .reserve-buttons-price__first
+      width: 50%
+      transform: skew(-10deg)
+      span
+        transform: skew(10deg)
+    .reserve-buttons-price__second
+      width: 50%
+      transform: skew(-10deg)
+      span
+        transform: skew(10deg)
+    .reserve-button
+      transform: skew(-10deg)
+      padding: 9px 0px
+      box-shadow: 0px 0px 30px rgba($accent, .7)
+      span
+        transform: skew(10deg)
+    .reserve-threebuttons
+      padding-top: 0px
+      margin-top: 80px
+      background: #fff
+    .reserve-threebuttons__button
+      width: 33%
+      text-align: center
+      background: #fff
+      transition: all .25s ease
+      font-size: 16px
+      padding: 10px 15px
+      &:nth-child(2)
+        margin: 0
+        border-left: 2px solid #bcc1f4
+        border-right: 2px solid #bcc1f4
+      &:hover
+        background: #e9efff
+        transition: all .25s ease
+
+  .section-fitness
+    background: url('../img/@2x/bg-fitness.png') no-repeat left
+    background-size: cover
+    .section-inner
+      background: none
+    .section-reverse-title
+      min-height: 0px
+      background: transparent
+      box-shadow: none
+    .reserve-title
+      padding: 28px
+    .fitness
+      width: 95%
+      padding: 10px 0px 20px 0px
+    .reserve-title
+      width: 80%
+      font-size: 30px
+    .fitness-flex
+    .fitness-arguments
+      justify-content: space-between
+      width: 100%
+    .fitness-arguments-column1
+      width: 50%
+    .fitness-arguments-column2
+      width: 50%
+    .arguments-title
+      font-size: 15px
+      line-height: 1.2
+      margin-left: 5px
+    .fitness-img
+      display: none
+
+    .fitness-arguments__item
+      min-width: 0
+      margin-bottom: 15px
+    .arguments-img
+      min-width: 50px
+      min-height: 70px
+    .a-img-1
+      min-width: 70px
+    .a-img-2
+      min-width: 70px
+    .a-img-3
+      min-width: 70px
+    #fit-icon-1
+      top: 5px
+      right: 0
+      width: 70px
+    #fit-icon-2
+      top: 6px
+      right: 4px
+      width: 56px
+    #fit-icon-3
+      top: 24px
+      right: 0
+      width: 65px
+    #fit-icon-4
+      top: 0
+      right: 13px
+      width: 36px
+    #fit-icon-5
+      top: 4px
+      right: 0
+      width: 52px
+    #fit-icon-6
+      top: 2px
+      right: 5px
+      width: 44px
+    #fit-icon-7
+      top: 14px
+      right: 0
+      width: 50px
+    #fit-icon-8
+      top: 13px
+      right: 0
+      width: 45px
+
+  .section-numbers
+    .numbers
+      padding-bottom: 30px
+      width: 85%
+    .numbers-title
+      width: auto
+      font-size: 30px
+      line-height: 1.2
+      padding-bottom: 40px
+    .numbers-big-A
+      display: none
+    .numbers-column__block
+      margin-top: 0px
+      height: 120px
+    .numbers-column__title
+      line-height: 1.2
+      font-size: 15px
+    .numbers-column__value
+      white-space: nowrap
+      font-size: 32px
+
+  .section-gallery
+    .gallery-blocks
+      justify-content: space-around
+    .gallery-block
+      width: 140px
+      height: 93px
+      margin-bottom: 20px
+      img
+        width: 140px
+        height: 93px
+
+  .section-reasons
+    .reasons-title
+      font-size: 25px
+      width: 90%
+      margin: 0 auto
+    .reasons-block
+      width: 150px
+      margin-top: 25px
+    .img-weight
+      width: 50px
+    .img-tile
+      width: 45px
+    .wrapper-number
+      font-size: 35px
+      width: 47px
+      height: 47px
+      left: 53px
+      top: 19px
+    .reasons-block__title
+      font-size: 15px
+      width: 100%
+
+
+
+  .section-ourtrainers
+    .js-direction-select
+      display: block
+    .ourtrainers
+      flex-direction: column
+      align-items: center
+    .ourtrainers-address
+      display: none
+    .ourtrainers-blocks
+      margin-left: 0px
+      padding-top: 0px
+    .ourtrainers-block
+      width: 300px
+      height: 393px
+      margin-top: 50px
+      border: 2px solid $blue
+    .ourtrainers-block__img
+      width: 300px
+      height: 393px
+      img
+        width: 300px
+        height: 393px
+    .ourtrainers-block__title
+      width: 235px
+      font-size: 18px
+    .select-trainer
+      display: none
+    .adress-select
+      .select2-container
+        +font("NeoSansPro-BoldItalic", 700, 20px)
+      .select2-container--default .select2-selection--single .select2-selection__arrow b
+        border-width: 9px 5px 0 5px
+        border-color: #fff transparent transparent transparent
+      .select2-selection--single .select2-selection__arrow
+        top: 13px
+        right: 25px
+
+    .direction-select
+      img
+        display: none
+      .select2-container
+        display: block
+        width: 310px
+        background: transparent
+        border: 1px solid $accent
+        color: #ffffff
+        text-align: center
+        text-transform: uppercase
+        +font("NeoSansPro-BoldItalic", 700, 20px)
+      .select2-container--default .select2-results > .select2-results__options
+        background: red !important
+      .select2-container--default .select2-selection--single
+        background: transparent
+        border: none
+      .select2-container--default .select2-selection--single .select2-selection__rendered
+        line-height: 56px
+        color: $accent
+      .select2-selection--single
+        height: 55px
+      .select2-selection--single .select2-selection__arrow
+        top: 13px
+        right: 25px
+      .select2-container--default .select2-selection--single .select2-selection__arrow b
+        border-width: 9px 5px 0 5px
+        border-color: $accent transparent transparent transparent
+      .select2-results__option[aria-selected]
+
+  .section-faq
+    .faq-toggle
+      flex-direction: column
+      width: 100%
+    .faq-other
+      margin-top: 20px
+    .pass-wrapper
+      flex-direction: column
+    .pass-column
+      flex-direction: column
+    .pass-column:last-child
+      margin-top: 50px
+    .ui-accordion .ui-accordion-content
+      font-size: 16px
+      line-height: 1.1
+    .ui-accordion .ui-accordion-content
+      padding: 1em
+    .ui-accordion .ui-accordion-header
+      padding: 15px 15px
+      font-size: 15px
+      line-height: 1.1
+      .ui-icon-triangle-1-e, .ui-icon
+        display: none
+    .pass-column__bracels
+      width: 190px
+      height: 192px
+      bottom: 150px
+      img
+        width: 190px
+        height: 192px
+
+  @keyframes howtoEnterfinger 
+    0% 
+      bottom: -220px
+    
+    25% 
+      bottom: -170px
+    
+    80% 
+      bottom: -160px
+    
+    100% 
+      bottom: -220px
+
+
+  #modal-tobook.fancybox-content, #modal-free.fancybox-content, #modal-call.fancybox-content
+    width: 100%
+    max-width: 500px
+    padding: 44px 15px
+    .modal-img
+      width: 215px
+      img
+        width: 215px
+    .modal-title
+      font-size: 19px
+    .modal-inputs
+      max-width: 412px
+      input
+        font-size: 18px
+    .modal-status
+      .modal-success
+        font-size: 18px
+        margin-top: 5px
+      .modal-error
+        font-size: 18px
+        margin-top: 5px
+    .modal-agree
+      font-size: 17px
+    .modal-button
+      font-size: 19px
+
+
 
       
 

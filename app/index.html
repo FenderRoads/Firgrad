@@ -31,7 +31,7 @@
 					<nav>
 						<ul class="menu">
 							<li>
-								<a href="#" class="clubs"><span>КЛУБЫ</span></a>
+								<div class="clubs"><span>КЛУБЫ</span></div>
 								<div class="li-club-dropdown">
 									<a href="#" class="li-club-dropdown__item">БК ЧАЙКА</a>
 									<a href="#" class="li-club-dropdown__item">ВОДНЫЙ МИР</a>
@@ -48,11 +48,11 @@
 				</div>
 				<div class="topline-rightside">
 					<div>
-						<a href="#" class="to-book-button"><span>забронировать <br>абонемент</span></a>
+						<a href="#modal-tobook" class="to-book-button"><span>забронировать <br>абонемент</span></a>
 					</div>
 					<div>
-						<a href="#" class="consultation-button"><span>БЕСПЛАТНОЕ занятие</span></a>
-						<a href="#" class="telephone">
+						<a href="#modal-free" class="consultation-button"><span>БЕСПЛАТНОЕ занятие</span></a>
+						<a href="#modal-call" class="telephone">
 							<img src="img/@2x/phone.png" alt="">
 							<span>Заказать звонок</span>
 						</a>
@@ -62,13 +62,13 @@
 			</div>
 			<div class="header-mobile">
 				<div class="header-mobile-leftside">
-					<div class="header-mobile-logo"><a href="#"><img src="img/@2x/logo-mobile.svg" alt=""></a></div>
+					<div class="header-mobile-logo"><a href="#" class="img-telephone"><img src="img/@2x/logo-mobile.svg" alt=""></a></div>
 					<div class="dn-sports-club"><img src="img/@2x/sports-club.png" alt=""></div>
-					<a href="#" class="to-book-button"><span>забронировать <br>абонемент</span></a>
+					<a href="#modal-tobook" class="to-book-button"><span>забронировать <br>абонемент</span></a>
 				</div>
 				<div class="header-mobile-rightside">
-					<a href="#" class="consultation-button"><span>БЕСПЛАТНОЕ занятие</span></a>
-					<div class="header-mobile-telephone"><a href="#"><img src="img/@2x/phone-mobile.svg" alt=""></a></div>
+					<a href="#modal-free" class="consultation-button"><span>БЕСПЛАТНОЕ занятие</span></a>
+					<div class="header-mobile-telephone"><a href="#modal-call" class="telephone-mobile"><img src="img/@2x/phone-mobile.svg" alt=""></a></div>
 					<button class="hamburger hamburger--vortex" type="button">
 							<span class="hamburger-box">
 								<span class="hamburger-inner"></span>
@@ -79,34 +79,37 @@
 			<div class="header-mobile-menu">
 					<nav>
 						<ul>
-							<li><a href="#">КЛУБЫ</a></li>
+							<li>
+								<a href="#" class="mobile-clubs-button">КЛУБЫ</a>
+								<ul class="mobile-clubs">
+									<li><a href="#" class="mobile-clubs__item">БК ЧАЙКА</a></li>
+									<li><a href="#" class="mobile-clubs__item">КОЛОМЕНСКАя</a></li>
+								</ul>
+							</li>
 							<li><a href="#">РАСПИСАНИЕ</a></li>
 							<li><a href="#">АКЦИИ</a></li>
 							<li><a href="#">НАША КОМАНДА</a></li>
 							<li><a href="#">НОВОСТИ</a></li>
 							<li><a href="#">КОНТАКТЫ</a></li>
-							<li class="li-to-book-button"><a href="#">забронировать<br> абонемент</a></li>
-							<li class="li-consultation-button"><a href="#">БЕСПЛАТНОЕ занятие</a></li>
-							<li class="li-telephone"><a href="#"><span><img src="img/@2x/phone.png" alt="">ЗАКАЗАТЬ ЗВОНОК</span></a></li>
+							<li><a href="#modal-tobook" class="li-to-book-button">забронировать<br> абонемент</a></li>
+							<li><a href="#modal-free" class="li-consultation-button">БЕСПЛАТНОЕ занятие</a></li>
+							<li><a href="#modal-call" class="li-telephone"><span><img src="img/@2x/phone.png" alt="">ЗАКАЗАТЬ ЗВОНОК</span></a></li>
 						</ul>
 					</nav>
 					<div class="header-mobile-location">
 						<div class="location-blocks">
 		
 							<div class="location-block">
-								<div class="location-block__title"><span><i class="fas fa-map-marker-alt"></i>БК ЧАЙКА</span></div>
-								<div class="location-block__address">пр. Ленина, 109 2-161-161</div>
-								<a href="#" class="location-block__about"><span>О клубе</span></a>
+								<a href="#" class="location-block__title"><span><i class="fas fa-map-marker-alt"></i>БК ЧАЙКА</span></a>
+								<div class="location-block__address"><span>пр. Ленина, 109</span> <a href="#" class="tel">2-161-161</a></div>
 							</div>
 							<div class="location-block">
-								<div class="location-block__title"><span><i class="fas fa-map-marker-alt"></i>Водный Мир</span></div>
-								<div class="location-block__address">пр. Ленина, 109 2-161-161</div>
-								<a href="#" class="location-block__about"><span>О клубе</span></a>
+								<a href="#" class="location-block__title"><span><i class="fas fa-map-marker-alt"></i>Водный Мир</span></a>
+								<div class="location-block__address"><span>пр. Ленина, 109</span> <a href="#" class="tel">2-161-161</a></div>
 							</div>
 							<div class="location-block">
-								<div class="location-block__title"><span><i class="fas fa-map-marker-alt"></i>Комсомольская</span></div>
-								<div class="location-block__address">пр. Ленина, 109 2-161-161</div>
-								<a href="#" class="location-block__about"><span>О клубе</span></a>
+								<a href="#" class="location-block__title"><span><i class="fas fa-map-marker-alt"></i>Комсомольская</span></a>
+								<div class="location-block__address"><span>пр. Ленина, 109</span> <a href="#" class="tel">2-161-161</a></div>
 							</div>
 		
 		
@@ -123,7 +126,7 @@
 			<div class="container">
 				<div class="owl-carousel owl-theme carousel-1">
 
-					<div class="item bgvideo-item" data-bgvideo="1">
+					<div class="item bgvideo-item" data-bgvideo="0">
 							<div class="background-video">
 								<div class="overlay"><span>ЗДЕСЬ ВИДЕО</span></div>
 									<video loop muted autoplay class="fullscreen-bg__video">
@@ -422,7 +425,7 @@
 
 						
 					<div class="item">
-							<div class="stockitem stockitem-bg-1">
+							<div class="stockitem" style="background: url('../app/img/@2x/bg-stock2.jpg') no-repeat center;background-size: cover;">
 									<div class="stockitem-biglogo"><img src="img/@2x/big-logo.png" alt=""></div>
 									<div class="stockitem-content-1">
 										<div class="stockitem-content__title stockitem-content__title-1"><h2 class="h2">ЗАГОЛОВОК
@@ -435,7 +438,7 @@
 						</div>
 
 						<div class="item">
-							<div class="stockitem">
+							<div class="stockitem" style="background: url('../app/img/@2x/bg-stock1.jpg') no-repeat center;background-size: cover;">
 								<div class="stockitem-biglogo"><img src="img/@2x/big-logo.png" alt=""></div>
 								<div class="stockitem-content">
 									<div class="stockitem-content__title"><h2 class="h2">ЗАГОЛОВОК
@@ -519,55 +522,57 @@
 							<div class="toppannel-button"><span>Комсомольский</span></div>
 						</div>
 						<div class="toppannel-address-wrapper">
-								<div class="toppannel-address toppannel-address-active">Нижний Новгород, ул. Коломенская 5, ТРЦ Жар-Птица (1)</div>
-								<div class="toppannel-address">Нижний Новгород, ул. Коломенская 5, ТРЦ Жар-Птица (2)</div>
-								<div class="toppannel-address">Нижний Новгород, ул. Коломенская 5, ТРЦ Жар-Птица (3)</div>
+								<div class="toppannel-address toppannel-address-active"><span>Нижний Новгород, ул. Коломенская 5, ТРЦ Жар-Птица (1)</span> <a href="#">666666666666</a></div>
+								<div class="toppannel-address"><span>Нижний Новгород, ул. Коломенская 5, ТРЦ Жар-Птица (2)</span> <a href="#">666666666666</a></div>
+								<div class="toppannel-address"><span>Нижний Новгород, ул. Коломенская 5, ТРЦ Жар-Птица (3)</span> <a href="#">666666666666</a></div>
 						</div>
 					</div>
-					<div class="owl-carousel owl-theme megaslider-js megaslider-js-active">
-							<div class="item">
-								<div class="megaslider-img">
-									<div class="megaslider-img-wrapper">
-										<img src="img/@2x/sports-hall.jpg" alt="">
+					
+							<div class="owl-carousel owl-theme megaslider-js megaslider-js-active">
+									<div class="item">
+										<div class="megaslider-img">
+											<div class="megaslider-img-wrapper">
+												<img src="img/@2x/sports-hall.jpg" alt="">
+											</div>
+										</div>
 									</div>
-								</div>
+									<div class="item">
+										<div class="megaslider-img">
+											<div class="megaslider-img-wrapper">
+												<img src="img/@2x/sports-hall.jpg" alt="">
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="megaslider-img">
+											<div class="megaslider-img-wrapper">
+												<img src="img/@2x/sports-hall.jpg" alt="">
+											</div>
+											</div>
+									</div>
+									<div class="item">
+										<div class="megaslider-img">
+											<div class="megaslider-img-wrapper">
+												<img src="img/@2x/sports-hall.jpg" alt="">
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="megaslider-img">
+											<div class="megaslider-img-wrapper">
+												<img src="img/@2x/sports-hall.jpg" alt="">
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="megaslider-img">
+											<div class="megaslider-img-wrapper">
+												<img src="img/@2x/sports-hall.jpg" alt="">
+											</div>
+										</div>
+									</div>
 							</div>
-							<div class="item">
-								<div class="megaslider-img">
-									<div class="megaslider-img-wrapper">
-										<img src="img/@2x/sports-hall.jpg" alt="">
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="megaslider-img">
-									<div class="megaslider-img-wrapper">
-										<img src="img/@2x/sports-hall.jpg" alt="">
-									</div>
-									</div>
-							</div>
-							<div class="item">
-								<div class="megaslider-img">
-									<div class="megaslider-img-wrapper">
-										<img src="img/@2x/sports-hall.jpg" alt="">
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="megaslider-img">
-									<div class="megaslider-img-wrapper">
-										<img src="img/@2x/sports-hall.jpg" alt="">
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="megaslider-img">
-									<div class="megaslider-img-wrapper">
-										<img src="img/@2x/sports-hall.jpg" alt="">
-									</div>
-								</div>
-							</div>
-					</div>
+					
 
 					<div class="owl-carousel owl-theme megaslider-js">
 							<div class="item">
@@ -585,7 +590,7 @@
 								</div>
 							</div>
 					</div>
-
+					
 					<div class="owl-carousel owl-theme megaslider-js">
 							<div class="item">
 								<div class="megaslider-img">
@@ -609,7 +614,11 @@
 									</div>
 							</div>
 					</div>
+
+					<div class="megaslider-more-wrapper megaslider-more-active"><a href="#" class="megaslider-more"><span>ПОДРОБНЕЕ О КЛУБЕ</span></a></div>
 					<div class="megaslider-more-wrapper"><a href="#" class="megaslider-more"><span>ПОДРОБНЕЕ О КЛУБЕ</span></a></div>
+					<div class="megaslider-more-wrapper"><a href="#" class="megaslider-more"><span>ПОДРОБНЕЕ О КЛУБЕ</span></a></div>
+					
 				</div>
 			</div>
 		</div>
@@ -630,8 +639,8 @@
 								</div>
 								<div class="ourstock-content-wrapper ourstock-content1">
 									<div class="ourstock-content">
-										<div class="ourstock-content__title"> лето к тебе
-											не готово</div>
+										<div class="ourstock-content__title"><span>лето к тебе
+											не готово</span></div>
 										<div class="ourstock-content__post-title">жгучее предложение от фитнесграда</div>
 									</div>
 								</div>
@@ -646,8 +655,7 @@
 								</div>
 								<div class="ourstock-content-wrapper ourstock-content2">
 									<div class="ourstock-content">
-										<div class="ourstock-content__title"> лето к тебе
-											не готово</div>
+										<div class="ourstock-content__title"><span>лето к тебе не готово</span></div>
 										<div class="ourstock-content__post-title">жгучее предложение от фитнесграда</div>
 									</div>
 								</div>
@@ -662,8 +670,7 @@
 								</div>
 								<div class="ourstock-content-wrapper ourstock-content3">
 									<div class="ourstock-content">
-										<div class="ourstock-content__title"> лето к тебе
-											не готово</div>
+										<div class="ourstock-content__title"><span>лето к тебе не готово</span></div>
 										<div class="ourstock-content__post-title">жгучее предложение от фитнесграда</div>
 									</div>
 								</div>
@@ -681,7 +688,7 @@
 			<div class="container">
 				<div class="directionlist">
 					<div class="directionlist-button-wrapper">
-						<a href="#" class="directionlist-button-absolute"><span>Бесплатное занятие</span></a>
+						<a href="#modal-free" class="directionlist-button-absolute"><span>Бесплатное занятие</span></a>
 					</div>
 					<div class="directionlist-leftside">
 							<div id="wowslider-container1">
@@ -710,21 +717,27 @@
 									<div class="ws_shadow"></div>
 									</div>	
 					</div>
-					<!-- <div class="directionlist-rightside">
-						<div class="rightside-list ws_bullets">
-							
-									<a href="#wows1_0" title="bgtoggle1" class="rightside-list-item"><span>Кроссфит</span></a>
-								<a href="#wows1_1" title="bgtoggle2" class="rightside-list-item"><span>LES MILLS </span></a>
-								<a href="#wows1_2" title="bgtoggle3" class="rightside-list-item rightside-list-item-active"><span>Бокс</span></a>
-								<a href="#wows1_3" title="bgtoggle4" class="rightside-list-item"><span>Cycle</span></a>
-								<a href="#wows1_4" title="bgtoggle5" class="rightside-list-item"><span>Кардиозона</span></a>
-								<a href="#wows1_5" title="bgtoggle6" class="rightside-list-item"><span>Тренажерный зал</span></a>
-								<a href="#wows1_6" title="bgtoggle7" class="rightside-list-item"><span>Йога</span></a>
-								<a href="#wows1_7" title="bgtoggle8" class="rightside-list-item"><span>Танцевальный зал</span></a>
-									
-						
+					<div class="directionlist-bottom">
+						<div class="tooltip-items">
+							<div class="tooltip-item tooltip-item-active">
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos molestiae, ipsum tenetur quibusdam, amet distinctio eveniet earum iure explicabo quae, velit consequatur tempora cupiditate delectus vel illum ab! Sapiente, dignissimos.</p>
+								</div>
+								<div class="tooltip-item">
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos molestiae, ipsum tenetur quibusdam, amet distinctio eveniet earum iure explicabo quae, velit consequatur tempora cupiditate delectus vel illum ab! Sapiente, dignissimos.</p>
+								</div>
+								<div class="tooltip-item">
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos molestiae, ipsum tenetur quibusdam, amet distinctio eveniet earum iure explicabo quae, velit consequatur tempora cupiditate delectus vel illum ab! Sapiente, dignissimos.</p>
+								</div>
+								<div class="tooltip-item">
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos molestiae, ipsum tenetur quibusdam, amet distinctio eveniet earum iure explicabo quae, velit consequatur tempora cupiditate delectus vel illum ab! Sapiente, dignissimos.</p>
+								</div>
 						</div>
-					</div> -->
+	
+						<div class="directionlist-bottom__button"><span>записаться на бесплатное занятие</span></div>
+					</div>
+					
+
+
 				</div>
 			</div>
 		</div>
@@ -912,26 +925,26 @@
 								<div class="contacts-leftside__block">
 									<div class="leftside__block-title"><a href="#">ФИТНЕС ГРАД</a></div>
 									<div class="leftside__block-address"><img src="img/@2x/logo-mobile-white.svg" alt="" class="dn-dekstop-icon">на пр. Ленина, 109</div>
-									<div class="leftside__block-tel"><img src="img/src/phone-white.svg" alt="" class="dn-dekstop-icon">2-161-161</div>
+									<a href="#" class="leftside__block-tel"><img src="img/src/phone-white.svg" alt="" class="dn-dekstop-icon">2-161-161</a>
 								</div>
 								<div class="contacts-leftside__block">
 									<div class="leftside__block-title"><a href="#">ФИТНЕС ГРАД</a></div>
 									<div class="leftside__block-address"><img src="img/@2x/logo-mobile-white.svg" alt="" class="dn-dekstop-icon">на пр. Ленина, 109</div>
-									<div class="leftside__block-tel"><img src="img/src/phone-white.svg" alt="" class="dn-dekstop-icon">2-161-161</div>
+									<a href="#" class="leftside__block-tel"><img src="img/src/phone-white.svg" alt="" class="dn-dekstop-icon">2-161-161</a>
 								</div>
 								<div class="contacts-leftside__block">
 									<div class="leftside__block-title"><a href="#">ФИТНЕС ГРАД</a></div>
 									<div class="leftside__block-address"><img src="img/@2x/logo-mobile-white.svg" alt="" class="dn-dekstop-icon">на пр. Ленина, 109</div>
-									<div class="leftside__block-tel"><img src="img/src/phone-white.svg" alt="" class="dn-dekstop-icon">2-161-161</div>
+									<a href="#" class="leftside__block-tel"><img src="img/src/phone-white.svg" alt="" class="dn-dekstop-icon">2-161-161</a>
 								</div>
 							</div>
 						</div>
 						<div class="contacts-rightside">
 							<div class="contacts-rightside__social">
-								<a href="#" class="rightside__social-vk social"><i class="fab fa-vk"></i></a>
-								<a href="#" class="rightside__social-facebook social"><i class="fab fa-facebook-f"></i></a>
-								<a href="#" class="rightside__social-instagram social"><i class="fab fa-instagram"></i></a>
-								<a href="#" class="rightside__social-youtube social"><i class="fab fa-youtube"></i></a>
+								<a href="#" class="rightside__social_item1 social"><i class="fab fa-vk"></i></a>
+								<a href="#" class="rightside__social-item2 social"><i class="fab fa-facebook-f"></i></a>
+								<a href="#" class="rightside__social-item3 social"><i class="fab fa-instagram"></i></a>
+								<a href="#" class="rightside__social-item4 social"><i class="fab fa-youtube"></i></a>
 							</div>
 							<div class="contacts-rightside__buttons">
 								<a href="#" class="google-play"><img src="img/@2x/googleplay.png" alt=""></a>
@@ -963,9 +976,57 @@
 			</div>
 		</footer>
 
+		<div id="modal-tobook">
+			<div class="modal-img"><img src="img/@2x/sports-club.png" alt=""></div>
+			<div class="modal-title">Название формы</div>
+			<div class="modal-inputs">
+				<input type="text" placeholder="Ваше имя">
+				<input type="text" placeholder="Номер телефона">
+			</div>
+			<div class="modal-status">
+				<div class="modal-success">Заявка успешно отправлена</div>
+				<div class="modal-error">Заполните все поля</div>
+			</div>
+			<div class="modal-agree">Отправляя форму, вы соглашаетесь
+				с <a href="#">политикой конфиденциальности</a></div>
+			<div class="modal-button"><span>Любой текст</span></div>
+		</div>
+		
+		<div id="modal-free">
+			<div class="modal-img"><img src="img/@2x/sports-club.png" alt=""></div>
+			<div class="modal-title">Название формы</div>
+			<div class="modal-inputs">
+				<input type="text" placeholder="Ваше имя">
+				<input type="text" placeholder="Номер телефона">
+			</div>
+			<div class="modal-status">
+				<div class="modal-success">Заявка успешно отправлена</div>
+				<div class="modal-error">Заполните все поля</div>
+			</div>
+			<div class="modal-agree">Отправляя форму, вы соглашаетесь
+				с <a href="#">политикой конфиденциальности</a></div>
+			<div class="modal-button"><span>Любой текст</span></div>
+		</div>
+		
+		<div id="modal-call">
+			<div class="modal-img"><img src="img/@2x/sports-club.png" alt=""></div>
+			<div class="modal-title">Название формы</div>
+			<div class="modal-inputs">
+				<input type="text" placeholder="Ваше имя">
+				<input type="text" placeholder="Номер телефона">
+			</div>
+			<div class="modal-status">
+				<div class="modal-success">Заявка успешно отправлена</div>
+				<div class="modal-error">Заполните все поля</div>
+			</div>
+			<div class="modal-agree">Отправляя форму, вы соглашаетесь
+				с <a href="#">политикой конфиденциальности</a></div>
+			<div class="modal-button"><span>Любой текст</span></div>
+		</div>
+
 	<script src="js/scripts.min.js"></script>
+	<script src="js/common.js"></script>
 	<!-- WOWSLIDER -->
-	<script src="libs/wowslider/engine1/wowslider-dots.js"></script>
 	<script src="libs/wowslider/engine1/wowslider.js"></script>
 	<script src="libs/wowslider/engine1/script.js"></script>
 	<!-- /WOWSLIDER -->
