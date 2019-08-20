@@ -9,8 +9,6 @@
 	outline: none
 
 
-
-	
 ::placeholder
 	color: #666
 
@@ -31,6 +29,7 @@ h1, h2, h3, h4, h5, h6
 	font-size: 100%
 
 a
+	color: #fff
 	text-decoration: none
 	&:visited, &:active
 		color: inherit
@@ -98,6 +97,113 @@ b, strong
 
 // Button up_
 
+// Modal
+
+#modal-tobook, #modal-free, #modal-call
+	display: none
+	width: 500px
+	background: #e9efff
+	.fancybox-button 
+		width: 50px
+		height: 50px
+	.modal-img
+		width: 300px
+		margin: 0 auto
+		img
+			width: 300px
+	.modal-title
+		text-align: center
+		font-size: 23px
+		color: $accent
+		text-transform: uppercase
+		margin: 10px 0px
+	.modal-select
+		// .select2-container
+		// 	display: block
+		// 	width: 100%
+		// 	background: transparent
+		// 	border: 1px solid $accent
+		// 	color: #ffffff
+		// 	+font("NeoSansPro-BoldItalic", 700, 20px)
+		// .select2-container--default .select2-results > .select2-results__options
+		// 	background: red !important
+		// .select2-container--default .select2-selection--single
+		// 	background: transparent
+		// 	border: none
+		// .select2-container--default .select2-selection--single .select2-selection__rendered
+		// 	line-height: 56px
+		// 	color: $accent
+		// .select2-selection--single
+		// 	height: 55px
+		// .select2-selection--single .select2-selection__arrow
+		// 	top: 13px
+		// 	right: 25px
+		// .select2-container--default .select2-selection--single .select2-selection__arrow b
+		// 	border-width: 9px 5px 0 5px
+		// 	border-color: $accent transparent transparent transparent
+		// .select2-results__option[aria-selected]
+	.modal-inputs
+		margin: 0 auto
+		input
+			display: block
+			margin-left: auto
+			margin-right: auto
+			width: 100%
+			border: none
+			+font("Solomon-Sans-Normal", 400, 21px)
+			color: #878787
+			padding: 10px 20px
+			margin-top: 10px
+			&::placeholder
+				text-align: center
+	.modal-status
+		position: relative
+		height: 33px
+	.modal-success
+		text-align: center
+		color: $blue
+		font-size: 20px
+		position: absolute
+		display: none
+		left: 0
+		right: 0
+	.modal-error
+		text-align: center
+		color: $orange
+		font-size: 20px
+		position: absolute
+		display: none
+		left: 0
+		right: 0
+	.modal-status-active
+		display: block
+	.modal-agree
+		line-height: 1.1
+		+font("Solomon-Sans-Normal", 100, 19px)
+		color: #878787
+		text-align: center
+		margin-bottom: 10px
+		a
+			text-decoration: underline
+			color: #878787
+	.modal-button
+		background: $orange
+		color: $blue
+		transform: skew(-16deg)
+		text-align: center
+		padding: 5px 15px
+		text-transform: uppercase
+		font-size: 21px
+		width: 250px
+		margin: 0 auto
+		span
+			display: inline-block
+			transform: skew(16deg)
+
+
+// Modal_
+
+	
 // Header
 
 .section-header
@@ -135,7 +241,23 @@ b, strong
 			&:first-child
 				&:hover .li-club-dropdown
 					display: block
-					animation: rotateIn 0.5s ease
+					animation: fadeInRight 0.5s ease
+			.clubs
+				display: inline-block
+				text-transform: uppercase
+				color: $accent
+				transform: skew(-16deg) 
+				font-size: 13px
+				white-space: nowrap
+				transition: all .25s ease
+				padding: 22px 21px
+				border-left: 1px solid #c0c5f5
+				background: #fff
+				position: relative
+				cursor: default
+				span
+					display: inline-block
+					transform: skew(16deg)
 			& > a
 				display: inline-block
 				text-transform: uppercase
@@ -155,12 +277,14 @@ b, strong
 					display: inline-block
 					transform: skew(16deg)
 			.li-club-dropdown
-				background: #fff
 				width: 200px
 				position: absolute
 				left: 86px
 				display: none
+				border-top: 10px solid transparent
+				box-sizing: border-box
 			.li-club-dropdown__item
+				background: #fff
 				display: block
 				font-size: 18px
 				padding: 4px 7px
@@ -262,9 +386,6 @@ b, strong
 
 
 
-
-
-
 // Header_
 
 // Banner
@@ -322,10 +443,15 @@ b, strong
 		text-transform: uppercase
 		margin: 40px 0px 0px 0px
 		cursor: pointer
+		transition: all .5s ease
 		span
 			display: inline-block
 			transform: skew(16deg)
 			padding: 7px 0px
+		&:hover
+			background: $blue
+			color: #fff
+			transition: all .5s ease
 	.owl-dots
 		position: absolute
 		bottom: 0
@@ -557,16 +683,16 @@ b, strong
 
 
 	.stockitem
-		background: url('../img/@2x/bg-stock1.jpg') no-repeat center
+		// background: url('../img/@2x/bg-stock1.jpg') no-repeat center
 		background-size: cover
 		position: relative
 		width: 100%
-		height: 100vh
+		height: calc(100vh - 66px)
 		min-height: 500px
 	.stockitem-biglogo
 		position: absolute
 		top: 50%
-		margin-top: -240px
+		margin-top: -225px
 		left: 80px
 		width: 140px
 		height: 186px
@@ -608,13 +734,17 @@ b, strong
 		text-transform: uppercase
 		margin: 40px 0px 0px 0px
 		cursor: pointer
+		transition: all .5s ease
 		span
 			display: inline-block
 			transform: skew(-16deg)
 			padding: 7px 0px
+		&:hover
+			background: $blue
+			transition: all .5s ease
 
 	.stockitem-bg-1
-		background: url('../img/@2x/bg-stock2.jpg') no-repeat center
+		// background: url('../img/@2x/bg-stock2.jpg') no-repeat center
 		background-size: cover
 	.stockitem-content-1
 		width: 550px
@@ -883,6 +1013,7 @@ b, strong
 		+font("Solomon-Sans-Normal", 400, 15px)
 		display: flex
 		align-items: center
+		justify-content: center
 		span
 			padding: 0px 15px
 			transform: skew(16deg)
@@ -918,7 +1049,7 @@ b, strong
     position: relative
     height: 100%
     width: 100%
-    padding-top: 45%
+    padding-top: 29%
 	.fullscreen-bg__video 
 		position: absolute
 		top: -35%
@@ -1018,7 +1149,7 @@ b, strong
 		font-family: "NeoSansPro-Italic", sans-serif
 		text-transform: uppercase
 		margin-right: 30px
-		width: 150px
+		width: 160px
 		&:last-child
 			margin-right: 0
 	.leftside__block-title
@@ -1026,15 +1157,24 @@ b, strong
 		text-decoration: underline
 		a
 			transition: all .25s ease
+			color: #fff
 			&:hover
 				color: $accent
 				transition: all .25s ease
 	.leftside__block-address
 		font-size: 14px
 		margin-top: 3px
+		line-height: 1.2
+		color: #fff
 	.leftside__block-tel
 		font-size: 14px
 		margin-top: 5px
+		display: inline-block
+		color: #fff
+		transition: all .25s ease
+		&:hover
+			color: $accent
+			transition: all .25s ease
 	.dn-dekstop-icon
 		display: none
 
@@ -1062,12 +1202,12 @@ b, strong
 		&:hover
 			background: $accent
 			transition: all .25s ease
-	.rightside__social-vk
+	.rightside__social_item1
 		.fab
 			margin-top: 1px
-	.rightside__social-facebook
-	.rightside__social-instagram
-	.rightside__social-youtube
+	.rightside__social-item2
+	.rightside__social-item3
+	.rightside__social-item3
 	.contacts-rightside__buttons
 		display: flex
 		padding-top: 13px
@@ -1168,7 +1308,6 @@ b, strong
 		position: absolute
 		width: 260px
 		left: -6px
-		bottom: -135px
 		display: none
 		z-index: 3000
 		a
@@ -1265,9 +1404,8 @@ b, strong
 		width: 100%
 		margin: 0 auto
 		padding-bottom: 50px
-		flex-wrap: wrap
 	.data-block
-		width: 33%
+		width: 50%
 		text-align: center
 		position: relative
 		padding-top: 35px
@@ -1308,9 +1446,17 @@ b, strong
 		text-transform: uppercase
 		color: #1F2496
 		margin-top: 15px
+		width: 80%
+		margin: 0 auto
+		line-height: 1.3
+		padding-top: 10px
+		span
+			display: block
 	.data-block__tel
 		+font("NeoSansPro-BoldItalic", 700, 24px)
 		color: $accent
+		a
+			color: $accent
 	.data-block__time
 		+font("NeoSansPro-Italic", 400, 20px)
 		color: #363874
@@ -1318,6 +1464,8 @@ b, strong
 		margin-top: 5px
 		width: 208px
 		margin: 0 auto
+		span
+			display: block
 	.data-block__emails
 		+font("NeoSansPro-Italic", 500, 18px)
 		color: #222222
@@ -1325,6 +1473,7 @@ b, strong
 		width: 80%
 		margin-left: auto
 		margin-right: auto
+		line-height: 1.4
 
 
 
@@ -1339,7 +1488,7 @@ b, strong
 	.news-blocks
 		display: flex
 		flex-wrap: wrap
-		justify-content: space-between
+		justify-content: space-around
 		width: 95%
 		max-width: 1500px
 		margin: 0 auto
@@ -1387,6 +1536,8 @@ b, strong
 			&:hover
 				font-size: 16px
 				transition: all .5s ease
+		a
+			color: $accent
 
 	.news-block__img
 		position: relative
@@ -1417,59 +1568,44 @@ b, strong
 .section-newsitem
 	background: url('../img/@2x/bg-pixels.png') no-repeat center
 	background-size: cover
-	.section-inner
-	.newsitem
-		padding-top: 130px
-		padding-bottom: 70px
-		width: 90%
-		max-width: 1500px
-		margin: 0 auto
-	.newsitem-topline
-		display: flex
-		justify-content: space-between
-		padding-bottom: 40px
-	.newsitem-topline__return
-		+font("NeoSansPro-BoldItalic", 700, 18px)
-		color: #1a1e51
-		text-transform: uppercase
-		background: $orange
-		transform: skew(-16deg)
-		padding: 6px 15px
-		display: block
-		span
-			display: inline-block
-			transform: skew(16deg)
-		&:hover
-			background: $blue
-			color: #fff
-			transition: all .5s ease
-	.newsitem-topline__date
-		+font("Solomon-Sans-SemiBold", 600, 20px)
-		color: #313563
-		text-transform: uppercase
-	.newsitem-flex
-		display: flex
-		justify-content: space-between
-	.newsitem-leftside
-		ul
-			li
-				list-style: disc inside
-		ol
-			li
-				list-style: decimal inside
-	.newsitem-leftside__title
-		+font("Solomon-Sans-Black", 900, 25px)
-		color: #313563
-		width: 95%
-	.newsitem-leftside__title
-	.newsitem-leftside__title2
-		font-size: 23px
-	.newsitem-leftside__title3
-		font-size: 21px
-
-	.newsitem-leftside__text
+.section-inner
+.newsitem
+	padding-top: 130px
+	padding-bottom: 70px
+	width: 90%
+	max-width: 1500px
+	margin: 0 auto
+.newsitem-topline
+	display: flex
+	justify-content: space-between
+	padding-bottom: 40px
+.newsitem-topline__return
+	+font("NeoSansPro-BoldItalic", 700, 18px)
+	color: #1a1e51
+	text-transform: uppercase
+	background: $orange
+	transform: skew(-16deg)
+	padding: 6px 15px
+	display: block
+	span
+		display: inline-block
+		transform: skew(16deg)
+	&:hover
+		background: $blue
+		color: #fff
+		transition: all .5s ease
+.newsitem-topline__date
+	+font("Solomon-Sans-SemiBold", 600, 20px)
+	color: #313563
+	text-transform: uppercase
+.newsitem-flex
+	display: flex
+	justify-content: space-between
+.newsitem-leftside
+	line-height: 1.5
+	& > p
 		+font("Solomon-Sans-Normal", 400, 16px)
-		margin: 7px 0px
+		padding: 5px 0px
 		width: 95%
 		max-width: 1000px
 		&:last-child
@@ -1477,18 +1613,51 @@ b, strong
 				margin-top: 10px
 		span
 			display: inline-block
-	.newsitem-rightside
-	.newsitem-rightside__img
-		width: 580px
-		height: 390px
-		position: relative
+	ul
+		padding-left: 20px
+		font-size: 17px
+		+font("Solomon-Sans-Normal", 400, 18px)
+		margin: 5px 0px
+		line-height: 1.4
+		li
+			list-style: disc outside
+			margin: 3px 0px
+	ol
+		font-size: 17px
+		padding-left: 20px
+		font-size: 17px
+		+font("Solomon-Sans-Normal", 400, 18px)
+		margin: 5px 0px
+		line-height: 1.4
+		li
+			list-style: decimal outside
+			margin: 3px 0px
+	h2, h3, h4
+		color: #313563
+		width: 95%
+		line-height: 1.2
+	h2
+		+font("Solomon-Sans-Black", 900, 25px)
+		width: 95%
+	h3
+		+font("Solomon-Sans-Black", 900, 23px)
+		width: 95%
+	h4
+		+font("Solomon-Sans-Black", 900, 21px)
+		width: 95%
+	
+.newsitem-rightside
+.newsitem-rightside__img
+	width: 580px
+	height: 580px
+	position: relative
+	transform: skew(0deg)
+	overflow: hidden
+	& > div
 		transform: skew(0deg)
-		overflow: hidden
-		& > div
-			transform: skew(0deg)
-		img
-			display: block
-			width: 100%
+	img
+		display: block
+		width: 100%
 
 // Newsitem_
 
@@ -1536,22 +1705,38 @@ b, strong
 		+font("Solomon-Sans-Normal", 400, 16px)
 		max-width: 800px
 		margin: 0 auto
-		padding: 67px 0px
+		padding: 67px 0px	
 		color: #000
 		span
 			display: inline-block
 			&:last-child
 				margin-top: 10px
-	.event-content__title
+		& > p
+			line-height: 1.5
+			padding: 5px 0px
+	ul
+		padding-left: 20px
+		font-size: 17px
+		line-height: 1.4
+		li
+			list-style: disc outside
+			margin: 5px 0px
+	ol
+		font-size: 17px
+		padding-left: 20px
+		font-size: 17px
+		line-height: 1.4
+		li
+			list-style: decimal outside
+			margin: 5px 0px
+	h2, h3, h4
 		text-transform: uppercase
 		+font1("Solomon-Sans-Bold", 700)
 		color: $blue
-	.event-content__title1
+	h2
 		font-size: 30px
-	.event-content__title2
+	h3
 		font-size: 27px
-	.event-content__text
-		line-height: 1.5
 
 
 	.event-gallery
@@ -1635,7 +1820,7 @@ b, strong
 			color: #000
 			+font("NeoSansPro-Italic", 400, 16px)
 		span:last-child
-			+font("NeoSansPro-Italic", 700, 30px)
+			+font("Solomon-Sans-Bold", 400, 30px)
 			color: #fff
 			margin-top: 0px
 			margin-bottom: 9px
@@ -1703,9 +1888,13 @@ b, strong
 		background: #e8e8e8
 		transform: skew(-16deg)
 		text-transform: uppercase
+		transition: all .25s ease
 		span
 			display: inline-block
 			transform: skew(16deg)
+		&:hover
+			background: lighten(#e8e8e8, 25%)
+			transition: all .25s ease
 		&:nth-child(2)
 			margin: 0px 25px
 	.reserve-threebuttons__first
@@ -1830,7 +2019,7 @@ b, strong
 	position: static
 	.owl-stage-outer
 		overflow: hidden
-		transform: skew(-18deg)
+		transform: skew(-8deg)
 	.owl-nav.disabled
 		display: block
 	.owl-nav
@@ -1918,11 +2107,11 @@ b, strong
 	img
 		position: absolute
 		left: 50%
-		margin-left: -300px
+		margin-left: -264px
 		display: inline-block
-		width: 608px !important // owl-item img width: 100% !!!
+		width: 530px !important // owl-item img width: 100% !!!
 		height: 508px
-		transform: skew(18deg)
+		transform: skew(8deg)
 .img-event
 	position: absolute
 	left: 50%
@@ -1951,15 +2140,19 @@ b, strong
 	background: rgba(#ff9516, .8)
 	color: #10122f
 .ourstock-content__title
-	transform: skew(18deg)
+	transform: skew(8deg)
 	text-transform: uppercase
 	+font("NeoSansPro-BoldItalic", 700, 27px)
-	width: 195px
+	width: 90%
+	height: 96px
 	line-height: 1.4
-	margin-left: 25px
-	padding: 11px 0px
+	margin-left: 20px
+	padding: 0
+	display: flex
+	align-items: center
+	line-height: 1
 .ourstock-content__post-title
-	transform: skew(18deg)
+	transform: skew(8deg)
 	position: absolute
 	bottom: -50px
 	left: 34px
@@ -1968,6 +2161,8 @@ b, strong
 	+font("NeoSansPro-Italic", 400, 16px)
 	text-transform: uppercase
 	opacity: 0
+	line-height: 1.2
+	width: 90%
 
 // Ourstock_
 
@@ -2506,7 +2701,7 @@ b, strong
 			position: absolute
 			left: 50%
 			top: 50%
-			margin-left: -170px
+			margin-left: -150px
 			margin-top: -180px
 			transition: all .5s ease
 		&:hover 
@@ -2574,6 +2769,12 @@ b, strong
 		margin: 0 auto
 	.bottomrow-contacts__item
 		margin-top: 15px
+		a
+			color: #3c3c3c
+			transition: all .25s ease
+			&:hover
+				color: $accent
+				transition: all .25s ease
 	.trainer-entry-wrapper
 		padding-top: 30px
 		display: flex
@@ -2611,6 +2812,8 @@ b, strong
 			color: #fff
 			font-size: 18px
 			+font("Solomon-Sans-Normal", 300, 18px)
+			a
+				color: #fff
 	.trainer-contacts-active
 		display: block
 		animation: flipInX .5s ease
@@ -2726,10 +2929,10 @@ b, strong
 				margin-left: 5px
 
 	.owl-dots
-		position: absolute
-		bottom: -50px
-		left: 50%
-		margin-left: -251px
+		// position: absolute
+		// bottom: -50px
+		// left: 50%
+		margin-top: 20px
 		.owl-dot
 			span
 				background: rgba(#98a3cc, .7)
@@ -2953,6 +3156,16 @@ b, strong
 		width: 450px
 		padding-top: 25px
 		display: none
+		span
+			display: block
+			line-height: 1.3
+		a
+			color: #fff
+			display: inline-block
+			transition: all .25s ease
+			&:hover
+				color: $accent
+				transition: all .25s ease
 	.toppannel-address-active
 		display: block
 	.megaslider-more
@@ -2975,6 +3188,9 @@ b, strong
 			transition: all .5s ease
 	.megaslider-more-wrapper
 		padding-bottom: 50px
+		display: none
+	.megaslider-more-active
+		display: block
 	.item
 	.megaslider-img
 		overflow: hidden
@@ -3003,9 +3219,9 @@ b, strong
 		width: 60%
 		margin: 0 auto
 		padding: 0px 0px
-		display: none
 		opacity: 0
 		transition: all .5s ease
+		display: none
 	.megaslider-js-active
 		display: block
 		opacity: 1
@@ -3121,6 +3337,8 @@ b, strong
 			background: $blue
 			color: #fff
 			transition: all .5s ease
+	.directionlist-bottom
+		display: none
 	.directionlist-leftside
 		align-self: flex-start
 		width: 100%
@@ -3139,26 +3357,33 @@ b, strong
 			width: 20%
 			overflow: visible !important
 			.ws_selthumb
-				background: $accent
-				border-color: transparent
+				background: $blue
+				border-color: #51586b
 				position: relative
-				transform: scale(1.05)
 				z-index: 4000
 				&:before
 					content: ''
 					position: absolute
-					left: -12px
-					bottom: 0
 					height: 101%
 					line-height: 40px
 					background: $accent
-					width: 40px
-					transform: skew(-12deg)
+					width: 86%
+					z-index: -1
+				&:after
+					content: ''
+					position: absolute
+					background: $accent
+					padding-bottom: 17.8%
+					width: 17.8%
+					z-index: -1
+					transform: rotate(40deg) skewX(-9deg)
+					left: 50%
+					margin-left: -45%
 				span
-					color: $blue
+					color: #fff
 					transition: all .25s ease
 				&:hover span
-					color: $blue
+					color: #fff
 
 			a
 				border: none
@@ -3278,7 +3503,7 @@ b, strong
 	.eventlist-flex
 		display: flex
 		flex-wrap: wrap
-		justify-content: space-between
+		justify-content: space-around
 		padding-top: 70px
 		padding-bottom: 70px
 	.eventlist-block
@@ -3396,6 +3621,7 @@ b, strong
 	.pass-column__title
 		+font("NeoSansPro-Regular", 700, 16px)
 		width: 200px
+		z-index: 10
 		span
 			display: block
 		span:first-child
@@ -3418,6 +3644,7 @@ b, strong
 		bottom: -300px
 		left: 50px
 		animation: howtoEnterfinger 2.5s infinite
+		z-index: 2
 		
 
 	.ui-accordion-content.ui-corner-bottom.ui-helper-reset.ui-widget-content
@@ -3487,7 +3714,7 @@ b, strong
 	.reasons
 		margin: 0 auto
 		max-width: 1100px
-		padding-bottom: 75px
+		padding-bottom: 60px
 	.reasons-title
 		text-align: center
 		text-transform: uppercase
@@ -3501,7 +3728,7 @@ b, strong
 		flex-wrap: wrap
 		justify-content: space-evenly
 	.reasons-block
-		margin-top: 50px
+		margin-top: 30px
 		width: 215px
 		animation: bounce 1s ease 
 		&:hover .reasons-block__img .img-weight
@@ -3513,27 +3740,28 @@ b, strong
 		text-align: center
 		img
 			display: block
-			margin: 20px auto 25px auto
+			margin: 20px auto 20px auto
 	.img-weight
-		width: 85px
+		width: 65px
 	.img-tile
+		width: 45px
 
 	.wrapper-number
 		width: 110px
 		height: 106px
 		position: absolute
 		left: 54px
-		top: 37px
+		top: 31px
 		z-index: 1000
 		color: #fff
-		font-size: 52px
+		font-size: 38px
 		font-weight: 700
 		text-align: center
 		span
 	.reasons-block__title
 		text-align: center
 		margin: auto
-		font-size: 18px
+		font-size: 15px
 		text-transform: uppercase
 		color: #131434
 		line-height: 1.2
@@ -3555,8 +3783,11 @@ b, strong
 		padding-bottom: 80px
 	.ourtrainers-sidebar
 		padding-top: 30px
-	.adress-select
-		margin-bottom: 30px
+	.js-direction-select
+		display: none
+	.direction-select
+		.select2-container
+			display: none
 	.js-adress-select
 	.select-trainer
 		width: 310px
@@ -3576,10 +3807,10 @@ b, strong
 			background: #f2f6ff
 			+font("NeoSansCyr-Regular", 400, 22px)
 			border: 1px solid rgba(#51586b, .35)
-			border-bottom: none
+			border-top: none
 			color: #000
-			&:last-child
-				border-bottom: 1px solid rgba(#51586b, .35)
+			&:first-child
+				border-top: 1px solid rgba(#51586b, .35)
 			&:after
 				content: ''
 				position: absolute
@@ -3599,6 +3830,7 @@ b, strong
 		position: relative
 		padding-top: 60px
 		margin-left: 30px
+		width: 100%
 	.ourtrainers-address
 		display: none
 		position: absolute
@@ -3655,28 +3887,30 @@ b, strong
 		left: 15px
 		bottom: 10px
 		width: 25px
-	.select2-container
-		width: 310px
-		background: $orange
-		color: #ffffff
-		text-align: center
-		text-transform: uppercase
-		+font("NeoSansPro-BoldItalic", 700, 22px)
-	.select2-container--default .select2-selection--single
-		background: $orange
-		border: none
-	.select2-container--default .select2-selection--single .select2-selection__rendered
-		line-height: 56px
-		color: #fff
-	.select2-selection--single
-		height: 55px
-	.select2-selection--single .select2-selection__arrow
-		top: 10px
-		right: 36px
-	.select2-container--default .select2-selection--single .select2-selection__arrow b
-		border-width: 14px 8px 0 8px
-		border-color: #fff transparent transparent transparent
-	.select2-results__option[aria-selected]
+	.adress-select
+		margin-bottom: 30px
+		.select2-container
+			width: 310px
+			background: $orange
+			color: #ffffff
+			text-align: center
+			text-transform: uppercase
+			+font("NeoSansPro-BoldItalic", 700, 22px)
+		.select2-container--default .select2-selection--single
+			background: $orange
+			border: none
+		.select2-container--default .select2-selection--single .select2-selection__rendered
+			line-height: 56px
+			color: #fff
+		.select2-selection--single
+			height: 55px
+		.select2-selection--single .select2-selection__arrow
+			top: 10px
+			right: 36px
+		.select2-container--default .select2-selection--single .select2-selection__arrow b
+			border-width: 14px 8px 0 8px
+			border-color: #fff transparent transparent transparent
+		.select2-results__option[aria-selected]
 
 // Ourtrainers_
 
@@ -3749,6 +3983,49 @@ b, strong
 
 
 // Stocklist_
-@import "_media"
 
-////
+// Stockinfo
+
+.section-infoabout
+	background: url('../img/@2x/bg-pixels.png') no-repeat center
+	background-size: cover
+.infoabout
+	max-width: 1200px
+	margin: 0 auto
+	width: 90%
+	padding: 40px 0px
+	line-height: 1.5
+	h2, h3, h4
+		color: #313563
+		line-height: 1.2
+	h2
+		+font("Solomon-Sans-Black", 900, 25px)
+	h3
+		+font("Solomon-Sans-Black", 900, 23px)
+	h4
+		+font("Solomon-Sans-Black", 900, 21px)
+	& > p
+		+font("Solomon-Sans-Normal", 400, 16px)
+		padding: 5px 0px
+		margin: 0 auto
+	ul
+		font-size: 17px
+		padding-left: 20px
+		+font("Solomon-Sans-Normal", 400, 18px)
+		margin: 5px 0px
+		line-height: 1.4
+		li
+			list-style: disc outside
+			margin: 3px 0px
+	ol
+		font-size: 17px
+		font-size: 17px
+		+font("Solomon-Sans-Normal", 400, 18px)
+		margin: 5px 0px
+		line-height: 1.4
+		li
+			margin: 3px 0px
+
+
+// Stockinfo_
+@import "_media"

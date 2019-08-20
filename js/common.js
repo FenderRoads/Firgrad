@@ -1,10 +1,13 @@
-$(function() {
+document.addEventListener("DOMContentLoaded", function() {
   // Wowjs
 
-  new WOW().init()
+  // new WOW().init();
 
 
-  //Wowjs_
+  // $('#wowslider-container1 .ws_controls').append('<div class="ws_bullets"><div><a href="#wows1_0" title="bgtoggle1" class=""><span>1</span></a><a href="#wows1_1" title="bgtoggle2" class=""><span>2</span></a><a href="#wows1_2" title="bgtoggle3" class=""><span>3</span></a><a href="#wows1_3" title="bgtoggle4" class=""><span>4</span></a><a href="#wows1_4" title="bgtoggle5" class=""><span>5</span></a><a href="#wows1_5" title="bgtoggle6" class=""><span>6</span></a><a href="#wows1_6" title="bgtoggle7" class="ws_selbull"><span>7</span></a><a href="#wows1_7" title="bgtoggle8"><span>8</span></a></div></div>')
+
+
+  // Wowjs_
 
   // Button up
 
@@ -51,25 +54,12 @@ $(function() {
       }
     }
 
-    
-    // onChange: function counter(event) {
-    //   let items     = event.item.count;     
-    //   let item     = event.item.index;
-  
-    //   if (window.matchMedia('(max-width: 780px)').matches) {
-    //     $(".owl-carousel").trigger('remove.owl.carousel', [0]).trigger('refresh.owl.carousel');
-    //     console.log(1);
-    //   } else {
-    //     if (item < 6) {
-    //       $(".owl-carousel").trigger('add.owl.carousel', ['<div class="item bgvideo-item"><div class="background-video"><div class="overlay"></div><video loop muted autoplay class="fullscreen-bg__video"><source src="/app/video/image landing1.mp4" type="video/mp4"></video></div></div>']).trigger('refresh.owl.carousel');
-    //     console.log(0); 
-    //     } 
-    //   }
-    // }             
   });
 
+  // $('.item').filter('[data-bgvideo="0"]').remove();
+
   if (window.matchMedia("(max-width: 760px)").matches) {
-    $(".carousel-1").trigger('remove.owl.carousel', $('.item').data( 'bgvideo' )).trigger('refresh.owl.carousel'); 
+    $(".carousel-1").trigger('remove.owl.carousel', $('.item').find('[data-bgvideo="0"]')).trigger('refresh.owl.carousel'); 
   } else {
     
   }
@@ -140,63 +130,36 @@ $(function() {
     $('.tour-select-dropdown').toggleClass('tour-select-dropdown-active')
   });
 
-  // $($('*:not(.tour-select-title)', document).on('click', function(){
-  //   $('.tour-select-dropdown').removeClass('tour-select-dropdown-active')
-  // });
-
-//   $(document).mouseup(function (e) {
-//     var container = $(".tour-select-dropdown");
-//     if (container.has(e.target).length === 0){
-//       container.removeClass('tour-select-dropdown-active')
-//     }
-// });
-
-  $(document).mouseup(function (e) {
-    var a = document.querySelector('tour-select-dropdown');
-    if ($("tour-select-dropdown").has(e.target).length === 0){
-        a.className = (a.className == 'tour-select-dropdown-active' ? '' : '');
-    }
-  });
-
-// $(document).ready(function(){
-//   $(".tour-select-dropdown").click(function(){
-//       if ($(this).hasClass('tour-select-dropdown-active')) {
-//           $(this).removeClass('tour-select-dropdown-active');
-//       } else {
-//           $(this).addClass('tour-select-dropdown-active');
-//       }
-//       $('.tour-select-dropdown').not(this).removeClass('tour-select-dropdown-active'); //тут закроем все кроме нажатого
-//   });
-// });
-
-// $(document).click(function(e){ 
-//   var elem = $(".tour-select-dropdown"); 
-//   if (e.target!=elem[0]&&!elem.has(e.target).length) { 
-//     elem.removeClass('tour-select-dropdown-active')
-//   } 
-// });
-
-
-  // $('.tour-select-title').focusout(function() {
-  //   $('.tour-select-dropdown').removeClass('tour-select-dropdown-active')
-  // })
-
-  // $(document).on('click', '*:not(.tour-select-title)', function() {
-  //   $('.tour-select-dropdown').removeClass('tour-select-dropdown-active')
-  // })
+  $(document).mouseup(function (e){ // событие клика по веб-документу
+    var div = $(".tour-select");  // тут указываем ID элемента
+		if (!div.is(e.target) // если клик был не по нашему блоку
+		    && div.has(e.target).length === 0) { // и не по его дочерним элементам
+			$('.tour-select-dropdown').removeClass('tour-select-dropdown-active') // скрываем его
+		}
+	});
 
 
   $('.js-tour-select').select2({
     minimumResultsForSearch: Infinity,
     width: 'style'
-  })
+  });
 
   $('.js-adress-select').select2({
     minimumResultsForSearch: Infinity,
     width: 'style'
-  })
+  });
 
-  $('.select2-container').append('<img src="img/@2x/logo-mobile-white.svg" alt="" class="logo-white">')
+  $('.js-direction-select').select2({
+    minimumResultsForSearch: Infinity,
+    width: 'style'
+  });
+
+  $('.select2-container').append('<img src="/bitrix/templates/fitgrad/img/logo-mobile-white.svg" alt="" class="logo-white">')
+
+  $('.js-select-club').select2({
+    minimumResultsForSearch: Infinity,
+    width: 'style'
+  })
   // Select_
 
   // Ourstock carousel
@@ -265,6 +228,12 @@ $(function() {
     $(this)
       .addClass('toppannel-button-active').siblings().removeClass('toppannel-button-active')
       .closest('div.megaslider-toppannel').find('div.toppannel-address').removeClass('toppannel-address-active').eq($(this).index()).addClass('toppannel-address-active');
+  });
+
+  $('.toppannel-buttons').on('click', '.toppannel-button:not(.toppannel-button-active)', function() {
+    $(this)
+      .addClass('toppannel-button-active').siblings().removeClass('toppannel-button-active')
+      .closest('div.megaslider').find('div.megaslider-more-wrapper').removeClass('megaslider-more-active').eq($(this).index()).addClass('megaslider-more-active');
   });
 
   $('.timetable-tabs').on('click', '.timetable-button:not(.timetable-button-active)', function() {
@@ -338,6 +307,9 @@ $(function() {
     $('.dn-sports-club').fadeToggle(500)
   })
 
+  $('.mobile-clubs-button').on('click', function() {
+    $('.li-club-dropdown').toggle(500);
+  });
   
   // Hamburger_
 
@@ -399,4 +371,19 @@ $(".fitness-flex .js-parallax-block").each(function() {scrollParallax($(this))})
   });
 
   // Sign up to trainer_
+
+
+  // Modal
+
+  $('.telephone').fancybox();
+  $('.telephone-mobile').fancybox();
+  $('.directionlist-button-absolute').fancybox();
+  $('.to-book-button').fancybox();
+  $('.li-to-book-button').fancybox();
+  $('.li-consultation-button').fancybox();
+  $('.li-telephone').fancybox();
+  $('.consultation-button').fancybox();
+
+
+  // Modal
 });
