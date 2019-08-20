@@ -28,11 +28,11 @@
     img
       position: absolute
       left: 50%
-      margin-left: -228px
+      margin-left: -194px
       display: inline-block
-      width: 456px !important
+      width: 387px !important
       height: 375px
-      transform: skew(18deg)
+      transform: skew(8deg)
   .ourstock-content
     height: 82px
   .ourstock-content1
@@ -426,8 +426,19 @@
             &:hover
               color: $blue
               transition: all .25s ease
-          .mobile-clubs-button
+          .clubs
             cursor: default
+            color: $accent
+            transition: all .25s ease
+            height: 55px
+            box-sizing: border-box
+            text-transform: uppercase
+            font-weight: 700
+            text-align: center
+            padding: 14px 0px
+            border: 1px solid rgba(#e9efff, .5)
+            background: #fff
+            display: block
             &:hover
               color: $accent
 
@@ -457,9 +468,9 @@
             position: absolute
             left: -9px
             top: -1px
-    .mobile-clubs
+    .li-club-dropdown
       display: none
-      .mobile-clubs__item
+      .li-club-dropdown__item
         color: $blue
         transition: all .25s ease
         height: 55px
@@ -1841,6 +1852,18 @@
     
     100% 
       bottom: -220px
+
+  .section-infoabout
+  .infoabout
+    & > p
+      font-size: 15px
+    h2
+      font-size: 24px
+    h3
+      font-size: 22px
+    h4
+      font-size: 20px
+      
 
 
   #modal-tobook.fancybox-content, #modal-free.fancybox-content, #modal-call.fancybox-content

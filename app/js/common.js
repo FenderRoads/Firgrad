@@ -142,19 +142,24 @@ document.addEventListener("DOMContentLoaded", function() {
   $('.js-tour-select').select2({
     minimumResultsForSearch: Infinity,
     width: 'style'
-  })
+  });
 
   $('.js-adress-select').select2({
     minimumResultsForSearch: Infinity,
     width: 'style'
-  })
+  });
 
   $('.js-direction-select').select2({
     minimumResultsForSearch: Infinity,
     width: 'style'
-  })
+  });
 
   $('.select2-container').append('<img src="/bitrix/templates/fitgrad/img/logo-mobile-white.svg" alt="" class="logo-white">')
+
+  $('.js-select-club').select2({
+    minimumResultsForSearch: Infinity,
+    width: 'style'
+  })
   // Select_
 
   // Ourstock carousel
@@ -303,7 +308,7 @@ document.addEventListener("DOMContentLoaded", function() {
   })
 
   $('.mobile-clubs-button').on('click', function() {
-    $('.mobile-clubs').toggle(500);
+    $('.li-club-dropdown').toggle(500);
   });
   
   // Hamburger_
