@@ -151,15 +151,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
   $('.js-direction-select').select2({
     minimumResultsForSearch: Infinity,
-    width: 'style'
+    width: 'style',
+    dropdownCssClass: 'direction-select-inner'
   });
+
 
   $('.select2-container').append('<img src="/bitrix/templates/fitgrad/img/logo-mobile-white.svg" alt="" class="logo-white">')
 
-  $('.js-select-club').select2({
+  $('.js-select-club-free').select2({
     minimumResultsForSearch: Infinity,
-    width: 'style'
-  })
+    width: 'style',
+    dropdownParent: $("#modal-free"),
+    dropdownCssClass: 'modal-select-inner'
+  });
+
+  $('.js-select-club-call').select2({
+    minimumResultsForSearch: Infinity,
+    width: 'style',
+    dropdownParent: $("#modal-call"),
+    dropdownCssClass: 'modal-select-inner'
+  });
+
+  $('.js-select-club-tobook').select2({
+    minimumResultsForSearch: Infinity,
+    width: 'style',
+    dropdownParent: $("#modal-tobook"),
+    dropdownCssClass: 'modal-select-inner'
+  });
   // Select_
 
   // Ourstock carousel

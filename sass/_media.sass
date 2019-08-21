@@ -177,9 +177,13 @@
       & > p
         font-size: 15px
         line-height: 1.5
+      ul
+      font-size: 16px
+      ol
+        font-size: 16px
     .newsitem-rightside__img
       width: 500px
-      height: 340px
+      height: 500px
     .newsitem-leftside__title1
       font-size: 24px
     .newsitem-leftside__title2
@@ -1220,7 +1224,7 @@
         font-size: 15px
     .title-page-wrapper
       justify-content: center
-      top: 163px
+      top: 134px
     .title-page
       font-size: 18px
       width: 270px
@@ -1269,6 +1273,12 @@
       height: 200px
       & > div
         transform: skew(0deg)
+    ul
+      font-size: 16px
+    ol
+      font-size: 16px
+    p
+      font-size: 15px
 
   .section-news
     .news-blocks
@@ -1792,7 +1802,7 @@
         text-transform: uppercase
         +font("NeoSansPro-BoldItalic", 700, 20px)
       .select2-container--default .select2-results > .select2-results__options
-        background: red !important
+        background: red 
       .select2-container--default .select2-selection--single
         background: transparent
         border: none
@@ -1808,6 +1818,14 @@
         border-width: 9px 5px 0 5px
         border-color: $accent transparent transparent transparent
       .select2-results__option[aria-selected]
+
+  .direction-select-inner .select2-results .select2-results__options
+    background: transparent
+  .direction-select-inner .select2-results__option--highlighted[aria-selected]
+    color: $blue
+  .select2-dropdown.direction-select-inner
+    background: #fff
+    border: 1px solid $accent
 
   .section-faq
     .faq-toggle
@@ -1863,6 +1881,10 @@
       font-size: 22px
     h4
       font-size: 20px
+    ul
+      font-size: 16px
+    ol
+      font-size: 16px
       
 
 
