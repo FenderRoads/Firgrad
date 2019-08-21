@@ -47,7 +47,7 @@ gulp.task('scripts', function() {
 		'app/libs/jquery/jquery.min.js',
 		'app/libs/owlcarousel/owl.carousel.min.js',
 		'app/libs/fancybox/jquery.fancybox.min.js',
-		'app/libs/select2/js/select2.min.js',
+		'app/libs/select2/js/select2.full.min.js',
 		'app/libs/slick-slider/slick.min.js',
 		'app/libs/jquery migrate/jquery-migrate.js',
 		'app/libs/parallax.js/parallax.min.js',
