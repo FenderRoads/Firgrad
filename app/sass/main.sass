@@ -23,6 +23,8 @@
 .container
 	width: 100%
 	
+img
+	image-rendering: -webkit-optimize-contrast
 
 h1, h2, h3, h4, h5, h6
 	margin: 0
@@ -428,10 +430,10 @@ b, strong
 	.wideanim-rightside__title
 		width: 550px
 		margin-bottom: 30px
-	.h1
-		font-size: 55px
-		color: #fff
-		line-height: 1.2
+		.h1
+			font-size: 55px
+			color: #fff
+			line-height: 1.2
 	@-moz-document url-prefix()
 		.wideanim-rightside__title
 			.h2
@@ -682,12 +684,17 @@ b, strong
 		width: 100%
 		height: 100%
 		z-index: 4
-	.overlay span
-		display: block 
-		text-align: center
-		color: #fff
-		font-size: 70px
-		margin-top: 17%		
+		.stockitem
+			background-position: 1000000% 1000000%
+	.background-video-image
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: calc(100vh - 66px)
+		z-index: -1
+	.fullscreen-bg__video
+		z-index: 1
 	.owl-item
 		height: 100%
 
@@ -1418,7 +1425,9 @@ b, strong
 		width: 50%
 		text-align: center
 		position: relative
-		padding-top: 35px
+		margin-top: 35px
+		&:not(:first-child)
+			border-left: 1px solid $blue
 	.data-block__title
 		display: block
 		+font("Solomon-Sans-Black Italic", 400, 20px)
@@ -1437,20 +1446,6 @@ b, strong
 		&:hover
 			background: $blue
 			transition: all .5s ease
-	.data-block-line1
-		position: absolute
-		right: 0
-		bottom: -15px
-		height: 290px
-		width: 1px
-		background: #313563
-	.data-block-line2
-		position: absolute
-		left: 0
-		bottom: -15px
-		height: 290px
-		width: 1px
-		background: #313563
 	.data-block__address
 		+font("NeoSansPro-BoldItalic", 700, 22px)
 		text-transform: uppercase
@@ -2848,7 +2843,7 @@ b, strong
 	.maingallery
 		position: relative
 	.js-maingallery
-		width: 65%
+		width: 50%
 		margin: 0 auto
 	.maingallery-img-wrapper
 	.maingallery-title
@@ -2898,7 +2893,7 @@ b, strong
 		display: flex
 		justify-content: space-between
 		width: 94vw
-		height: 60px
+		height: 30px
 		pointer-events: none
 		color: #fff
 		button.owl-prev
@@ -3161,7 +3156,7 @@ b, strong
 		display: flex
 		justify-content: center
 		margin: 0 auto
-		padding-top: 50px
+		padding-top: 35px
 	.toppannel-address
 		text-align: center
 		+font("NeoSansPro-Regular", 400, 17px)
@@ -3201,7 +3196,8 @@ b, strong
 			color: #fff
 			transition: all .5s ease
 	.megaslider-more-wrapper
-		padding-bottom: 50px
+		padding-bottom: 35px
+		padding-top: 10px
 		display: none
 	.megaslider-more-active
 		display: block
@@ -3209,12 +3205,12 @@ b, strong
 	.megaslider-img
 		overflow: hidden
 		position: relative
-		transform: skew(-5deg)
+		transform: skew(-3deg)
 	.megaslider-img-wrapper
 		overflow: hidden
-		width: calc(115%)
-		margin-left: calc(-8%)
-		transform: skew(5deg)	
+		width: calc(104%)
+		margin-left: calc(-2%)
+		transform: skew(3deg)	
 		img
 			display: block
 			user-select: none
@@ -3230,7 +3226,7 @@ b, strong
 			background: rgba($blue, .65)
 			transition: all .5s ease
 	.megaslider-js
-		width: 60%
+		width: 35%
 		margin: 0 auto
 		padding: 0px 0px
 		opacity: 0
@@ -3269,7 +3265,7 @@ b, strong
 		margin: auto
 		display: flex
 		justify-content: space-between
-		width: 49vw
+		width: 29vw
 		height: 60px
 		pointer-events: none
 		color: #fff
@@ -3991,6 +3987,7 @@ b, strong
 		color: #fff
 	.ourstock-content__post-title
 		transform: skew(0deg)
+		left: 21px 
 	.ourstock-img
 		img
 			transform: skew(0deg)
@@ -4025,7 +4022,6 @@ b, strong
 		padding: 5px 0px
 		margin: 0 auto
 	ul
-		font-size: 17px
 		padding-left: 20px
 		+font("Solomon-Sans-Normal", 400, 17px)
 		margin: 5px 0px
@@ -4034,8 +4030,6 @@ b, strong
 			list-style: disc outside
 			margin: 3px 0px
 	ol
-		font-size: 17px
-		font-size: 17px
 		+font("Solomon-Sans-Normal", 400, 17px)
 		margin: 5px 0px
 		line-height: 1.4

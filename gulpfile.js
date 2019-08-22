@@ -89,6 +89,7 @@ gulp.task('img1x', function() {
 	.pipe(imagemin())
 	.pipe(gulp.dest('app/img/@1x/'))
 });
+
 gulp.task('img2x', function() {
 	return gulp.src('app/img/src/**/*.*')
 	.pipe(imagemin())

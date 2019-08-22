@@ -401,6 +401,7 @@ $(".fitness-flex .js-parallax-block").each(function() {scrollParallax($(this))})
   $('.li-consultation-button').fancybox();
   $('.li-telephone').fancybox();
   $('.consultation-button').fancybox();
+  $('.reserve-button').fancybox();
 
 
   // Modal
