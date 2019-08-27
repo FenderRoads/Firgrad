@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function() {
     dropdownParent: $("#modal-free"),
     dropdownCssClass: 'modal-select-inner'
   });
-
+  
   $('.js-select-club-call').select2({
     minimumResultsForSearch: Infinity,
     width: 'style',
@@ -178,6 +178,13 @@ document.addEventListener("DOMContentLoaded", function() {
     dropdownParent: $("#modal-tobook"),
     dropdownCssClass: 'modal-select-inner'
   });
+
+  // $('.js-select-club-call').styler()
+
+  // $('.js-select-club-free').styler()
+
+  // $('.js-select-club-tobook').styler()
+
   // Select_
 
   // Ourstock carousel
@@ -203,13 +210,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Megaslider
 
-  var $owl = $('.megaslider-js');
+  var megaslider1 = $('.megaslider-js');
 
-  $owl.children().each( function( index ) {
+  megaslider1.children().each( function( index ) {
     $(this).attr( 'data-position', index ); // NB: .attr() instead of .data()
   });
 
-  $owl.owlCarousel({
+  megaslider1.owlCarousel({
     loop: true,
     items: 1,
     nav: true,
@@ -229,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   $(document).on('click', '.owl-item>div', function() {
-    $owl.trigger('to.owl.carousel', $(this).data( 'position' ) );
+    megaslider1.trigger('to.owl.carousel', $(this).data( 'position' ) );
   });
 
   // Megaslider_
@@ -393,15 +400,33 @@ $(".fitness-flex .js-parallax-block").each(function() {scrollParallax($(this))})
 
   // Modal
 
-  $('.telephone').fancybox();
-  $('.telephone-mobile').fancybox();
-  $('.directionlist-button-absolute').fancybox();
-  $('.to-book-button').fancybox();
-  $('.li-to-book-button').fancybox();
-  $('.li-consultation-button').fancybox();
-  $('.li-telephone').fancybox();
-  $('.consultation-button').fancybox();
-  $('.reserve-button').fancybox();
+  $('.telephone').fancybox({
+    touch: false
+  });
+  $('.telephone-mobile').fancybox({
+    touch: false
+  });
+  $('.directionlist-button-absolute').fancybox({
+    touch: false
+  });
+  $('.to-book-button').fancybox({
+    touch: false
+  });
+  $('.li-to-book-button').fancybox({
+    touch: false
+  });
+  $('.li-consultation-button').fancybox({
+    touch: false
+  });
+  $('.li-telephone').fancybox({
+    touch: false
+  });
+  $('.consultation-button').fancybox({
+    touch: false
+  });
+  $('.reserve-button').fancybox({
+    touch: false
+  });
 
 
   // Modal

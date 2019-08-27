@@ -150,9 +150,9 @@
     .mobileapp-rightside__list
       ul
         li
-          font-size: 19px
+          font-size: 18px
           span
-            font-size: 15px
+            font-size: 14px
 
   .section-eventlist
     .eventlist
@@ -318,6 +318,7 @@
       display: flex
       align-items: center
     .dn-sports-club
+      display: block
       img
         width: 245px
     .header-mobile-rightside
@@ -589,7 +590,7 @@
       padding-bottom: 50px
     .rightside-four-rounds
       flex-wrap: wrap
-      width: 290px
+      width: 245px
     .four-rounds__item
       .info-hover
         width: 290px
@@ -713,6 +714,8 @@
 
 
   .section-contacts
+    background-image: none
+    background-color: $blue
     .contacts
       flex-wrap: wrap
       flex-direction: column
@@ -840,7 +843,7 @@
   .ourstock-img
     img
       width: 430px !important
-      margin-left: -252px
+      margin-left: -217px
       transform: skew(0deg)
   .nohover
     pointer-events: none
@@ -1336,18 +1339,22 @@
       min-width: 300px
       max-width: 700px
       line-height: 1.3
-      font-size: 19px
+      font-size: 16px
     .conditions-title
       font-size: 21px
       width: 100%
       max-width: 700px
       min-width: 300px
     .conditions-block__title
-      display: none
+      line-height: 1.2
+      padding-top: 10px
+      +font("NeoSansPro-BoldItalic", 700, 12px)
     .conditions-block__img
+      width: 80px
+      height: 80px
       .cond-round
-        width: 125px
-        height: 125px
+        width: 80px
+        height: 80px
       .cond-info
         width: 35px
         height: 35px
@@ -1545,9 +1552,9 @@
         box-shadow: none
 
   .section-background
-    background: url('../img/@2x/bg-barbell.jpg') no-repeat center
+    background: url('../img/@2x/bg-barbell-mobile.jpg') no-repeat center
     background-size: cover
-    height: 350px
+    height: 300px
     position: relative 
     &:after
       content: ''
@@ -1892,8 +1899,11 @@
   .section-wideanim
     .fullscreen-bg__video 
       display: none
+    .background-video
+      height: calc(100vh - 66px)
     .overlay
       background: none
+      height: calc(100vh - 66px)
       .stockitem
         background-position: center center
       
@@ -1924,6 +1934,18 @@
       font-size: 17px
     .modal-button
       font-size: 19px
+
+
+  .mobile-background
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    display: block
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center center
 
 
 
