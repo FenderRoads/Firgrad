@@ -24,7 +24,7 @@
 	width: 100%
 	
 img
-	image-rendering: -webkit-optimize-contrast
+	image-rendering: -webkit-optimize-contrast 
 
 h1, h2, h3, h4, h5, h6
 	margin: 0
@@ -120,6 +120,8 @@ b, strong
 		text-transform: uppercase
 		margin: 10px 0px
 	.modal-select
+		max-width: 412px
+		margin: 0 auto
 		.select2-container
 			display: block
 			width: 100%
@@ -200,11 +202,13 @@ b, strong
 		font-size: 21px
 		width: 250px
 		margin: 0 auto
+		cursor: pointer
 		span
 			display: inline-block
 			transform: skew(16deg)
 
 .modal-select-inner
+
 
 .modal-select-inner .select2-results .select2-results__options
     background: transparent
@@ -433,7 +437,7 @@ b, strong
 		.h1
 			font-size: 55px
 			color: #fff
-			line-height: 1.2
+			line-height: 1.1
 	@-moz-document url-prefix()
 		.wideanim-rightside__title
 			.h2
@@ -443,6 +447,7 @@ b, strong
 		color: #ffffff
 		+font("Solomon-Sans-Book", 300, 21px)
 		text-transform: uppercase
+		line-height: 1.4
 	.wideanim-rightside__button
 		display: block
 		+font("NeoSansPro-BoldItalic", 700, 23px)
@@ -456,10 +461,11 @@ b, strong
 		margin: 40px 0px 0px 0px
 		cursor: pointer
 		transition: all .5s ease
+		line-height: 1.2
 		span
 			display: inline-block
 			transform: skew(16deg)
-			padding: 7px 0px
+			padding: 11px 0px
 		&:hover
 			background: $blue
 			color: #fff
@@ -666,7 +672,7 @@ b, strong
 
 	.background-video
     overflow: hidden
-    z-index: -100
+    z-index: 100
     position: relative
     height: 100%
     width: 100%
@@ -683,9 +689,11 @@ b, strong
 		left: 0
 		width: 100%
 		height: 100%
-		z-index: 4
+		z-index: 1000
 		.stockitem
 			background-position: 1000000% 1000000%
+			background-repeat: no-repeat
+			background-size: cover
 	.background-video-image
 		position: absolute
 		top: 0
@@ -727,7 +735,7 @@ b, strong
 		.h2
 			font-size: 55px
 			color: #ffffff
-			line-height: 1.2
+			line-height: 1.1
 			margin-bottom: .67em
 			text-align: left
 	@-moz-document url-prefix()
@@ -739,6 +747,7 @@ b, strong
 		color: #ffffff
 		+font("Solomon-Sans-Book", 300, 21px)
 		text-transform: uppercase
+		line-height: 1.4
 	.stockitem-content__button
 		display: block
 		+font("NeoSansPro-BoldItalic", 700, 23px)
@@ -752,10 +761,11 @@ b, strong
 		margin: 40px 0px 0px 0px
 		cursor: pointer
 		transition: all .5s ease
+		line-height: 1.2
 		span
 			display: inline-block
 			transform: skew(-16deg)
-			padding: 7px 0px
+			padding: 11px 0px
 		&:hover
 			background: $blue
 			transition: all .5s ease
@@ -959,7 +969,7 @@ b, strong
 		position: relative
 		width: 90%
 		margin: 0 auto
-		max-width: 1920px
+		max-width: 1100px
 	.conditions-title
 		text-align: center
 		font-size: 28px
@@ -972,7 +982,7 @@ b, strong
 		width: 900px
 		margin-left: auto
 		margin-right: auto
-		+font("NeoSansPro-Italic", 600, 18px)
+		+font("NeoSansPro-Italic", 600, 17px)
 		padding-top: 25px
 		color: #1d235d
 	.conditions-blocks
@@ -988,12 +998,12 @@ b, strong
 		margin-top: 30px
 	.conditions-block__img
 		position: relative
-		width: 110px
-		height: 110px
+		width: 90px
+		height: 90px
 		margin: 0 auto
 		.cond-round
-			width: 110px
-			height: 110px
+			width: 90px
+			height: 90px
 		.cond-info
 			position: absolute
 			top: 0
@@ -1045,7 +1055,7 @@ b, strong
 			right: 36px
 	.conditions-block__title
 		color: #1e245e
-		+font("NeoSansPro-Italic", 500, 18px)
+		+font("NeoSansPro-Italic", 500, 17px)
 		text-transform: uppercase
 		padding-top: 5px
 // Conditions_
@@ -1066,10 +1076,10 @@ b, strong
     position: relative
     height: 100%
     width: 100%
-    padding-top: 29%
+    padding-top: 60%
 	.fullscreen-bg__video 
 		position: absolute
-		top: -35%
+		top: 0
 		left: 0
 		width: 100%
 	.overlay 
@@ -1086,6 +1096,7 @@ b, strong
 		font-size: 70px
 		margin-top: 17%
 		color: red
+		line-height: 1
 
 
 // Background_
@@ -1140,6 +1151,15 @@ b, strong
 	.section-inner
 	iframe
 		display: block
+		width: 100%
+		height: 610px
+		border: none
+		position: relative
+		top: -50px
+	.wrapper-map
+		width: 100%
+		height: 560px
+		overflow: hidden
 	
 	
 // Map_
@@ -1158,7 +1178,7 @@ b, strong
 		width: 90%
 		margin: 0 auto
 		max-width: 1500px
-		padding: 30px 0px 
+		padding: 27px 0px 
 	.contacts-leftside
 	.contacts-leftside__blocks
 		display: flex
@@ -1170,7 +1190,7 @@ b, strong
 		&:last-child
 			margin-right: 0
 	.leftside__block-title
-		font-size: 17px
+		font-size: 16px
 		text-decoration: underline
 		a
 			transition: all .25s ease
@@ -1179,12 +1199,12 @@ b, strong
 				color: $accent
 				transition: all .25s ease
 	.leftside__block-address
-		font-size: 14px
+		font-size: 13px
 		margin-top: 3px
 		line-height: 1.2
 		color: #fff
 	.leftside__block-tel
-		font-size: 14px
+		font-size: 13px
 		margin-top: 5px
 		display: inline-block
 		color: #fff
@@ -1201,16 +1221,16 @@ b, strong
 		display: flex
 		justify-content: flex-end
 		i
-			font-size: 26px
-			line-height: 1.7
+			font-size: 23px
+			line-height: 1.8
 		.fa-facebook-f
 			margin-right: 2px
 	.social
 		margin-left: 10px
 		display: block
 		color: #fff
-		width: 45px
-		height: 45px
+		width: 42px
+		height: 42px
 		border-radius: 10em
 		background: #7d7abe
 		text-align: center
@@ -1257,7 +1277,7 @@ b, strong
 		width: 25%
 	.footer-copyright
 		color: $accent
-		+font("NeoSansPro-BoldItalic", 700, 15px)
+		+font("NeoSansPro-BoldItalic", 700, 14px)
 	.footer-links-rightside
 		display: flex
 		justify-content: space-between
@@ -1265,7 +1285,7 @@ b, strong
 	.footer-link
 		text-decoration: underline
 		color: #1a1e51
-		+font("NeoSansPro-Italic", 400, 15px)
+		+font("NeoSansPro-Italic", 400, 14px)
 		transition: all .25s ease
 		&:hover
 			color: $accent
@@ -1777,94 +1797,111 @@ b, strong
 
 .section-reserve
 	background: url('../img/@2x/bg-club-new.png') no-repeat center
-	background-size: cover
+	background-size: contain
 	margin-top: 66px
+	height: calc(100vh - 66px)
+	background-color: #141333
 	.section-inner
 	.reserve
-		padding-top: 35px
 	.reserve-biglogo
 		position: relative
 		margin-left: auto
 		margin-right: auto
-		width: 334px
-		height: 445px
+		padding-top: 1em
+		width: 19em
+		font-size: 2vh
 		img
-			width: 334px
+			display: block
+			width: 100%
 	.reserve-biglogo__info
 		position: absolute
-		bottom: 113px
-		left: 16px
-		width: 304px
+		bottom: 5.5em
+		left: 2em
+		width: 15em
+		font-size: 2vh
 	.reserve-biglogo__name
 		color: #e8ad4c
 		text-transform: uppercase
-		font-size: 28px
+		font-size: 2.7vh
 		text-align: center
 		line-height: 1.2
 	.reserve-biglogo__address
 		color: #fff
-		font-size: 21px
+		font-size: 2.5vh
 		text-align: center
 		line-height: 1.2
-		margin-top: 10px
-		width: 250px
+		margin-top: 0.3em
+		width: 10em
 		margin-left: auto
 		margin-right: auto
+		height: 3.5em
 	.reserve-buttons-price
-		padding-top: 60px
+		padding-top: 1.5em
 		margin-left: auto
 		margin-right: auto
-		width: 350px
+		width: 19em
+		font-size: 2vh
 		display: flex
 		text-align: center
 		line-height: 1.3
 		em
 			font-style: normal
-			+font("NeoSansPro-BoldItalic", 700, 16px)
+			+font("NeoSansPro-BoldItalic", 700, 1.9vh)
 			color: #000
 		span
 			color: #000
-			+font("NeoSansPro-Italic", 400, 16px)
+			+font("NeoSansPro-Italic", 400, 1.9vh)
+			width: 8em
+			margin: 0 auto
 		span:last-child
-			+font("Solomon-Sans-Bold", 400, 30px)
+			+font("Solomon-Sans-Bold", 400, 3.6vh)
 			color: #fff
-			margin-top: 0px
-			margin-bottom: 9px
 			line-height: 1
+			width: 4em
 			b
-				+font("ALSRubl", 400, 33px)
+				+font("ALSRubl", 400, 3.6vh)
 	.reserve-buttons-price__first
 		width: 50%
 		transform: skew(-16deg)
 		background: $accent
+		box-sizing: border-box
+		font-size: 2vh
+		height: 7em
 		& > div
-			width: 150px
 			margin: 0 auto
+			height: 100%
+			font-size: 2vh
+			padding-top: 0.8em
+			box-sizing: border-box
 		span
 			display: inline-block
 			transform: skew(16deg)
-			margin-top: 9px
 	.reserve-buttons-price__second
 		width: 50%
 		background: $orange
 		transform: skew(-16deg)
+		box-sizing: border-box
+		font-size: 2vh
+		height: 7em
 		& > div
-			width: 150px
 			margin: 0 auto
+			height: 100%
+			font-size: 2vh
+			padding-top: 0.8em
+			box-sizing: border-box
 		span
 			display: inline-block
 			transform: skew(16deg)
-			margin-top: 9px
 	.reserve-button
 		display: block
-		width: 230px
+		width: 14em
 		background: #fff
 		color: $accent
 		text-transform: uppercase
-		+font("NeoSansPro-BoldItalic", 700, 18px)
+		+font("NeoSansPro-BoldItalic", 700, 1.9vh)
 		transform: skew(-16deg)
 		text-align: center
-		padding: 4px 0px
+		padding: 0.5em 0px
 		margin: 0 auto
 		transition: all .1s ease
 		span
@@ -1875,20 +1912,23 @@ b, strong
 			background: $accent
 			transition: all .1s ease
 	.reserve-conditions
-		+font("NeoSansPro-LightItalic", 200, 15px)
+		+font1("NeoSansPro-LightItalic", 200)
 		color: #fff9f9
-		width: 287px
-		margin: 0 auto
-		padding-top: 30px
+		text-align: center
+		padding-top: 1em
+		font-size: 1.8vh
 		a
 			text-decoration: underline
 			color: #fff9f9
 	.reserve-threebuttons
 		display: flex
 		justify-content: center
-		padding-top: 80px
+		position: absolute
+		left: 0
+		right: 0
+		bottom: 0
 	.reserve-threebuttons__button
-		+font("NeoSansPro-Italic", 800, 22px)
+		+font("NeoSansPro-Italic", 800, 2.3vh)
 		color: #131434
 		padding: 5px 15px
 		background: #e8e8e8
@@ -1937,7 +1977,7 @@ b, strong
 		font-size: 40px
 	.fitness
 		max-width: 1350px
-		width: 80%
+		width: 90%
 		margin: 0 auto
 		padding: 60px 0px
 	.fitness-flex
@@ -1954,7 +1994,7 @@ b, strong
 		display: flex
 		flex-wrap: wrap
 		justify-content: center
-		width: 70%
+		width: 65%
 	.fitness-arguments__item
 		display: flex
 		min-width: 350px
@@ -2161,7 +2201,7 @@ b, strong
 	transform: skew(8deg)
 	position: absolute
 	bottom: -50px
-	left: 34px
+	left: 27px
 	color: #fff
 	height: 60px
 	+font("NeoSansPro-Italic", 400, 16px)
@@ -2205,23 +2245,23 @@ b, strong
 	.rightside-four-rounds
 		display: flex
 		justify-content: space-between
-		width: 585px
+		width: 530px
 		margin: 0 auto
 	.four-rounds__item
 		position: relative
 		img
-			width: 119px
-			height: 119px
+			width: 95px
+			height: 95px
 	.four-rounds__info
 		position: absolute
 		top: 0
 		right: 0
 		cursor: pointer
-		width: 30px
-		height: 30px
+		width: 25px
+		height: 25px
 		img
-			width: 30px
-			height: 30px
+			width: 25px
+			height: 25px
 		&:hover .info-hover
 			display: flex
 			animation: zoomIn .25s ease
@@ -2237,7 +2277,7 @@ b, strong
 		font-weight: 400
 		position: absolute
 		top: -85px
-		left: -267px
+		left: -270px
 		+font("Solomon-Sans-Normal", 400, 15px)
 		display: none
 		align-items: center
@@ -2259,12 +2299,12 @@ b, strong
 		top: -5px
 		left: -5px
 	.rightside-text
-		+font("Solomon - Sans - Normal", 400, 17px)
+		+font("Solomon - Sans - Normal", 400, 15px)
 		color: #131434
-		max-width: 630px
+		max-width: 530px
 		margin: 0 auto
 		padding: 13px 0px 20px 0px
-		line-height: 1.4
+		line-height: 1.3
 	.rightside-button
 		margin: 0 auto
 		+font("NeoSansPro-BoldItalic", 400, 20px)
@@ -2402,7 +2442,7 @@ b, strong
 	.mobileapp-flex
 		display: flex
 		justify-content: space-between
-		max-width: 1920px
+		max-width: 1500px
 		width: 80%
 		margin: 0 auto
 		padding-top: 55px
@@ -2434,26 +2474,26 @@ b, strong
 	.mobileapp-leftside__img
 		text-align: center
 		img
-			width: 260px
+			width: 225px
 	.mobileapp-leftside__buttons
 		display: flex
 		justify-content: space-between
-		width: 415px
+		width: 340px
 		padding-top: 20px
 	.google-play-big
 		display: block
-		width: 200px
-		height: 57px
+		width: 170px
+		height: 48px
 		img
-			width: 200px
-			height: 57px
+			width: 170px
+			height: 48px
 	.appstore-big
 		display: block
-		width: 166px
-		height: 58px
+		width: 138px
+		height: 48px
 		img
-			width: 166px
-			height: 58px
+			width: 138px
+			height: 48px
 
 
 	.mobileapp-rightside
@@ -2474,7 +2514,7 @@ b, strong
 			transform: skew(16deg)
 	.mobileapp-rightside__post-title
 		margin-top: 30px
-		margin-bottom: 20px
+		margin-bottom: 15px
 		+font("NeoSansPro-BoldItalic", 700, 20px)
 		color: #2a2c6f
 		position: relative
@@ -2485,8 +2525,8 @@ b, strong
 				list-style-position: inside
 				color: $accent
 				+font("NeoSansPro-BoldItalic", 700, 23px)
-				line-height: 1.25
-				margin-top: 20px
+				line-height: 1.1
+				margin-top: 15px
 				max-width: 1100px
 				span
 					+font("NeoSansPro-Regular", 600, 18px)
@@ -3137,14 +3177,15 @@ b, strong
 	.toppannel-button
 		width: 50%
 		transform: skew(-16deg)
-		padding: 6px 0px
+		padding: 4px 0px
 		cursor: pointer
+		font-size: 21px
 		span
 			display: inline-block
 			transform: skew(16deg)
 	.toppannel-button-active
 		background: $orange
-		+font("NeoSansPro-BoldItalic", 700, 27px)
+		+font1("NeoSansPro-BoldItalic", 700)
 		color: $blue
 		transition: all .25s ease
 	.toppannel-buttons
@@ -3163,7 +3204,8 @@ b, strong
 		color: #fff
 		margin: 0 auto
 		width: 450px
-		padding-top: 25px
+		padding-top: 15px
+		padding-bottom: 7px
 		display: none
 		span
 			display: block
@@ -3179,7 +3221,7 @@ b, strong
 		display: block
 	.megaslider-more
 		display: block
-		+font("NeoSansPro-BoldItalic", 400, 23px)
+		+font("NeoSansPro-BoldItalic", 400, 20px)
 		color: $blue
 		width: 400px
 		background: $orange
@@ -3197,7 +3239,7 @@ b, strong
 			transition: all .5s ease
 	.megaslider-more-wrapper
 		padding-bottom: 35px
-		padding-top: 10px
+		padding-top: 20px
 		display: none
 	.megaslider-more-active
 		display: block
@@ -3226,7 +3268,7 @@ b, strong
 			background: rgba($blue, .65)
 			transition: all .5s ease
 	.megaslider-js
-		width: 35%
+		width: 45%
 		margin: 0 auto
 		padding: 0px 0px
 		opacity: 0
@@ -3238,7 +3280,7 @@ b, strong
 		transition: all .5s ease
 	.owl-stage-outer
 		overflow: visible
-		transform: scale(0.45)
+		transform: scale(0.5)
 		transition: all .5s ease
 	.owl-stage
 	.owl-item
@@ -3265,7 +3307,7 @@ b, strong
 		margin: auto
 		display: flex
 		justify-content: space-between
-		width: 29vw
+		width: 39vw
 		height: 60px
 		pointer-events: none
 		color: #fff
@@ -3723,7 +3765,7 @@ b, strong
 	.section-inner
 	.reasons
 		margin: 0 auto
-		max-width: 1100px
+		max-width: 960px
 		padding-bottom: 50px
 	.reasons-title
 		text-align: center
@@ -3731,7 +3773,7 @@ b, strong
 		color: $accent
 		font-size: 33px
 		padding: 40px 0px 0px 0px
-		font-size: 48px
+		font-size: 42px
 		.h2
 	.reasons-blocks
 		display: flex
@@ -3739,7 +3781,7 @@ b, strong
 		justify-content: space-evenly
 	.reasons-block
 		margin-top: 20px
-		width: 215px
+		width: 190px
 		animation: bounce 1s ease 
 		&:hover .reasons-block__img .img-weight
 			animation: bounce 1s ease
@@ -3760,14 +3802,13 @@ b, strong
 		width: 110px
 		height: 106px
 		position: absolute
-		left: 54px
-		top: 30px
+		left: 42px
+		top: 20px
 		z-index: 1000
 		color: #fff
-		font-size: 38px
+		font-size: 50px
 		font-weight: 700
 		text-align: center
-		span
 	.reasons-block__title
 		text-align: center
 		margin: auto
@@ -3815,10 +3856,10 @@ b, strong
 			cursor: pointer
 			padding: 14px 15px 14px 55px
 			background: #f2f6ff
-			+font("NeoSansCyr-Regular", 400, 22px)
+			+font("Solomon-Sans-Normal", 600, 20px)
 			border: 1px solid rgba(#51586b, .35)
 			border-top: none
-			color: #000
+			color: #4f4646
 			&:first-child
 				border-top: 1px solid rgba(#51586b, .35)
 			&:after
@@ -3985,12 +4026,12 @@ b, strong
 	.ourstock-content__title
 		transform: skew(0deg)
 		color: #fff
-	.ourstock-content__post-title
-		transform: skew(0deg)
-		left: 21px 
 	.ourstock-img
 		img
 			transform: skew(0deg)
+	.ourstock-content__post-title
+		transform: skew(0deg)
+		left: 21px 
 
 
 
@@ -4038,4 +4079,9 @@ b, strong
 
 
 // Stockinfo_
+
+
+.mobile-background
+	display: none
+
 @import "_media"
