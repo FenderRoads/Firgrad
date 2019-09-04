@@ -39,9 +39,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Carousel-1
 
-  $('.carousel-1').children().each( function( index ) {
-    $(this).attr( 'data-position', index );
-  });
+  // $('.carousel-1').children().each( function( index ) {
+  //   $(this).attr( 'data-position', index );
+  // });
 
   $('.carousel-1').owlCarousel({
     loop: true,
@@ -56,14 +56,35 @@ document.addEventListener("DOMContentLoaded", function() {
 
   });
 
+
+  $('.carousel-1').on('translated.owl.carousel', function(event) {
+
+    if ($('.owl-item.active').find('div.wideanim-js').length !== 0) {
+      wideAnimation();
+    } else {
+      console.log(1);
+    }
+    
+  });
+
+
+
   // $('.item').filter('[data-bgvideo="0"]').remove();
 
-  if (window.matchMedia("(max-width: 760px)").matches) {
-    $(".carousel-1").trigger('remove.owl.carousel', $('.item').find('[data-bgvideo="0"]')).trigger('refresh.owl.carousel'); 
-  } else {
+  // if (window.matchMedia("(max-width: 760px)").matches) {
+  //   $(".carousel-1").trigger('remove.owl.carousel', $('.item').find('[data-bgvideo="0"]')).trigger('refresh.owl.carousel'); 
+  // } else {
     
-  }
+  // }
 
+  // $('.owl-item.active .item[data-wideanim]').wideAnimation()
+  // let attr = $('.item').attr('data-wideanim')
+
+  // if ($('.owl-item.active').children('[data-wideanim="1"]')) {
+  //   wideAnimation()
+  // } else {
+  //   console.log(1);
+  // }
   
   // $(document).on('click', '.owl-item>div', function() {
   //   $('.carousel-1').trigger('to.owl.carousel', $(this).data( 'position' ) );
@@ -77,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Carousel-1_
 
   // Banner
+  function wideAnimation() {
 
   const items = document.querySelectorAll('.wideanim-item');
   const costumerItems = document.querySelectorAll('.wideanimcustomer-item');
@@ -120,7 +142,10 @@ document.addEventListener("DOMContentLoaded", function() {
   
   function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  } 
+  }
+
+  };
+
 
   // Banner_
 
@@ -190,14 +215,17 @@ document.addEventListener("DOMContentLoaded", function() {
   // Ourstock carousel
 
   $('.ourstock-carousel').owlCarousel({
-    loop: true,
+    loop: false,
     margin: 0,
-    items: 3,
     nav: true, // Nav включен в стилях
     responsive: {
-      780:{
+      1200:{
         dots: false,
-        items: 3
+        items: ($(".ourstock-carousel .item").length > 1) ? 3 : 1
+      },
+      760:{
+        dots: false,
+        items: ($(".ourstock-carousel .item").length > 1) ? 3 : 1
       },
       0:{
         dots: true,
@@ -392,7 +420,7 @@ $(".fitness-flex .js-parallax-block").each(function() {scrollParallax($(this))})
   // Sign up to trainer
 
   $('.trainer-entry').on('click', function() {
-    $('.trainer-contacts').addClass('trainer-contacts-active')
+    $('.trainer-contacts').toggleClass('trainer-contacts-active')
   });
 
   // Sign up to trainer_
@@ -430,4 +458,7 @@ $(".fitness-flex .js-parallax-block").each(function() {scrollParallax($(this))})
 
 
   // Modal
+
+
+
 });

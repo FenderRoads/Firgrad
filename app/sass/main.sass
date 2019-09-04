@@ -88,11 +88,12 @@ b, strong
 	font-size: 24px
 	width: 53px
 	height: 53px
-	text-align: center
-	line-height: 56px
 	cursor: pointer
 	transition: all .25s ease
 	opacity: .5
+	display: flex
+	align-items: center
+	justify-content: center
 	&.active
 		right: 25px
 		
@@ -203,9 +204,14 @@ b, strong
 		width: 250px
 		margin: 0 auto
 		cursor: pointer
+		transition: all .5s ease
 		span
 			display: inline-block
 			transform: skew(16deg)
+		&:hover
+			background: $blue
+			color: #fff
+			transition: all .5s ease
 
 .modal-select-inner
 
@@ -1796,11 +1802,11 @@ b, strong
 // Reserve
 
 .section-reserve
-	background: url('../img/@2x/bg-club-new.png') no-repeat center
-	background-size: contain
+	// background: url('../img/@2x/bg-club-new.png') no-repeat center
+	// background-size: contain
 	margin-top: 66px
 	height: calc(100vh - 66px)
-	background-color: #141333
+	// background-color: #141333
 	.section-inner
 	.reserve
 	.reserve-biglogo
@@ -1815,7 +1821,7 @@ b, strong
 			width: 100%
 	.reserve-biglogo__info
 		position: absolute
-		bottom: 5.5em
+		bottom: 4.1em
 		left: 2em
 		width: 15em
 		font-size: 2vh
@@ -1834,7 +1840,13 @@ b, strong
 		width: 10em
 		margin-left: auto
 		margin-right: auto
-		height: 3.5em
+		height: 4.75em
+	.reserve-biglogo__tel
+		display: block
+		transition: all .25s ease
+		&:hover
+			transition: all .25s ease
+			color: $accent
 	.reserve-buttons-price
 		padding-top: 1.5em
 		margin-left: auto
@@ -1920,6 +1932,10 @@ b, strong
 		a
 			text-decoration: underline
 			color: #fff9f9
+			transition: all .25s ease
+			&:hover
+				color: $accent
+				transition: all .25s ease
 	.reserve-threebuttons
 		display: flex
 		justify-content: center
@@ -1928,28 +1944,23 @@ b, strong
 		right: 0
 		bottom: 0
 	.reserve-threebuttons__button
+		display: block
 		+font("NeoSansPro-Italic", 800, 2.3vh)
 		color: #131434
-		padding: 5px 15px
+		padding: 0.2em 1em
 		background: #e8e8e8
 		transform: skew(-16deg)
 		text-transform: uppercase
-		transition: all .25s ease
+		transition: all .5s ease
 		span
 			display: inline-block
 			transform: skew(16deg)
 		&:hover
-			background: lighten(#e8e8e8, 25%)
-			transition: all .25s ease
+			background: $blue
+			color: #fff
+			transition: all .5s ease
 		&:nth-child(2)
 			margin: 0px 25px
-	.reserve-threebuttons__first
-		display: block
-	.reserve-threebuttons__second
-		display: block
-	.reserve-threebuttons__third
-		display: block
-
 
 // Reserve_
 
@@ -2047,6 +2058,8 @@ b, strong
 
 // .section-ourstock
 // .section-inner
+.only-child
+	display: none
 .ourstock
 	position: relative
 	padding-bottom: 65px
@@ -2063,6 +2076,33 @@ b, strong
 	width: 90%
 	margin: 0 auto
 	position: static
+	.item
+		overflow: hidden
+		// transform: skew(-8deg)
+	.owl-stage
+		margin: 0 auto
+		.owl-item.active:only-child
+			transform: skew(8deg)
+			.item
+				overflow: visible
+			.ourstock-wrapper
+				width: 950px
+			.ourstock-img
+				overflow: visible
+				width: 100%
+				img
+					transform: skew(0deg)
+					display: none
+					margin-left: -475px
+				.only-child
+					display: block
+					width: 950px !important
+				.img-event
+					width: 100%
+					margin-left: -473px
+			.ourstock-content-wrapper
+				width: 100%
+				margin-left: -473px
 	.owl-stage-outer
 		overflow: hidden
 		transform: skew(-8deg)
@@ -2282,6 +2322,7 @@ b, strong
 		display: none
 		align-items: center
 		text-align: center
+		cursor: default
 		span
 			padding: 0px 15px
 			transform: skew(16deg)
@@ -2576,7 +2617,7 @@ b, strong
 	.smartfitness-leftside__list
 		span
 			display: block
-			+font("Solomon-Sans-Normal", 700, 19px)
+			+font("NeoSansPro-Regular", 700, 18px)
 			color: #1d1d1d
 			margin-left: 40px
 			max-width: 750px
@@ -3905,6 +3946,7 @@ b, strong
 		width: 257px
 		height: 327px
 		overflow: hidden
+		display: block
 		img
 			width: 257px
 			height: 327px
