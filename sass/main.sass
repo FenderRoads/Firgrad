@@ -88,11 +88,12 @@ b, strong
 	font-size: 24px
 	width: 53px
 	height: 53px
-	text-align: center
-	line-height: 56px
 	cursor: pointer
 	transition: all .25s ease
 	opacity: .5
+	display: flex
+	align-items: center
+	justify-content: center
 	&.active
 		right: 25px
 		
@@ -203,9 +204,14 @@ b, strong
 		width: 250px
 		margin: 0 auto
 		cursor: pointer
+		transition: all .5s ease
 		span
 			display: inline-block
 			transform: skew(16deg)
+		&:hover
+			background: $blue
+			color: #fff
+			transition: all .5s ease
 
 .modal-select-inner
 
@@ -802,7 +808,7 @@ b, strong
 		width: 700px
 		left: 75px
 		top: 50%
-		margin-top: -210px
+		margin-top: -145px
 		z-index: 2000
 	.wideanimcustomer-rightside__big-logo
 		position: absolute
@@ -820,7 +826,8 @@ b, strong
 		color: #ffffff
 		+font("Solomon-Sans-Book", 300, 16px)
 		text-transform: uppercase
-		line-height: 1.4	
+		line-height: 1.4
+		margin-top: 45px	
 	.wideanimcustomer-rightside__button
 		+font("NeoSansPro-BoldItalic", 700, 23px)
 		color: $blue
@@ -1569,7 +1576,6 @@ b, strong
 		max-width: 365px
 		max-height: 220px
 		align-self: center
-		overflow: hidden
 		transition: all .5s ease
 		img
 			max-width: 250px
@@ -1628,6 +1634,9 @@ b, strong
 	justify-content: space-between
 .newsitem-leftside
 	line-height: 1.5
+	+font("Solomon-Sans-Normal", 400, 16px)
+	width: 95%
+	max-width: 1000px
 	& > p
 		+font("Solomon-Sans-Normal", 400, 16px)
 		padding: 5px 0px
@@ -1796,11 +1805,8 @@ b, strong
 // Reserve
 
 .section-reserve
-	background: url('../img/@2x/bg-club-new.png') no-repeat center
-	background-size: contain
 	margin-top: 66px
 	height: calc(100vh - 66px)
-	background-color: #141333
 	.section-inner
 	.reserve
 	.reserve-biglogo
@@ -1815,7 +1821,7 @@ b, strong
 			width: 100%
 	.reserve-biglogo__info
 		position: absolute
-		bottom: 5.5em
+		bottom: 4.1em
 		left: 2em
 		width: 15em
 		font-size: 2vh
@@ -1834,7 +1840,13 @@ b, strong
 		width: 10em
 		margin-left: auto
 		margin-right: auto
-		height: 3.5em
+		height: 4.75em
+	.reserve-biglogo__tel
+		display: block
+		transition: all .25s ease
+		&:hover
+			transition: all .25s ease
+			color: $accent
 	.reserve-buttons-price
 		padding-top: 1.5em
 		margin-left: auto
@@ -1903,14 +1915,14 @@ b, strong
 		text-align: center
 		padding: 0.5em 0px
 		margin: 0 auto
-		transition: all .1s ease
+		transition: all .5s ease
 		span
 			display: inline-block
 			transform: skew(16deg)
 		&:hover
 			color: #ffffff
-			background: $accent
-			transition: all .1s ease
+			background: $orange
+			transition: all .5s ease
 	.reserve-conditions
 		+font1("NeoSansPro-LightItalic", 200)
 		color: #fff9f9
@@ -1920,6 +1932,10 @@ b, strong
 		a
 			text-decoration: underline
 			color: #fff9f9
+			transition: all .25s ease
+			&:hover
+				color: $accent
+				transition: all .25s ease
 	.reserve-threebuttons
 		display: flex
 		justify-content: center
@@ -1928,28 +1944,23 @@ b, strong
 		right: 0
 		bottom: 0
 	.reserve-threebuttons__button
+		display: block
 		+font("NeoSansPro-Italic", 800, 2.3vh)
 		color: #131434
-		padding: 5px 15px
+		padding: 0.2em 1em
 		background: #e8e8e8
 		transform: skew(-16deg)
 		text-transform: uppercase
-		transition: all .25s ease
+		transition: all .5s ease
 		span
 			display: inline-block
 			transform: skew(16deg)
 		&:hover
-			background: lighten(#e8e8e8, 25%)
-			transition: all .25s ease
+			background: $blue
+			color: #fff
+			transition: all .5s ease
 		&:nth-child(2)
 			margin: 0px 25px
-	.reserve-threebuttons__first
-		display: block
-	.reserve-threebuttons__second
-		display: block
-	.reserve-threebuttons__third
-		display: block
-
 
 // Reserve_
 
@@ -2047,6 +2058,8 @@ b, strong
 
 // .section-ourstock
 // .section-inner
+.only-child
+	display: none
 .ourstock
 	position: relative
 	padding-bottom: 65px
@@ -2063,6 +2076,33 @@ b, strong
 	width: 90%
 	margin: 0 auto
 	position: static
+	.item
+		overflow: hidden
+		// transform: skew(-8deg)
+	.owl-stage
+		margin: 0 auto
+		.owl-item.active:only-child
+			transform: skew(8deg)
+			.item
+				overflow: visible
+			.ourstock-wrapper
+				width: 950px
+			.ourstock-img
+				overflow: visible
+				width: 100%
+				img
+					transform: skew(0deg)
+					display: none
+					margin-left: -475px
+				.only-child
+					display: block
+					width: 950px !important
+				.img-event
+					width: 100%
+					margin-left: -473px
+			.ourstock-content-wrapper
+				width: 100%
+				margin-left: -473px
 	.owl-stage-outer
 		overflow: hidden
 		transform: skew(-8deg)
@@ -2281,7 +2321,9 @@ b, strong
 		+font("Solomon-Sans-Normal", 400, 15px)
 		display: none
 		align-items: center
+		justify-content: center
 		text-align: center
+		cursor: default
 		span
 			padding: 0px 15px
 			transform: skew(16deg)
@@ -2576,7 +2618,7 @@ b, strong
 	.smartfitness-leftside__list
 		span
 			display: block
-			+font("Solomon-Sans-Normal", 700, 19px)
+			+font("NeoSansPro-Regular", 700, 18px)
 			color: #1d1d1d
 			margin-left: 40px
 			max-width: 750px
@@ -2782,7 +2824,8 @@ b, strong
 		padding-top: 30px
 	.bottomrow-education__item
 		max-width: 504px
-		margin: 0 auto
+		margin: 6px auto
+
 
 	.hide-bottomrow-exp
 		display: none
@@ -3268,7 +3311,7 @@ b, strong
 			background: rgba($blue, .65)
 			transition: all .5s ease
 	.megaslider-js
-		width: 45%
+		width: 43%
 		margin: 0 auto
 		padding: 0px 0px
 		opacity: 0
@@ -3898,13 +3941,14 @@ b, strong
 		height: 327px
 		margin-top: 80px
 		transition: all .5s ease
-		&:hover .ourtrainers-block__img img
-			transform: scale(1.4)
-			transition: all .5s ease
+		// &:hover .ourtrainers-block__img img
+		// 	transform: scale(1.4)
+		// 	transition: all .5s ease
 	.ourtrainers-block__img
 		width: 257px
 		height: 327px
 		overflow: hidden
+		display: block
 		img
 			width: 257px
 			height: 327px
@@ -4083,5 +4127,23 @@ b, strong
 
 .mobile-background
 	display: none
+
+_:-ms-fullscreen, :root .wideanim-leftside__bigoverlay
+	display: none
+
+_:-ms-fullscreen, :root .ws_selthumb::after
+	display: none
+
+_:-ms-fullscreen, :root .ws_selthumb::before
+	display: none
+
+_:-ms-fullscreen, :root #wowslider-container1 .ws_thumbs a.ws_selthumb
+	background: $accent
+
+_:-ms-fullscreen, :root .telephone:hover img
+	animation: none
+
+_:-ms-fullscreen, :root .section-header .topline-rightside
+	width: auto
 
 @import "_media"

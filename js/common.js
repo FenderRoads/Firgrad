@@ -39,9 +39,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Carousel-1
 
-  $('.carousel-1').children().each( function( index ) {
-    $(this).attr( 'data-position', index );
-  });
+  // $('.carousel-1').children().each( function( index ) {
+  //   $(this).attr( 'data-position', index );
+  // });
 
   $('.carousel-1').owlCarousel({
     loop: true,
@@ -56,14 +56,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
   });
 
-  // $('.item').filter('[data-bgvideo="0"]').remove();
 
-  if (window.matchMedia("(max-width: 760px)").matches) {
-    $(".carousel-1").trigger('remove.owl.carousel', $('.item').find('[data-bgvideo="0"]')).trigger('refresh.owl.carousel'); 
+  $('.carousel-1').on('translated.owl.carousel', function(event) {
+
+    if ($('.owl-item.active').find('div.wideanim-js').length !== 0) {
+      wideAnimation();
+    } else {
+
+    }
+    
+  });
+
+  if ($('.section-wideanimcustomer').find('div.wideanimcustomer').length !== 0) {
+    wideAnimation();
   } else {
     
   }
 
+  // $('.item').filter('[data-bgvideo="0"]').remove();
+
+  // if (window.matchMedia("(max-width: 760px)").matches) {
+  //   $(".carousel-1").trigger('remove.owl.carousel', $('.item').find('[data-bgvideo="0"]')).trigger('refresh.owl.carousel'); 
+  // } else {
+    
+  // }
+
+  // $('.owl-item.active .item[data-wideanim]').wideAnimation()
+  // let attr = $('.item').attr('data-wideanim')
+
+  // if ($('.owl-item.active').children('[data-wideanim="1"]')) {
+  //   wideAnimation()
+  // } else {
+  //   console.log(1);
+  // }
   
   // $(document).on('click', '.owl-item>div', function() {
   //   $('.carousel-1').trigger('to.owl.carousel', $(this).data( 'position' ) );
@@ -78,49 +103,103 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Banner
 
-  const items = document.querySelectorAll('.wideanim-item');
-  const costumerItems = document.querySelectorAll('.wideanimcustomer-item');
 
 
-  [...items].map(randomFactory(1.5, 5)(scale))
-            .map(randomFactory(0.6, 1.3)(transition))
-            .map(randomFactory(200, 2000)(toNormal));
+  // function wideAnimation() {
+
+  // const items = document.querySelectorAll('.wideanim-item');
+  // const costumerItems = document.querySelectorAll('.wideanimcustomer-item');
+
+
+  // [...items].map(randomFactory(1.5, 5)(scale))
+  //           .map(randomFactory(0.6, 1.3)(transition))
+  //           .map(randomFactory(200, 2000)(toNormal));
             
-  [...costumerItems].map(randomFactory(1.5, 5)(scale))
-            .map(randomFactory(0.6, 1.3)(transition))
-            .map(randomFactory(200, 2000)(toNormal));
+  // [...costumerItems].map(randomFactory(1.5, 5)(scale))
+  //           .map(randomFactory(0.6, 1.3)(transition))
+  //           .map(randomFactory(200, 2000)(toNormal));
 
 
   
-  function randomFactory(min, max) {
-    return callback => item => {
-      setTimeout(function(){
-        callback(
-          item, 
-          random(min, max)
-        );           
-      }, 0);
+  // function randomFactory(min, max) {
+  //   return callback => item => {
+  //     setTimeout(function(){
+  //       callback(
+  //         item, 
+  //         random(min, max)
+  //       );           
+  //     }, 0);
       
-      return item;
+  //     return item;
+  //   }
+  // }
+  
+  // function scale(item, value) {
+  //   item.style.transform = `scale(${value})`;
+  // }
+  
+  // function transition(item, value) {
+  //   item.style.transition = `all ${value}s`;
+  // }
+  
+  // function toNormal(item, timeout) { 
+  //   item.style.zIndex = timeout;
+  //   setTimeout(() => item.classList.add('normal-satate'), timeout);
+  // }
+  
+  // function random(min, max) {
+  //   return Math.floor(Math.random() * (max - min + 1)) + min;
+  // }
+
+  // };
+
+  function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+  function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+  
+  function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+  
+  function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+  
+  function wideAnimation() {
+    var items = document.querySelectorAll('.wideanim-item');
+    var costumerItems = document.querySelectorAll('.wideanimcustomer-item');
+  
+    _toConsumableArray(items).map(randomFactory(1.5, 5)(scale)).map(randomFactory(0.6, 1.3)(transition)).map(randomFactory(200, 2000)(toNormal));
+  
+    _toConsumableArray(costumerItems).map(randomFactory(1.5, 5)(scale)).map(randomFactory(0.6, 1.3)(transition)).map(randomFactory(200, 2000)(toNormal));
+  
+    function randomFactory(min, max) {
+      return function (callback) {
+        return function (item) {
+          setTimeout(function () {
+            callback(item, random(min, max));
+          }, 0);
+          return item;
+        };
+      };
     }
-  }
   
-  function scale(item, value) {
-    item.style.transform = `scale(${value})`;
-  }
+    function scale(item, value) {
+      item.style.transform = "scale(".concat(value, ")");
+    }
   
-  function transition(item, value) {
-    item.style.transition = `all ${value}s`;
-  }
+    function transition(item, value) {
+      item.style.transition = "all ".concat(value, "s");
+    }
   
-  function toNormal(item, timeout) { 
-    item.style.zIndex = timeout;
-    setTimeout(() => item.classList.add('normal-satate'), timeout);
-  }
+    function toNormal(item, timeout) {
+      item.style.zIndex = timeout;
+      setTimeout(function () {
+        return item.classList.add('normal-satate');
+      }, timeout);
+    }
   
-  function random(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  } 
+    function random(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+  };
+
 
   // Banner_
 
@@ -190,18 +269,27 @@ document.addEventListener("DOMContentLoaded", function() {
   // Ourstock carousel
 
   $('.ourstock-carousel').owlCarousel({
-    loop: true,
+    touchDrag: ($(".ourstock-carousel .item").length > 2) ? true : false,
+    mouseDrag: ($(".ourstock-carousel .item").length > 2) ? true : false,
+    loop: false,
     margin: 0,
-    items: 3,
     nav: true, // Nav включен в стилях
     responsive: {
-      780:{
+      1200:{
         dots: false,
-        items: 3
+        items: ($(".ourstock-carousel .item").length > 1) ? 3 : 1
+      },
+      760:{
+        touchDrag: ($(".ourstock-carousel .item").length > 2) ? true : false,
+        mouseDrag: ($(".ourstock-carousel .item").length > 2) ? true : false,
+        dots: false,
+        items: ($(".ourstock-carousel .item").length > 1) ? 3 : 1
       },
       0:{
         dots: true,
-        items: 1
+        items: 1,
+        touchDrag: ($(".ourstock-carousel .item").length > 1) ? true : false,
+        mouseDrag: ($(".ourstock-carousel .item").length > 1) ? true : false
       }
     }
   })
@@ -228,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function() {
       0: {
         dots: true
       },
-      780: {
+      760: {
         dots: false
       }
     }
@@ -261,12 +349,17 @@ document.addEventListener("DOMContentLoaded", function() {
       .closest('div.megaslider').find('div.megaslider-more-wrapper').removeClass('megaslider-more-active').eq($(this).index()).addClass('megaslider-more-active');
   });
 
+  // $('.timetable-tabs').on('click', '.timetable-button:not(.timetable-button-active)', function() {
+  //   $(this)
+  //     .addClass('timetable-button-active').siblings().removeClass('timetable-button-active')
+  //     .closest('.timetable-widgets').find('.timetable-widget').removeClass('timetable-widget-active').eq($(this).index()).addClass('timetable-widget-active');
+  // });
+
   $('.timetable-tabs').on('click', '.timetable-button:not(.timetable-button-active)', function() {
     $(this)
-      .addClass('timetable-button-active').siblings().removeClass('timetable-button-active')
-      .closest('.timetable-widgets').find('.timetable-widget').removeClass('timetable-widget-active').eq($(this).index()).addClass('timetable-widget-active');
+      .addClass('timetable-button-active').siblings().removeClass('timetable-button-active');
+    $(this).parent().next().find('.timetable-widget').removeClass('timetable-widget-active').eq($(this).index()).addClass('timetable-widget-active')
   });
-
   // Tabs_
 
   // Maingallery
@@ -291,8 +384,8 @@ document.addEventListener("DOMContentLoaded", function() {
     loop: true,
     nav: true,
     responsive: {
-      780: {
-        items: 2,
+      760: {
+        items: 1,
         dots: false
       },
       0: {
@@ -392,7 +485,7 @@ $(".fitness-flex .js-parallax-block").each(function() {scrollParallax($(this))})
   // Sign up to trainer
 
   $('.trainer-entry').on('click', function() {
-    $('.trainer-contacts').addClass('trainer-contacts-active')
+    $('.trainer-contacts').toggleClass('trainer-contacts-active')
   });
 
   // Sign up to trainer_
@@ -430,4 +523,7 @@ $(".fitness-flex .js-parallax-block").each(function() {scrollParallax($(this))})
 
 
   // Modal
+
+
+
 });
