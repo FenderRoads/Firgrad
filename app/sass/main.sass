@@ -808,7 +808,7 @@ b, strong
 		width: 700px
 		left: 75px
 		top: 50%
-		margin-top: -210px
+		margin-top: -145px
 		z-index: 2000
 	.wideanimcustomer-rightside__big-logo
 		position: absolute
@@ -826,7 +826,8 @@ b, strong
 		color: #ffffff
 		+font("Solomon-Sans-Book", 300, 16px)
 		text-transform: uppercase
-		line-height: 1.4	
+		line-height: 1.4
+		margin-top: 45px	
 	.wideanimcustomer-rightside__button
 		+font("NeoSansPro-BoldItalic", 700, 23px)
 		color: $blue
@@ -1575,7 +1576,6 @@ b, strong
 		max-width: 365px
 		max-height: 220px
 		align-self: center
-		overflow: hidden
 		transition: all .5s ease
 		img
 			max-width: 250px
@@ -1634,6 +1634,9 @@ b, strong
 	justify-content: space-between
 .newsitem-leftside
 	line-height: 1.5
+	+font("Solomon-Sans-Normal", 400, 16px)
+	width: 95%
+	max-width: 1000px
 	& > p
 		+font("Solomon-Sans-Normal", 400, 16px)
 		padding: 5px 0px
@@ -1802,11 +1805,8 @@ b, strong
 // Reserve
 
 .section-reserve
-	// background: url('../img/@2x/bg-club-new.png') no-repeat center
-	// background-size: contain
 	margin-top: 66px
 	height: calc(100vh - 66px)
-	// background-color: #141333
 	.section-inner
 	.reserve
 	.reserve-biglogo
@@ -1915,14 +1915,14 @@ b, strong
 		text-align: center
 		padding: 0.5em 0px
 		margin: 0 auto
-		transition: all .1s ease
+		transition: all .5s ease
 		span
 			display: inline-block
 			transform: skew(16deg)
 		&:hover
 			color: #ffffff
-			background: $accent
-			transition: all .1s ease
+			background: $orange
+			transition: all .5s ease
 	.reserve-conditions
 		+font1("NeoSansPro-LightItalic", 200)
 		color: #fff9f9
@@ -2321,6 +2321,7 @@ b, strong
 		+font("Solomon-Sans-Normal", 400, 15px)
 		display: none
 		align-items: center
+		justify-content: center
 		text-align: center
 		cursor: default
 		span
@@ -2823,7 +2824,8 @@ b, strong
 		padding-top: 30px
 	.bottomrow-education__item
 		max-width: 504px
-		margin: 0 auto
+		margin: 6px auto
+
 
 	.hide-bottomrow-exp
 		display: none
@@ -3309,7 +3311,7 @@ b, strong
 			background: rgba($blue, .65)
 			transition: all .5s ease
 	.megaslider-js
-		width: 45%
+		width: 43%
 		margin: 0 auto
 		padding: 0px 0px
 		opacity: 0
@@ -3939,9 +3941,9 @@ b, strong
 		height: 327px
 		margin-top: 80px
 		transition: all .5s ease
-		&:hover .ourtrainers-block__img img
-			transform: scale(1.4)
-			transition: all .5s ease
+		// &:hover .ourtrainers-block__img img
+		// 	transform: scale(1.4)
+		// 	transition: all .5s ease
 	.ourtrainers-block__img
 		width: 257px
 		height: 327px
@@ -4125,5 +4127,23 @@ b, strong
 
 .mobile-background
 	display: none
+
+_:-ms-fullscreen, :root .wideanim-leftside__bigoverlay
+	display: none
+
+_:-ms-fullscreen, :root .ws_selthumb::after
+	display: none
+
+_:-ms-fullscreen, :root .ws_selthumb::before
+	display: none
+
+_:-ms-fullscreen, :root #wowslider-container1 .ws_thumbs a.ws_selthumb
+	background: $accent
+
+_:-ms-fullscreen, :root .telephone:hover img
+	animation: none
+
+_:-ms-fullscreen, :root .section-header .topline-rightside
+	width: auto
 
 @import "_media"
