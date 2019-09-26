@@ -237,6 +237,7 @@
       width: 48%
     .content-text
       line-height: 1.2
+      min-height: 120px
     .content-title
       line-height: 1.2
       font-size: 15px
@@ -1019,13 +1020,23 @@
 
 
   .section-news
+    .news-block
+      border: 3px solid $accent
+      padding: 2px
+    .news-block__content
+      padding: 6px
     .content-title
       font-size: 13px
     .content-text
       font-size: 12px
+      min-height: 112px
     .content-more
+      line-height: 1
+      padding-top: 0px
       span
         font-size: 12px
+        &:hover
+          font-size: 14px
     .content-date
       font-size: 10px
     .news-block__img
@@ -1033,16 +1044,73 @@
       max-height: 163px
       img
         max-width: 200px
-        height: 163px
+        height: auto
 
-  
+  .section-ourtrainers
+    .logo-white
+      left: 4px
+      bottom: 16px
+      width: 17px
+    .select-trainer
+      width: 180px
+    .adress-select
+      .select2-container
+        width: 180px
+        font-size: 16px
+      .select2-selection--single .select2-selection__arrow
+        top: 11px
+        right: 14px
+    .select-trainer
+      li
+        font-size: 15px
+        padding: 14px 15px 14px 10px
+    .ourtrainers-address
+      font-size: 18px
+    .ourtrainers-blocks
+      max-width: 955px
+    .ourtrainers-block__img
+      width: 160px
+      height: 218px
+    .ourtrainers-block
+      width: 160px
+      height: 218px
+      margin-top: 55px
+      img
+        width: 160px
+        height: 218px
+    .ourtrainers-block__title
+      width: 145px
+      font-size: 12px
+      bottom: -16px
+
 
       
 @media only screen and (max-width: 994px)
   .section-news
     .news-block
-      
-
+      padding: 1px
+    .news-block__img
+      max-width: 160px
+      max-height: 130px
+      img
+        max-width: 160px
+        height: auto
+    .content-text
+      line-height: 1
+    .content-title
+      font-size: 11px
+    .content-text
+      font-size: 10px
+      min-height: 62px
+    .content-more
+      line-height: 1
+      padding-top: 0px
+      span
+        font-size: 10px
+        &:hover
+          font-size: 12px
+    .content-date
+      font-size: 8px
     
 
 
@@ -1346,13 +1414,18 @@
       padding-bottom: 50px
     .rightside-four-rounds
       flex-wrap: wrap
-      width: 245px
+      width: 225px
     .four-rounds__item
+      width: 95px
+      height: 95px
+      img
+        width: 95px
+        height: 95px
       .info-hover
         width: 290px
         padding: 23px 4px
-        top: -86px
-        left: -252px
+        top: -72px
+        left: -256px
         font-size: 13px
         transform: skew(-5deg)
         span
@@ -1364,14 +1437,14 @@
 
       &:first-child
         .info-hover
-          left: -91px
+          left: -93px
           &:after
             left: 94px
             right: auto
       &:nth-child(3)
         margin-top: 45px
         .info-hover
-          left: -91px
+          left: -93px
           &:after
             left: 94px
             right: auto
@@ -1379,6 +1452,12 @@
         margin-top: 45px
         .info-hover
           width: 290px
+      .four-rounds__info
+        width: 25px
+        height: 25px
+        img
+          width: 25px
+          height: 25px
     .rightside-sports-club
       text-align: center
       img
@@ -2083,6 +2162,21 @@
       font-size: 16px
     .content-text
       font-weight: 700
+      font-size: 12px
+      line-height: 1.3
+      min-height: 119px
+    .content-more
+      line-height: 1.5
+      span
+        font-size: 15px
+        &:hover
+          font-size: 17px
+    .news-block__img
+      max-width: 250px
+      min-height: 220px
+      img
+        max-width: 250px
+        height: 220px
 
 
   .section-wideanimcustomer
@@ -2201,6 +2295,7 @@
       flex-direction: column
     .trainer-flex-bottomrow
       flex-direction: column
+      padding-top: 0
       .bottomrow-exp 
         display: none
 
@@ -2656,6 +2751,7 @@
     .adress-select
       .select2-container
         +font("NeoSansPro-BoldItalic", 700, 20px)
+        width: 310px
       .select2-container--default .select2-selection--single .select2-selection__arrow b
         border-width: 9px 5px 0 5px
         border-color: #fff transparent transparent transparent

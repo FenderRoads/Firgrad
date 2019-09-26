@@ -406,7 +406,8 @@ b, strong
 
 
 
-
+.empty-postheader
+	min-height: 66px
 
 // Header_
 
@@ -414,7 +415,6 @@ b, strong
 
 .section-wideanim
 	background: linear-gradient(90deg, rgba(25,29,80,1) 0%, rgba(9,9,121,1) 0%, rgba(25,29,80,1) 57%)
-	margin-top: 66px
 	.section-inner
 	.wideanim
 		display: flex
@@ -796,7 +796,6 @@ b, strong
 
 .section-wideanimcustomer
 	background: linear-gradient(90deg, rgba(25,29,80,1) 0%, rgba(9,9,121,1) 0%, rgba(25,29,80,1) 57%)
-	margin-top: 66px
 	.section-inner
 	.wideanimcustomer
 		display: flex
@@ -1307,7 +1306,6 @@ b, strong
 	background: url('../img/@2x/bg-tour.jpg') no-repeat center
 	background-size: cover
 	min-height: 175px
-	margin-top: 66px
 	position: relative
 	.section-inner
 	.tour
@@ -1557,14 +1555,15 @@ b, strong
 		line-height: 1.3
 		width: 90%
 		max-width: 600px
+		min-height: 96px
 	.content-more
 		color: $accent
 		text-decoration: underline
 		padding-top: 10px
-		transition: all .5s ease
 		span
 			+font("Solomon-Sans-Bold-Italic", 700, 15px)
 			cursor: pointer
+			transition: all .5s ease
 			&:hover
 				font-size: 16px
 				transition: all .5s ease
@@ -1805,7 +1804,6 @@ b, strong
 // Reserve
 
 .section-reserve
-	margin-top: 66px
 	height: calc(100vh - 66px)
 	.section-inner
 	.reserve
@@ -1956,7 +1954,7 @@ b, strong
 			display: inline-block
 			transform: skew(16deg)
 		&:hover
-			background: $blue
+			background: $orange
 			color: #fff
 			transition: all .5s ease
 		&:nth-child(2)
@@ -2107,7 +2105,6 @@ b, strong
 		overflow: hidden
 		transform: skew(-8deg)
 	.owl-nav.disabled
-		display: block
 	.owl-nav
 		position: absolute
 		top: 0
@@ -2818,6 +2815,7 @@ b, strong
 	.trainer-flex-bottomrow
 		display: flex
 		justify-content: space-between
+		padding-top: 15px
 	.bottomrow-education
 	.bottomrow-education__title
 	.bottomrow-education__items
@@ -3941,6 +3939,8 @@ b, strong
 		height: 327px
 		margin-top: 80px
 		transition: all .5s ease
+		margin-left: 5px
+		margin-right: 5px
 		// &:hover .ourtrainers-block__img img
 		// 	transform: scale(1.4)
 		// 	transition: all .5s ease

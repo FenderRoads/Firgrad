@@ -292,7 +292,13 @@ document.addEventListener("DOMContentLoaded", function() {
         mouseDrag: ($(".ourstock-carousel .item").length > 1) ? true : false
       }
     }
-  })
+  });
+
+  if ($('.ourstock-carousel .item').length >= 3) {
+    $('.ourstock-carousel .owl-nav.disabled').hide()
+  }
+
+
 
   // Ourstock carousel_
 
@@ -384,6 +390,10 @@ document.addEventListener("DOMContentLoaded", function() {
     loop: true,
     nav: true,
     responsive: {
+      1200: {
+        items: 2,
+        dots: false
+      },
       760: {
         items: 1,
         dots: false
@@ -393,7 +403,7 @@ document.addEventListener("DOMContentLoaded", function() {
         dots: true
       }
     }
-  })
+  });
 
   // Reviews-carousel_
 
